@@ -1,56 +1,57 @@
-.comm-header {
+/* ==========================================================================
+   Death Stranding Minimalist Chiral Comms (Contact Terminal)
+   ========================================================================== */
+
+.comm-header.ds-comm-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
-  border-bottom: 2px dashed rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 16px;
   margin-bottom: 24px;
 }
 
-.comm-header .section-title {
+.comm-header.ds-comm-header .section-title {
   margin-bottom: 0;
 }
 
-.comm-status-pill {
-  font-family: var(--font-display);
-  font-size: 11px;
-  color: var(--retro-xp);
-  background-color: #000000;
+.comm-status-pill.ds-comm-pill {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ds-cyan, #00f0ff);
+  background-color: rgba(0, 240, 255, 0.1);
   padding: 4px 10px;
-  border: 1px solid var(--retro-xp);
-  letter-spacing: 0.05em;
+  border: 1px solid rgba(0, 240, 255, 0.45);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  animation: pulse-glow 2s infinite;
+  clip-path: var(--ds-chamfer-sm);
 }
 
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 4px var(--retro-xp); }
-  50% { box-shadow: 0 0 12px var(--retro-xp); }
-}
-
-.contact-grid {
+.contact-grid.ds-contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 36px;
   align-items: start;
 }
 
-.contact-intro {
+.contact-intro.ds-contact-intro {
   margin: 0 0 24px;
-  font-size: 17px;
-  line-height: 1.65;
-  color: var(--text-main);
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: #cbd5e1;
 }
 
-.contact-address {
+.contact-address.ds-contact-address {
   font-style: normal;
 }
 
-.contact-details {
+.contact-details.ds-contact-details {
   list-style: none;
   margin: 0 0 24px;
   padding: 0;
@@ -59,191 +60,198 @@
   gap: 16px;
 }
 
-.contact-details li {
+.ds-contact-li {
   display: flex;
   flex-direction: column;
   gap: 4px;
   padding-left: 14px;
-  border-left: 3px solid var(--accent);
+  border-left: 2px solid var(--ds-gold, #ffb703);
 }
 
-.contact-label {
-  font-family: var(--font-display);
-  font-size: 11px;
+.contact-label.ds-contact-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
   color: var(--text-dim);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
-.contact-value,
-.contact-link {
-  font-size: 17px;
-  font-weight: 700;
+.contact-value.ds-contact-val,
+.contact-link.ds-contact-link {
+  font-size: 16px;
+  font-weight: 600;
   color: var(--text-main);
   text-decoration: none;
   word-break: break-word;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  transition: color 0.15s ease;
 }
 
-.contact-link:hover {
-  color: var(--highlight);
-  text-decoration: underline;
+.contact-link.ds-contact-link:hover {
+  color: var(--ds-gold, #ffb703);
 }
 
 .contact-link--wa {
-  color: var(--whatsapp-green);
+  color: #25d366;
 }
 
 .contact-link--wa:hover {
-  color: #2eee76;
+  color: #38ef7d;
 }
 
 .wa-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
   background-color: var(--whatsapp-green);
   display: inline-block;
   box-shadow: 0 0 6px var(--whatsapp-green);
 }
 
-.contact-actions {
+.contact-actions.ds-contact-actions {
   margin-top: 10px;
 }
 
-.contact-form {
+/* Minimalist Terminal Form */
+.contact-form.ds-contact-form {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  background-color: #161822;
+  background: rgba(11, 15, 24, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   padding: 24px;
-  border: 3px solid #000000;
-  box-shadow: 4px 4px 0 #000000;
+  border: 1px solid rgba(255, 183, 3, 0.35);
+  clip-path: var(--ds-chamfer);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.65);
 }
 
-.form-title-row {
+.form-title-row.ds-form-title-row {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 6px;
-  border-bottom: 2px dashed rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 10px;
   margin-bottom: 4px;
 }
 
-.form-title-text {
-  font-family: var(--font-display);
-  font-size: 13px;
-  color: var(--whatsapp-green);
-  letter-spacing: 0.03em;
-}
-
-.form-title-sub {
+.form-title-text.ds-form-title-text {
+  font-family: var(--font-body);
   font-size: 11.5px;
-  color: var(--text-dim);
+  font-weight: 700;
+  color: var(--ds-gold, #ffb703);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.form-field {
+.form-title-sub.ds-form-title-sub {
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.form-field.ds-form-field {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.form-field label {
-  font-family: var(--font-display);
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text-main);
-  letter-spacing: 0.04em;
-}
-
-.form-field input,
-.form-field textarea {
-  width: 100%;
-  padding: 10px 12px;
-  background-color: #0d0e14;
-  color: var(--text-main);
-  border: 2px solid #000000;
-  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.4);
+.form-field.ds-form-field label {
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.form-field.ds-form-field input,
+.form-field.ds-form-field textarea {
+  width: 100%;
+  padding: 11px 13px;
+  background-color: rgba(6, 9, 14, 0.9);
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-body);
+  font-size: 14.5px;
   outline: none;
-  transition: border-color 0.15s ease;
+  clip-path: var(--ds-chamfer-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.form-field input:focus,
-.form-field textarea:focus {
-  border-color: var(--whatsapp-green);
-  box-shadow: 0 0 6px rgba(37, 211, 102, 0.35);
+.form-field.ds-form-field input:focus,
+.form-field.ds-form-field textarea:focus {
+  border-color: var(--ds-cyan, #00f0ff);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
 }
 
-.form-status {
-  margin: 6px 0 0;
-  min-height: 22px;
-  font-size: 14px;
+.form-status.ds-form-status {
+  margin: 4px 0 0;
+  min-height: 20px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
   font-weight: 600;
-  color: var(--retro-gold);
+  color: var(--ds-gold, #ffb703);
 }
 
-.form-status.is-success {
-  color: var(--whatsapp-green);
+.form-status.ds-form-status.is-success {
+  color: #25d366;
 }
 
-.form-status.is-error {
+.form-status.ds-form-status.is-error {
   color: var(--retro-hp);
 }
 
 @media (min-width: 1200px) {
-  .contact-grid {
+  .contact-grid.ds-contact-grid {
     grid-template-columns: 1.05fr 0.95fr;
     gap: 48px;
   }
 
-  .contact-intro {
-    font-size: 18px;
-    line-height: 1.7;
+  .contact-intro.ds-contact-intro {
+    font-size: 17.5px;
+    line-height: 1.75;
     margin-bottom: 28px;
   }
 
-  .contact-details {
+  .contact-details.ds-contact-details {
     gap: 18px;
   }
 
-  .contact-details li {
+  .contact-details.ds-contact-details li {
     padding-left: 16px;
-    border-left-width: 4px;
+    border-left-width: 3px;
   }
 
-  .contact-label {
-    font-size: 12px;
+  .contact-label.ds-contact-label {
+    font-size: 11px;
   }
 
-  .contact-value,
-  .contact-link {
-    font-size: 17.5px;
+  .contact-value.ds-contact-val,
+  .contact-link.ds-contact-link {
+    font-size: 17px;
   }
 
-  .contact-form {
-    padding: 30px 32px;
+  .contact-form.ds-contact-form {
+    padding: 28px 32px;
     gap: 16px;
   }
 
-  .form-field input,
-  .form-field textarea {
+  .form-field.ds-form-field input,
+  .form-field.ds-form-field textarea {
     padding: 12px 14px;
-    font-size: 15.5px;
-  }
-
-  .pixel-btn--full {
-    padding: 15px 22px;
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 
 @media (max-width: 768px) {
-  .contact-grid {
+  .contact-grid.ds-contact-grid {
     grid-template-columns: 1fr;
     gap: 28px;
   }

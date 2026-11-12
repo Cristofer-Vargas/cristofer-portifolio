@@ -1,7 +1,9 @@
-<!-- Developer Retro Marquee Strip -->
-<div class="marquee-bar" aria-hidden="true">
+<!-- Developer Death Stranding & Bridges Marquee Strip -->
+<div class="marquee-bar ds-marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>★ PLAYER 1 READY</span>
+    <span>★ BRIDGES EXPEDITION READY</span>
+    <span>•</span>
+    <span>CHIRAL NETWORK // CONNECTED</span>
     <span>•</span>
     <span>FULL STACK DEVELOPER</span>
     <span>•</span>
@@ -11,9 +13,11 @@
     <span>•</span>
     <span>UI/UX DESIGN</span>
     <span>•</span>
-    <span>INSERT COIN TO CONTINUE</span>
+    <span>KEEP ON KEEPING ON</span>
     <span>•</span>
-    <span>★ PLAYER 1 READY</span>
+    <span>★ BRIDGES EXPEDITION READY</span>
+    <span>•</span>
+    <span>CHIRAL NETWORK // CONNECTED</span>
     <span>•</span>
     <span>FULL STACK DEVELOPER</span>
     <span>•</span>
@@ -23,19 +27,20 @@
     <span>•</span>
     <span>UI/UX DESIGN</span>
     <span>•</span>
-    <span>INSERT COIN TO CONTINUE</span>
+    <span>KEEP ON KEEPING ON</span>
   </div>
 </div>
 
-<!-- Hero Section: Gamer Character Sheet -->
+<!-- Hero Section: Gamer Character Sheet & Bridges Terminal -->
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero__content">
-    <div class="hero__badge-row">
-      <span class="badge-accent">
-        <span class="status-dot" aria-hidden="true"></span>
-        PLAYER 1 // READY
+    <div class="hero__badge-row ds-badge-row">
+      <span class="ds-hud-chip ds-hud-chip--chiral">
+        <span class="ds-pulse-dot" aria-hidden="true"></span>
+        BRIDGES // PORTER DIV
       </span>
-      <span class="badge-xp">CLASS: FULL STACK</span>
+      <span class="ds-hud-chip ds-hud-chip--cyan">GREAT DELIVERER ★</span>
+      <span class="ds-hud-chip ds-hud-chip--slate">FULL STACK CLASS</span>
     </div>
 
     <h1 id="hero-title" class="hero__name">
@@ -69,19 +74,67 @@
       </li>
     </ul>
 
-    <!-- RPG Attributes Mini-HUD -->
-    <div class="hero__stats-hud" aria-label="Estatísticas e habilidades do desenvolvedor">
-      <div class="stat-slot">
-        <span class="stat-tag stat-tag--atk">ATK</span>
-        <span class="stat-val">C#, ASP .NET Core, API REST</span>
+    <!-- Death Stranding Bridges Cargo & Capability Loadout HUD -->
+    <div class="hero__stats-hud ds-loadout-hud" aria-label="Loadout e atributos técnicos do desenvolvedor">
+      <div class="ds-loadout-header">
+        <div class="ds-loadout-title-wrap">
+          <span class="ds-loadout-icon" aria-hidden="true">⬢</span>
+          <span class="ds-loadout-title">BRIDGES LOADOUT // CARGO &amp; SYSTEM ATTRIBUTES</span>
+        </div>
+        <span class="ds-loadout-status"><span class="ds-pulse-dot ds-pulse-dot--cyan"></span> Q-PID SYNC: 100%</span>
       </div>
-      <div class="stat-slot">
-        <span class="stat-tag stat-tag--def">DEF</span>
-        <span class="stat-val">Docker, SQL, Testcontainers</span>
-      </div>
-      <div class="stat-slot">
-        <span class="stat-tag stat-tag--agi">AGI</span>
-        <span class="stat-val">HTML5, CSS3, JavaScript, UI/UX</span>
+
+      <div class="ds-loadout-slots">
+        <div class="stat-slot ds-loadout-slot">
+          <div class="ds-slot-lead">
+            <span class="stat-tag ds-loadout-tag ds-loadout-tag--atk">CORE</span>
+            <span class="ds-slot-label">Backend &amp; Web APIs</span>
+          </div>
+          <span class="stat-val ds-slot-desc">C#, ASP .NET Core, Web APIs, Entity Framework</span>
+          <div class="ds-slot-gauge" aria-hidden="true" title="Capacidade: 95%">
+            <div class="ds-meter-bars">
+              <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+              <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+              <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+              <span class="is-empty"></span>
+            </div>
+            <span class="ds-gauge-val">95%</span>
+          </div>
+        </div>
+
+        <div class="stat-slot ds-loadout-slot">
+          <div class="ds-slot-lead">
+            <span class="stat-tag ds-loadout-tag ds-loadout-tag--def">INFRA</span>
+            <span class="ds-slot-label">Databases &amp; Containers</span>
+          </div>
+          <span class="stat-val ds-slot-desc">Docker, PostgreSQL, SQL Server, Testcontainers</span>
+          <div class="ds-slot-gauge" aria-hidden="true" title="Capacidade: 90%">
+            <div class="ds-meter-bars ds-meter-bars--cyan">
+              <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+              <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+              <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+              <span class="is-empty"></span>
+            </div>
+            <span class="ds-gauge-val ds-gauge-val--cyan">90%</span>
+          </div>
+        </div>
+
+        <div class="stat-slot ds-loadout-slot">
+          <div class="ds-slot-lead">
+            <span class="stat-tag ds-loadout-tag ds-loadout-tag--agi">INTERFACE</span>
+            <span class="ds-slot-label">Client &amp; Experiência</span>
+          </div>
+          <span class="stat-val ds-slot-desc">HTML5, CSS3, JavaScript, UI/UX Design, Figma</span>
+          <div class="ds-slot-gauge" aria-hidden="true" title="Capacidade: 95%">
+            <div class="ds-meter-bars ds-meter-bars--emerald">
+              <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+              <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+              <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+              <span class="is-empty"></span>
+            </div>
+            <span class="ds-gauge-val ds-gauge-val--emerald">95%</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -118,8 +171,13 @@
 
   <div class="hero__visual">
     <div class="portrait-frame">
-      <div class="portrait-square portrait-square--back pixel-shadow" aria-hidden="true"></div>
-      <div class="portrait-square portrait-square--front pixel-shadow" aria-hidden="true"></div>
+      <div class="ds-portrait-plate" aria-hidden="true">
+        <span class="ds-plate-tick ds-plate-tick--tl">+</span>
+        <span class="ds-plate-tick ds-plate-tick--tr">+</span>
+        <span class="ds-plate-tick ds-plate-tick--bl">+</span>
+        <span class="ds-plate-tick ds-plate-tick--br">+</span>
+        <span class="ds-plate-coord">UCA-RS // ID: CV-9924</span>
+      </div>
       <img
         src="assets/images/perfil.png"
         alt="Retrato de Cristofer Vargas de Santis, Desenvolvedor Web Full Stack e Técnico de Informática"
@@ -128,9 +186,13 @@
         height="533"
         fetchpriority="high"
       >
-      <!-- Floating Gamer Level Badge -->
-      <div class="portrait-lvl-tag pixel-float" aria-hidden="true">
-        <span>LVL 24</span>
+      <!-- Floating Death Stranding Porter Grade Badge -->
+      <div class="portrait-lvl-tag ds-grade-badge pixel-float" aria-hidden="true">
+        <div class="ds-grade-star">★</div>
+        <div class="ds-grade-details">
+          <span class="ds-grade-sub">BRIDGES PORTER</span>
+          <span class="ds-grade-main">GRADE 24</span>
+        </div>
       </div>
     </div>
   </div>

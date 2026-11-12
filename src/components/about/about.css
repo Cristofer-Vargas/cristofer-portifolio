@@ -1,86 +1,92 @@
-.dialogue-card {
-  background-color: var(--bg-card);
-  border: 3px solid #000000;
-  box-shadow: var(--shadow-pixel);
+/* ==========================================================================
+   Death Stranding Minimalist Bridges Personnel Dossier (About Section)
+   ========================================================================== */
+
+.dialogue-card.ds-dossier-card {
   position: relative;
 }
 
-.dialogue-header {
+.dialogue-header.ds-dossier-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
-  border-bottom: 2px dashed rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 14px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
-.dialogue-header .section-title {
+.dialogue-header.ds-dossier-header .section-title {
   margin-bottom: 0;
 }
 
-.dialogue-tag {
-  font-family: var(--font-display);
-  font-size: 11px;
-  color: var(--retro-gold);
-  background-color: #000000;
-  padding: 3px 8px;
-  border: 1px solid var(--retro-gold);
-  letter-spacing: 0.05em;
+.dialogue-tag.ds-dossier-tag {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ds-gold, #ffb703);
+  background: rgba(255, 183, 3, 0.1);
+  padding: 3px 10px;
+  border: 1px solid rgba(255, 183, 3, 0.4);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  clip-path: var(--ds-chamfer-sm);
 }
 
-.dialogue-speaker {
+.dialogue-speaker.ds-dossier-speaker {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #14151e;
-  border: 2px solid #000000;
-  padding: 4px 10px;
-  margin-bottom: 14px;
-  box-shadow: 2px 2px 0 #000000;
+  background: rgba(18, 24, 36, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 5px 12px;
+  margin-bottom: 18px;
+  clip-path: var(--ds-chamfer-sm);
 }
 
-.speaker-avatar {
-  font-size: 16px;
-}
-
-.speaker-name {
-  font-family: var(--font-display);
+.ds-dossier-speaker .speaker-name {
+  font-family: var(--font-body);
   font-size: 11px;
-  color: var(--accent);
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  color: var(--ds-gold, #ffb703);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.dialogue-grid {
+.dialogue-grid.ds-dossier-grid {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.dialogue-stats {
-  background-color: #14151e;
-  border: 2px solid #000000;
-  padding: 16px 18px;
+/* Minimalist Attribute Sheet */
+.dialogue-stats.ds-dossier-stats {
+  background: rgba(11, 15, 24, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.08), 3px 3px 0 #000000;
+  gap: 14px;
+  clip-path: var(--ds-chamfer-sm);
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.4);
 }
 
-.dialogue-stat-item {
+.dialogue-stat-item.ds-stat-item {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  border-left: 3px solid var(--accent);
+  border-left: 2px solid var(--ds-gold, #ffb703);
   padding-left: 10px;
 }
 
 .dialogue-stat-label {
-  font-family: var(--font-display);
-  font-size: 10px;
-  color: var(--retro-gold);
-  letter-spacing: 0.05em;
+  font-family: var(--font-body);
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .dialogue-stat-val {
@@ -90,42 +96,65 @@
   line-height: 1.35;
 }
 
-.dialogue-narrative {
+.dialogue-narrative.ds-dossier-narrative {
   min-width: 0;
 }
 
 .about-text {
   margin: 0;
-  font-size: 18px;
-  line-height: 1.75;
-  color: var(--text-main);
+  font-size: 17.5px;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+.dialogue-footer.ds-dossier-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 24px;
+  padding-top: 12px;
+}
+
+.dialogue-prompt {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dialogue-arrow {
+  color: var(--ds-gold, #ffb703);
+  font-size: 11px;
 }
 
 @media (min-width: 960px) {
-  .dialogue-grid {
+  .dialogue-grid.ds-dossier-grid {
     display: grid;
     grid-template-columns: 320px 1fr;
     gap: 32px;
     align-items: start;
   }
 
-  .dialogue-stats {
+  .dialogue-stats.ds-dossier-stats {
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    padding: 20px;
+    gap: 16px;
+    padding: 22px;
   }
 }
 
 @media (min-width: 1200px) {
-  .dialogue-grid {
+  .dialogue-grid.ds-dossier-grid {
     grid-template-columns: 360px 1fr;
     gap: 40px;
   }
 
   .about-text {
-    font-size: 19px;
-    line-height: 1.8;
+    font-size: 18.5px;
+    line-height: 1.85;
   }
 
   .dialogue-stat-val {
@@ -133,30 +162,8 @@
   }
 }
 
-.dialogue-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 2px dashed rgba(255, 255, 255, 0.15);
-  margin-top: 20px;
-  padding-top: 12px;
-}
-
-.dialogue-prompt {
-  font-family: var(--font-display);
-  font-size: 10px;
-  color: var(--text-dim);
-  letter-spacing: 0.04em;
-}
-
-.dialogue-arrow {
-  color: var(--highlight);
-  font-size: 12px;
-  animation: retro-blink 1.2s steps(1) infinite;
-}
-
 @media (max-width: 768px) {
   .about-text {
-    font-size: 16px;
+    font-size: 15.5px;
   }
 }

@@ -1,63 +1,74 @@
-.quest-section-header {
+/* ==========================================================================
+   Death Stranding Minimalist Expedition Archive (Timeline)
+   ========================================================================== */
+
+.quest-section-header.ds-timeline-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
-  border-bottom: 2px dashed rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 16px;
   margin-bottom: 28px;
 }
 
-.quest-section-header .section-title {
+.quest-section-header.ds-timeline-head .section-title {
   margin-bottom: 0;
 }
 
-.quest-counter {
-  font-family: var(--font-display);
-  font-size: 11px;
-  color: var(--retro-xp);
-  background-color: #000000;
+.quest-counter.ds-counter {
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--ds-cyan, #00f0ff);
+  background: rgba(0, 240, 255, 0.1);
   padding: 4px 10px;
-  border: 1px solid var(--retro-xp);
-  letter-spacing: 0.05em;
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  clip-path: var(--ds-chamfer-sm);
 }
 
-.quest-category-title {
+.quest-category-title.ds-category-title {
   margin: 0 0 20px;
-  font-family: var(--font-display);
-  font-size: 15px;
-  color: var(--highlight);
-  letter-spacing: 0.04em;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ds-gold, #ffb703);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
-.quest-category--spaced {
-  margin-top: 44px;
-  border-top: 2px dashed rgba(255, 255, 255, 0.15);
-  padding-top: 36px;
+.category-icon.ds-cat-icon {
+  font-size: 11px;
+  color: var(--ds-gold, #ffb703);
 }
 
-.category-icon {
-  font-size: 16px;
+.quest-category--spaced.ds-category--spaced {
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 32px;
 }
 
-.timeline {
+.timeline.ds-timeline {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 28px;
 }
 
-.timeline-item {
+.timeline-item.ds-timeline-item {
   display: grid;
   grid-template-columns: 124px 1fr;
   gap: 20px;
   align-items: stretch;
 }
 
-.timeline-rail {
+/* Minimalist Laser Rail */
+.timeline-rail.ds-timeline-rail {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -65,30 +76,30 @@
   min-height: 92px;
 }
 
-.timeline-rail::before {
+.timeline-rail.ds-timeline-rail::before {
   content: "";
   position: absolute;
   left: 6px;
   top: 10px;
   bottom: 10px;
   width: 2px;
-  background-color: var(--text-main);
+  background: linear-gradient(180deg, var(--ds-gold, #ffb703) 0%, rgba(255, 183, 3, 0.3) 100%);
   z-index: 1;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.timeline-item:not(:last-child) .timeline-rail::after {
+.timeline-item.ds-timeline-item:not(:last-child) .timeline-rail.ds-timeline-rail::after {
   content: "";
   position: absolute;
   left: 6px;
   top: calc(100% - 10px);
-  height: 52px;
+  height: 48px;
   width: 0;
-  border-left: 2px dashed rgba(255, 255, 255, 0.72);
+  border-left: 1px dashed rgba(255, 255, 255, 0.3);
   z-index: 1;
 }
 
-.timeline-point {
+.timeline-point.ds-point {
   position: relative;
   z-index: 2;
   display: flex;
@@ -97,60 +108,68 @@
   min-height: 20px;
 }
 
-.timeline-node {
-  width: 14px;
-  height: 14px;
+.timeline-node.ds-node {
+  width: 10px;
+  height: 10px;
   flex-shrink: 0;
-  background-color: var(--accent);
-  border: 2px solid #000000;
-  box-shadow: 2px 2px 0 #000000;
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 50%;
+  background-color: var(--ds-gold, #ffb703);
+  border: 2px solid #06080d;
+  box-shadow: 0 0 8px var(--ds-gold, #ffb703);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.timeline-date {
-  font-size: 12.5px;
-  font-family: var(--font-display);
+.timeline-date.ds-date {
+  font-size: 11.5px;
+  font-family: var(--font-body);
   font-weight: 700;
-  color: var(--text-main);
-  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   white-space: nowrap;
   line-height: 1;
 }
 
-.timeline-item:hover .timeline-node {
-  background-color: var(--highlight);
-  transform: scale(1.2);
-  box-shadow: 0 0 10px var(--highlight);
+.timeline-item.ds-timeline-item:hover .timeline-node.ds-node {
+  background-color: var(--ds-cyan, #00f0ff);
+  box-shadow: 0 0 12px var(--ds-cyan, #00f0ff);
+  transform: scale(1.25);
 }
 
-.timeline-item:hover .timeline-rail::before {
-  background-color: var(--highlight);
+.timeline-item.ds-timeline-item:hover .timeline-rail.ds-timeline-rail::before {
+  background: var(--ds-cyan, #00f0ff);
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
 }
 
-.timeline-body {
+/* Minimalist Mission Body Card */
+.timeline-body.ds-timeline-body {
   min-width: 0;
-  padding: 4px 16px 8px;
-  background-color: rgba(0, 0, 0, 0.2);
-  border: 2px solid #000000;
-  box-shadow: 3px 3px 0 #000000;
-  border-left: 4px solid var(--accent);
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  padding: 14px 20px 16px;
+  background: rgba(11, 15, 24, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 2px solid var(--ds-gold, #ffb703);
+  clip-path: var(--ds-chamfer-sm);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.timeline-item:hover .timeline-body {
-  background-color: rgba(0, 0, 0, 0.4);
-  border-left-color: var(--highlight);
+.timeline-item.ds-timeline-item:hover .timeline-body.ds-timeline-body {
+  background: rgba(15, 20, 32, 0.9);
+  border-left-color: var(--ds-cyan, #00f0ff);
   transform: translateX(4px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55), 0 0 12px rgba(0, 240, 255, 0.15);
 }
 
-.timeline-header {
+.timeline-header.ds-timeline-header {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-bottom: 12px;
+  gap: 4px;
+  margin-bottom: 10px;
 }
 
-.timeline-title-row {
+.timeline-title-row.ds-title-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -158,53 +177,54 @@
   gap: 10px;
 }
 
-.timeline-role {
+.timeline-role.ds-role {
   margin: 0;
-  font-family: var(--font-display);
-  font-size: 17px;
+  font-family: var(--font-body);
+  font-size: 16.5px;
   font-weight: 700;
-  color: var(--accent);
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
-  letter-spacing: 0.02em;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-.timeline-org {
-  font-size: 14.5px;
+.timeline-org.ds-org {
+  font-size: 13.5px;
   font-weight: 600;
-  color: var(--retro-gold);
+  color: var(--ds-gold, #ffb703);
 }
 
-.quest-status {
-  font-family: var(--font-display);
-  font-size: 10px;
+.quest-status.ds-status-badge {
+  font-family: var(--font-body);
+  font-size: 9.5px;
   font-weight: 700;
-  padding: 2px 8px;
-  border: 1px solid currentColor;
-  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 2px;
 }
 
-.quest-status--active {
-  color: var(--retro-gold);
-  background-color: rgba(255, 222, 33, 0.12);
-  border-color: var(--retro-gold);
+.quest-status.ds-status-badge--active {
+  color: var(--ds-cyan, #00f0ff);
+  background: rgba(0, 240, 255, 0.12);
+  border: 1px solid rgba(0, 240, 255, 0.45);
 }
 
-.quest-status--completed {
-  color: var(--retro-xp);
-  background-color: rgba(46, 213, 115, 0.12);
-  border-color: var(--retro-xp);
+.quest-status.ds-status-badge--done {
+  color: var(--retro-xp, #2ed573);
+  background: rgba(46, 213, 115, 0.12);
+  border: 1px solid rgba(46, 213, 115, 0.45);
 }
 
-.timeline-desc {
+.timeline-desc.ds-desc {
   margin: 0;
-  font-size: 15.5px;
+  font-size: 15px;
   line-height: 1.65;
   color: var(--text-muted);
 }
 
-.timeline-project {
+.timeline-project.ds-project-loot {
   margin: 12px 0 0;
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -212,13 +232,15 @@
   gap: 8px;
 }
 
-.quest-loot-label {
-  font-family: var(--font-display);
-  font-size: 11px;
-  color: var(--retro-mp);
+.quest-loot-label.ds-loot-tag {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ds-cyan, #00f0ff);
 }
 
-.project-inline-link {
+.project-inline-link.ds-inline-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -226,80 +248,77 @@
   transition: transform 0.15s ease;
 }
 
-.project-inline-link:hover {
+.project-inline-link.ds-inline-link:hover {
   transform: translateY(-1px);
 }
 
-.gh-pill {
+.gh-pill.ds-gh-pill {
   display: inline-block;
   padding: 2px 8px;
-  background-color: #000000;
-  color: var(--retro-gold);
-  font-family: var(--font-display);
-  font-size: 10px;
+  background-color: rgba(255, 183, 3, 0.12);
+  color: var(--ds-gold, #ffb703);
+  font-family: var(--font-body);
+  font-size: 9.5px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  border: 1px solid var(--retro-gold);
-  box-shadow: 2px 2px 0 #000000;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 183, 3, 0.4);
+  clip-path: var(--ds-chamfer-sm);
 }
 
 @media (min-width: 1200px) {
-  .timeline-item {
+  .timeline-item.ds-timeline-item {
     grid-template-columns: 140px 1fr;
     gap: 26px;
   }
 
-  .timeline-body {
-    padding: 14px 24px 16px;
+  .timeline-body.ds-timeline-body {
+    padding: 16px 24px;
   }
 
-  .timeline-role {
-    font-size: 18.5px;
+  .timeline-role.ds-role {
+    font-size: 17.5px;
   }
 
-  .timeline-desc {
-    font-size: 16px;
+  .timeline-desc.ds-desc {
+    font-size: 15.5px;
     line-height: 1.7;
   }
 
-  .timeline-org {
-    font-size: 15px;
-  }
-
-  .timeline-date {
-    font-size: 13px;
+  .timeline-org.ds-org {
+    font-size: 14px;
   }
 }
 
 @media (max-width: 768px) {
-  .timeline-item {
-    grid-template-columns: 112px 1fr;
+  .timeline-item.ds-timeline-item {
+    grid-template-columns: 100px 1fr;
     gap: 12px;
   }
 
-  .timeline-body {
-    padding: 0 6px 4px;
+  .timeline-body.ds-timeline-body {
+    padding: 12px 14px;
   }
 }
 
 @media (max-width: 560px) {
-  .timeline-item {
+  .timeline-item.ds-timeline-item {
     grid-template-columns: 1fr;
     gap: 10px;
   }
 
-  .timeline-rail {
+  .timeline-rail.ds-timeline-rail {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    gap: 20px;
+    gap: 16px;
     min-height: auto;
-    padding-bottom: 10px;
-    border-bottom: 2px dashed rgba(255, 255, 255, 0.55);
+    padding-bottom: 8px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
   }
 
-  .timeline-rail::before,
-  .timeline-item:not(:last-child) .timeline-rail::after {
+  .timeline-rail.ds-timeline-rail::before,
+  .timeline-item.ds-timeline-item:not(:last-child) .timeline-rail.ds-timeline-rail::after {
     display: none;
   }
 }

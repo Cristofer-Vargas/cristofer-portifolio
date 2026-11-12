@@ -1,60 +1,61 @@
 :root {
-  /* Color Palette - Cyber Arcade & Retro Gamer */
-  --bg-canvas: #0a0b10;
-  --bg-shell: #181922;
-  --bg-marquee: #101118;
-  --bg-card: #242633;
-  --bg-card-inner: #1a1b24;
-  --bg-pill: #353849;
+  /* Death Stranding Minimalist Sci-Fi Palette */
+  --bg-canvas: #06080d;
+  --bg-shell: #0a0e16;
+  --bg-marquee: #070a10;
+  --bg-card: rgba(14, 18, 28, 0.82);
+  --bg-card-inner: rgba(9, 12, 19, 0.88);
+  --bg-pill: rgba(22, 29, 44, 0.7);
 
-  /* Signature Accents & RPG Stats */
-  --accent: #cd853f;
-  --accent-hover: #e0964e;
-  --accent-dark: #7a3e05;
-  --highlight: #ffde21;
+  /* Chiral Network & Odradek Accents */
+  --accent: #ffb703;
+  --accent-hover: #ffc72c;
+  --accent-dark: #b88200;
+  --highlight: #00f0ff;
 
   --retro-hp: #ff4757;
   --retro-mp: #00f0ff;
   --retro-xp: #2ed573;
-  --retro-gold: #ffde21;
+  --retro-gold: #ffb703;
   --retro-purple: #a55eea;
   --whatsapp-green: #25d366;
 
   /* Typography Colors */
-  --text-main: #f5f6fa;
-  --text-muted: #c8cbd9;
-  --text-dim: #8b8f9e;
-  --text-dark: #0f1016;
-  --text-footer: #14151d;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --text-dark: #07090e;
+  --text-footer: #0c1017;
 
-  /* Stepped 8-Bit Pixel Shadows & Borders */
-  --shadow-pixel:
-    5px 0 0 #000000,
-    -5px 0 0 #000000,
-    0 5px 0 #000000,
-    0 -5px 0 #000000,
-    0 12px 24px rgba(0, 0, 0, 0.45);
-  --shadow-pixel-sm:
-    3px 0 0 #000000,
-    -3px 0 0 #000000,
-    0 3px 0 #000000,
-    0 -3px 0 #000000;
-  --pixel-bevel:
-    inset 2px 2px 0 rgba(255, 255, 255, 0.16),
-    inset -2px -2px 0 rgba(0, 0, 0, 0.5);
-  --pixel-bevel-gold:
-    inset 2px 2px 0 rgba(255, 255, 255, 0.35),
-    inset -2px -2px 0 rgba(0, 0, 0, 0.4);
-  --shadow-text: 0 4px 0 rgba(0, 0, 0, 0.65);
-  --glow-cyan: 0 0 12px rgba(0, 240, 255, 0.45);
-  --glow-gold: 0 0 12px rgba(255, 222, 33, 0.45);
+  /* Death Stranding Minimalist Glass & Chamfer Shadows */
+  --shadow-pixel: 0 8px 30px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --shadow-pixel-sm: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --pixel-bevel: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --pixel-bevel-gold: inset 0 1px 0 rgba(255, 183, 3, 0.25);
+  --shadow-text: none;
+  --glow-cyan: 0 0 14px rgba(0, 240, 255, 0.35);
+  --glow-gold: 0 0 14px rgba(255, 183, 3, 0.35);
 
-  /* Typography (Híbrido Indie: Silkscreen + Rubik) */
-  --font-display: "Silkscreen", monospace;
-  --font-body: "Rubik", sans-serif;
+  /* Typography - Sleek Technical Grotesque */
+  --font-display: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-size-base: 16px;
   --line-height-base: 1.6;
-  --letter-spacing-base: 0;
+  --letter-spacing-base: 0.01em;
+
+  /* Death Stranding 1 Tactical HUD & Chiral Network Tokens */
+  --ds-gold: #ffb703;
+  --ds-gold-glow: rgba(255, 183, 3, 0.45);
+  --ds-gold-dim: rgba(255, 183, 3, 0.14);
+  --ds-cyan: #00f0ff;
+  --ds-cyan-glow: rgba(0, 240, 255, 0.45);
+  --ds-cyan-dim: rgba(0, 240, 255, 0.14);
+  --ds-hud-bg: rgba(9, 13, 20, 0.94);
+  --ds-hud-glass: rgba(15, 20, 31, 0.78);
+  --ds-hud-border: rgba(255, 183, 3, 0.35);
+  --ds-hud-border-cyan: rgba(0, 240, 255, 0.35);
+  --ds-chamfer: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  --ds-chamfer-sm: polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px));
 
   /* Layout */
   --shell-width: 1440px;

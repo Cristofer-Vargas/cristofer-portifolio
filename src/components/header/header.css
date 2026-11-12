@@ -1,287 +1,575 @@
+/* ==========================================================================
+   Death Stranding 1 Tactical HUD & Bridges Porter Navigation Interface
+   ========================================================================== */
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  height: 74px;
-  background-color: var(--bg-marquee);
-  border-bottom: 3px solid #000000;
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.45);
+  background: var(--ds-hud-bg, rgba(9, 13, 20, 0.94));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--ds-hud-border, rgba(255, 183, 3, 0.35));
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 4px 28px rgba(0, 0, 0, 0.75),
+    0 1px 0 rgba(255, 183, 3, 0.15);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
-.site-header__inner {
+/* Odradek & Chiral Network Telemetry Top Ribbon */
+.site-header__telemetry-line {
+  background: rgba(6, 8, 14, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  padding: 4px 0;
+  user-select: none;
+}
+
+.ds-telemetry-inner {
   max-width: var(--shell-width);
-  height: 100%;
   margin: 0 auto;
   padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
+}
+
+.ds-telemetry-tick {
+  color: var(--ds-gold, #ffb703);
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.ds-telemetry-coord {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.ds-telemetry-divider {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.ds-chiral-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ds-gold, #ffb703);
+  font-weight: 600;
+}
+
+.ds-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--ds-gold, #ffb703);
+  box-shadow: 0 0 6px var(--ds-gold, #ffb703);
+  animation: ds-chiral-pulse 2s infinite ease-in-out;
+}
+
+.ds-pulse-dot--cyan {
+  background-color: var(--ds-cyan, #00f0ff);
+  box-shadow: 0 0 6px var(--ds-cyan, #00f0ff);
+  animation: ds-cyan-pulse 2s infinite ease-in-out;
+}
+
+@keyframes ds-chiral-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+    box-shadow: 0 0 4px var(--ds-gold, #ffb703);
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+    box-shadow: 0 0 10px var(--ds-gold, #ffb703);
+  }
+}
+
+@keyframes ds-cyan-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+    box-shadow: 0 0 4px var(--ds-cyan, #00f0ff);
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+    box-shadow: 0 0 10px var(--ds-cyan, #00f0ff);
+  }
+}
+
+.ds-telemetry-odradek {
+  color: var(--ds-cyan, #00f0ff);
+  font-weight: 600;
+}
+
+/* Header Main Inner Container */
+.site-header__inner {
+  max-width: var(--shell-width);
+  height: 68px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+/* ==========================================================================
+   Bridges Porter HUD (Left)
+   ========================================================================== */
+
+.header-hud.ds-porter-hud {
+  display: flex;
+  align-items: center;
   gap: 16px;
 }
 
-/* Player HUD Left */
-.header-hud {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.brand-github {
-  color: var(--text-main);
+/* GitHub Terminal Button */
+.brand-github.ds-brand-github {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
-  background-color: #000000;
-  border: 2px solid var(--accent);
-  box-shadow: 2px 2px 0 #000000;
-  transition: transform 0.12s ease, border-color 0.15s ease, background-color 0.15s ease;
+  width: 44px;
+  height: 44px;
+  background: rgba(15, 20, 31, 0.9);
+  color: var(--text-main);
+  border: 1px solid var(--ds-hud-border, rgba(255, 183, 3, 0.4));
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, background-color 0.2s ease;
 }
 
-.brand-github:hover,
-.brand-github:focus-visible {
-  color: var(--highlight);
-  border-color: var(--highlight);
+.brand-github.ds-brand-github:hover,
+.brand-github.ds-brand-github:focus-visible {
+  color: var(--ds-gold, #ffb703);
+  border-color: var(--ds-gold, #ffb703);
+  background: rgba(255, 183, 3, 0.12);
   transform: translateY(-2px);
+  box-shadow:
+    0 0 14px var(--ds-gold-glow, rgba(255, 183, 3, 0.45)),
+    inset 0 0 8px rgba(255, 183, 3, 0.2);
 }
 
-.player-status {
+.ds-player-status {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
-.player-tag {
+.ds-player-tag {
   display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ds-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--retro-xp, #2ed573);
+  box-shadow: 0 0 8px var(--retro-xp, #2ed573);
+  display: inline-block;
+  animation: ds-chiral-pulse 2s infinite ease-in-out;
+}
+
+.ds-id-sub {
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ds-gold, #ffb703);
+  text-transform: uppercase;
+}
+
+.player-name.ds-player-name {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+  text-transform: uppercase;
+}
+
+.ds-rank-pill {
+  font-family: var(--font-body);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--ds-gold, #ffb703);
+  background: rgba(255, 183, 3, 0.12);
+  border: 1px solid rgba(255, 183, 3, 0.45);
+  padding: 1px 6px;
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(255, 183, 3, 0.2);
+}
+
+/* Death Stranding Segmented Gauges (Stamina & Chiral Sync) */
+.player-hud-bars.ds-hud-bars {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body);
+}
+
+.ds-gauge {
+  display: inline-flex;
   align-items: center;
   gap: 6px;
 }
 
-.status-dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--retro-xp);
-  box-shadow: 0 0 6px var(--retro-xp);
-  display: inline-block;
-  animation: retro-blink 2s steps(1) infinite;
-}
-
-.player-name {
-  font-family: var(--font-display);
-  font-size: 13px;
+.ds-gauge-tag {
+  font-size: 9.5px;
   font-weight: 700;
-  color: var(--text-main);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  color: var(--ds-cyan, #00f0ff);
 }
 
-.player-hud-bars {
-  display: flex;
+.ds-gauge-tag--gold {
+  color: var(--ds-gold, #ffb703);
+}
+
+.ds-meter {
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-display);
+  gap: 2px;
+}
+
+.ds-meter span {
+  display: inline-block;
+  width: 4px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 1px;
+}
+
+.ds-meter--cyan span.is-filled {
+  background-color: var(--ds-cyan, #00f0ff);
+  box-shadow: 0 0 5px rgba(0, 240, 255, 0.6);
+}
+
+.ds-meter--gold span.is-filled {
+  background-color: var(--ds-gold, #ffb703);
+  box-shadow: 0 0 5px rgba(255, 183, 3, 0.6);
+}
+
+.ds-great-deliverer {
   font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--ds-gold, #ffb703);
+  opacity: 0.9;
 }
 
-.hud-stat--hp {
-  color: var(--retro-hp);
-}
+/* ==========================================================================
+   Header Actions & Controls (Right)
+   ========================================================================== */
 
-.hud-hearts {
-  letter-spacing: 2px;
-}
-
-.hud-stat--lvl {
-  color: var(--retro-gold);
-  background-color: #000000;
-  padding: 1px 6px;
-  border: 1px solid var(--retro-gold);
-}
-
-/* Controls Right */
-.header-actions {
+.header-actions.ds-header-actions {
   display: flex;
   align-items: center;
   gap: 18px;
 }
 
-.sfx-toggle {
+/* Odradek Audio Transceiver Button */
+.sfx-toggle.ds-sfx-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background-color: #000000;
-  color: var(--retro-mp);
-  border: 2px solid var(--retro-mp);
-  padding: 4px 10px;
-  font-family: var(--font-display);
+  gap: 8px;
+  background: rgba(14, 19, 29, 0.9);
+  color: var(--ds-cyan, #00f0ff);
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+  padding: 6px 12px;
+  font-family: var(--font-body);
   font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   cursor: pointer;
-  box-shadow: 2px 2px 0 #000000;
-  transition: transform 0.1s ease, background-color 0.15s ease, color 0.15s ease;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.12s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
-.sfx-toggle:hover {
-  background-color: var(--retro-mp);
-  color: #000000;
-  transform: translate(-1px, -1px);
+.sfx-toggle.ds-sfx-btn:hover {
+  background: rgba(0, 240, 255, 0.15);
+  border-color: var(--ds-cyan, #00f0ff);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 14px rgba(0, 240, 255, 0.4),
+    inset 0 0 8px rgba(0, 240, 255, 0.2);
 }
 
-.sfx-toggle.is-muted {
+.sfx-toggle.ds-sfx-btn.is-muted {
   color: var(--text-dim);
-  border-color: #444444;
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(15, 17, 24, 0.8);
 }
 
-.primary-nav {
+.sfx-toggle.ds-sfx-btn.is-muted .ds-audio-waves span {
+  animation: none;
+  background: var(--text-dim);
+  height: 4px;
+}
+
+.ds-audio-waves {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+}
+
+.ds-audio-waves span {
+  display: block;
+  width: 2.5px;
+  background: currentColor;
+  border-radius: 1px;
+  animation: ds-wave 1.2s infinite ease-in-out;
+}
+
+.ds-audio-waves span:nth-child(1) { height: 6px; animation-delay: 0s; }
+.ds-audio-waves span:nth-child(2) { height: 11px; animation-delay: 0.2s; }
+.ds-audio-waves span:nth-child(3) { height: 8px; animation-delay: 0.4s; }
+.ds-audio-waves span:nth-child(4) { height: 4px; animation-delay: 0.6s; }
+
+@keyframes ds-wave {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1); }
+}
+
+/* ==========================================================================
+   Death Stranding Primary Navigation Links
+   ========================================================================== */
+
+.primary-nav.ds-primary-nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 10px;
 }
 
-.nav-link {
+.nav-link.ds-nav-item {
   text-decoration: none;
-  font-family: var(--font-display);
-  font-size: 12.5px;
-  color: var(--text-main);
-  letter-spacing: 0.04em;
-  padding: 6px 4px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 6px 12px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   position: relative;
-  transition: color 0.15s ease, transform 0.12s ease;
+  background: transparent;
+  border: 1px solid transparent;
+  clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px));
+  transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease;
 }
 
-.nav-num {
+.ds-nav-idx {
   font-size: 10px;
-  color: var(--retro-gold);
+  font-weight: 700;
+  color: var(--ds-gold, #ffb703);
   opacity: 0.85;
 }
 
-.nav-link:hover,
-.nav-link:focus-visible,
-.nav-link.is-active {
-  color: var(--highlight);
-  transform: translateY(-2px);
+.nav-link.ds-nav-item:hover,
+.nav-link.ds-nav-item:focus-visible {
+  color: #ffffff;
+  border-color: rgba(255, 183, 3, 0.4);
+  background: rgba(255, 183, 3, 0.08);
+  transform: translateY(-1px);
 }
 
-.nav-link--highlight {
-  background-color: #000000;
-  padding: 5px 12px;
-  border: 2px solid var(--accent);
-  color: var(--accent);
-  box-shadow: 2px 2px 0 #000000;
+.nav-link.ds-nav-item.is-active {
+  color: var(--ds-gold, #ffb703);
+  background: linear-gradient(135deg, rgba(255, 183, 3, 0.22) 0%, rgba(255, 183, 3, 0.06) 100%);
+  border-color: var(--ds-gold, #ffb703);
+  box-shadow:
+    0 0 14px rgba(255, 183, 3, 0.25),
+    inset 0 0 10px rgba(255, 183, 3, 0.12);
 }
 
-.nav-link--highlight:hover {
-  background-color: var(--accent);
+.nav-link.ds-nav-item.is-active .ds-nav-idx {
+  color: #ffffff;
+}
+
+/* Special Transmission / Comms Link */
+.nav-link.ds-nav-item--chiral {
+  border: 1px solid var(--ds-gold, #ffb703);
+  background: rgba(255, 183, 3, 0.12);
+  color: var(--ds-gold, #ffb703);
+  box-shadow: 0 0 10px rgba(255, 183, 3, 0.15);
+}
+
+.nav-link.ds-nav-item--chiral:hover {
+  background: var(--ds-gold, #ffb703);
   color: #000000;
-  border-color: var(--highlight);
+  box-shadow: 0 0 18px rgba(255, 183, 3, 0.5);
 }
 
-/* Mobile Menu Toggle */
-.menu-toggle {
+.nav-link.ds-nav-item--chiral:hover .ds-nav-idx {
+  color: #000000;
+}
+
+/* ==========================================================================
+   Mobile Menu Toggle Button
+   ========================================================================== */
+
+.menu-toggle.ds-menu-btn {
   display: none;
   align-items: center;
   gap: 8px;
   padding: 6px 12px;
-  background: #000000;
-  border: 2px solid var(--accent);
-  color: var(--accent);
-  font-family: var(--font-display);
+  background: rgba(14, 19, 29, 0.95);
+  border: 1px solid var(--ds-gold, #ffb703);
+  color: var(--ds-gold, #ffb703);
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+  font-family: var(--font-body);
   font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   cursor: pointer;
-  box-shadow: 2px 2px 0 #000000;
+  box-shadow: 0 0 8px rgba(255, 183, 3, 0.25);
+  transition: transform 0.1s ease, background-color 0.15s ease;
 }
 
-.menu-toggle__bars {
+.menu-toggle.ds-menu-btn:hover {
+  background: rgba(255, 183, 3, 0.15);
+  transform: translateY(-1px);
+}
+
+.menu-toggle__bars.ds-menu-bars {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  width: 18px;
+  width: 16px;
 }
 
-.menu-toggle__bars span {
+.menu-toggle__bars.ds-menu-bars span {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: var(--accent);
+  background-color: var(--ds-gold, #ffb703);
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-@media (min-width: 1200px) {
-  .site-header {
-    height: 76px;
-  }
+/* ==========================================================================
+   Responsive Breakpoints & 1440px Optimization
+   ========================================================================== */
 
+@media (min-width: 1200px) {
   .site-header__inner {
     padding: 0 56px;
   }
 
-  .primary-nav {
-    gap: 26px;
+  .ds-telemetry-inner {
+    padding: 0 56px;
   }
 
-  .nav-link {
-    font-size: 13px;
+  .primary-nav.ds-primary-nav {
+    gap: 12px;
   }
 
-  .player-name {
+  .nav-link.ds-nav-item {
     font-size: 13.5px;
+    padding: 6px 14px;
+  }
+
+  .player-name.ds-player-name {
+    font-size: 15px;
   }
 }
 
-@media (max-width: 992px) {
-  .player-hud-bars {
+@media (max-width: 1024px) {
+  .ds-telemetry-odradek,
+  .ds-telemetry-divider:last-of-type {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .ds-great-deliverer {
     display: none;
   }
 }
 
 @media (max-width: 820px) {
-  .site-header__inner {
-    padding: 0 16px;
+  .site-header__telemetry-line {
+    padding: 3px 0;
+    font-size: 9px;
   }
 
-  .menu-toggle {
+  .ds-telemetry-coord {
+    display: none;
+  }
+
+  .ds-telemetry-divider {
+    display: none;
+  }
+
+  .site-header__inner {
+    padding: 0 16px;
+    height: 62px;
+  }
+
+  .player-hud-bars.ds-hud-bars {
+    display: none;
+  }
+
+  .menu-toggle.ds-menu-btn {
     display: inline-flex;
   }
 
-  .primary-nav {
+  .primary-nav.ds-primary-nav {
     position: fixed;
-    top: 74px;
+    top: 88px;
     left: 0;
     right: 0;
-    background-color: rgba(14, 15, 22, 0.98);
-    backdrop-filter: blur(8px);
-    border-bottom: 4px solid var(--accent);
+    background: rgba(9, 13, 20, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 2px solid var(--ds-gold, #ffb703);
     flex-direction: column;
     align-items: stretch;
-    padding: 24px 20px;
-    gap: 14px;
+    padding: 22px 20px;
+    gap: 12px;
     transform: translateY(-130%);
     opacity: 0;
     pointer-events: none;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.9);
     transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.3, 1), opacity 0.25s ease;
   }
 
-  .primary-nav.is-open {
+  .primary-nav.ds-primary-nav.is-open {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
   }
 
-  .nav-link {
+  .nav-link.ds-nav-item {
     font-size: 14px;
     padding: 12px 16px;
-    background-color: #1a1c26;
-    border: 2px solid #000000;
-    box-shadow: 3px 3px 0 #000000;
+    background: rgba(18, 23, 34, 0.85);
+    border: 1px solid rgba(255, 183, 3, 0.25);
   }
 
-  .sfx-toggle .sfx-label {
+  .sfx-toggle.ds-sfx-btn .ds-sfx-label {
     display: none;
   }
 
-  .sfx-toggle {
-    padding: 5px 8px;
+  .sfx-toggle.ds-sfx-btn {
+    padding: 6px 8px;
   }
 }

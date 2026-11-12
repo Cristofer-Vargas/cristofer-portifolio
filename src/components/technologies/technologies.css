@@ -1,35 +1,42 @@
-.tech-filters {
+/* ==========================================================================
+   Death Stranding Minimalist Arsenal (Technologies & Loadout Grid)
+   ========================================================================== */
+
+.tech-filters.ds-tech-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
 .filter-btn {
-  padding: 6px 12px;
-  background-color: #14151e;
-  color: var(--text-muted);
-  border: 2px solid #000000;
-  font-family: var(--font-display);
+  padding: 6px 14px;
+  background-color: rgba(14, 19, 29, 0.75);
+  color: var(--text-dim);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 2px 2px 0 #000000;
-  transition: transform 0.1s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  clip-path: var(--ds-chamfer-sm);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .filter-btn:hover,
 .filter-btn:focus-visible {
-  color: #000000;
-  background-color: var(--highlight);
-  transform: translateY(-2px);
+  color: #ffffff;
+  border-color: rgba(255, 183, 3, 0.4);
+  background-color: rgba(255, 183, 3, 0.1);
+  transform: translateY(-1px);
 }
 
 .filter-btn.is-active {
-  background-color: var(--accent);
-  color: #000000;
-  border-color: #000000;
-  box-shadow: 3px 3px 0 #000000;
+  background-color: rgba(255, 183, 3, 0.18);
+  color: var(--ds-gold, #ffb703);
+  border-color: var(--ds-gold, #ffb703);
+  box-shadow: 0 0 12px rgba(255, 183, 3, 0.25);
 }
 
 .tech-grid {
@@ -39,23 +46,28 @@
   margin-top: 14px;
 }
 
+/* Minimalist Tech Tile */
 .tech-item {
-  background-color: #181a24;
-  border: 2px solid #000000;
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.1), 3px 3px 0 #000000;
+  background-color: rgba(11, 15, 24, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  clip-path: var(--ds-chamfer-sm);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
   padding: 16px 14px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 8px;
   position: relative;
-  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 }
 
 .tech-item:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25), 4px 4px 0 #000000;
+  transform: translateY(-3px);
+  background-color: rgba(16, 22, 34, 0.9);
+  border-color: var(--ds-gold, #ffb703);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 14px rgba(255, 183, 3, 0.2);
 }
 
 .tech-item__top {
@@ -66,30 +78,33 @@
 }
 
 .tech-item__icon {
-  font-size: 30px;
-  color: var(--accent);
+  font-size: 28px;
+  color: var(--ds-cyan, #00f0ff);
   line-height: 1;
-  transition: transform 0.18s ease;
+  transition: transform 0.18s ease, color 0.18s ease, filter 0.18s ease;
 }
 
 .tech-item:hover .tech-item__icon {
-  transform: scale(1.12);
-  color: var(--highlight);
+  transform: scale(1.1);
+  color: var(--ds-gold, #ffb703);
+  filter: drop-shadow(0 0 8px rgba(255, 183, 3, 0.5));
 }
 
 .tech-item__name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 13.5px;
   font-weight: 700;
-  color: var(--text-main);
+  color: #ffffff;
   letter-spacing: 0.03em;
 }
 
 .tech-item__cat {
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 11px;
   font-weight: 600;
-  color: var(--retro-gold);
-  letter-spacing: 0.02em;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 @media (min-width: 1200px) {
@@ -104,7 +119,7 @@
   }
 
   .tech-item__icon {
-    font-size: 34px;
+    font-size: 32px;
   }
 
   .tech-item__name {
@@ -112,11 +127,11 @@
   }
 
   .tech-item__cat {
-    font-size: 12.5px;
+    font-size: 11.5px;
   }
 
   .filter-btn {
-    font-size: 12px;
-    padding: 7px 14px;
+    font-size: 11.5px;
+    padding: 7px 16px;
   }
 }

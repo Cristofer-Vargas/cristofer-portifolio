@@ -142,71 +142,129 @@
     <div class="hero-backdrop__fade"></div>
   </div>
 
-  <header class="site-header" id="topo">
+  <header class="site-header ds-hud" id="topo">
+    <!-- Death Stranding Odradek & Chiral Network Telemetry Ribbon -->
+    <div class="site-header__telemetry-line" aria-hidden="true">
+      <div class="ds-telemetry-inner">
+        <span class="ds-telemetry-tick">+</span>
+        <span class="ds-telemetry-coord">BRIDGES UCA-RS // LAT -29.68° LON -53.80°</span>
+        <span class="ds-telemetry-divider">|</span>
+        <span class="ds-chiral-status">
+          <span class="ds-pulse-dot"></span>
+          <span class="ds-chiral-text">CHIRAL NETWORK // CONNECTED</span>
+        </span>
+        <span class="ds-telemetry-divider">|</span>
+        <span class="ds-telemetry-odradek">ODRADEK: SCANNING OPTIMAL</span>
+        <span class="ds-telemetry-tick">+</span>
+      </div>
+    </div>
+
     <div class="site-header__inner">
-      <!-- Player HUD Left -->
-      <div class="header-hud">
+      <!-- Player HUD Left: Bridges Porter Terminal -->
+      <div class="header-hud ds-porter-hud">
         <a
           href="https://github.com/Cristofer-Vargas"
-          class="brand-github"
+          class="brand-github ds-brand-github"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Perfil do GitHub de Cristofer Vargas"
-          title="Ver GitHub"
+          title="Bridges ID Terminal // Ver GitHub"
         >
-          <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor" aria-hidden="true">
+          <span class="ds-brand-cut" aria-hidden="true"></span>
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z" />
           </svg>
         </a>
 
-        <div class="player-status">
-          <div class="player-tag">
-            <span class="status-dot" aria-hidden="true"></span>
-            <span class="player-name">P1: CRISTOFER</span>
+        <div class="player-status ds-player-status">
+          <div class="player-tag ds-player-tag">
+            <span class="status-dot ds-status-dot" aria-hidden="true"></span>
+            <span class="ds-id-sub">BRIDGES //</span>
+            <span class="player-name ds-player-name">CRISTOFER</span>
+            <span class="ds-rank-pill">GRADE 24</span>
           </div>
-          <div class="player-hud-bars" aria-label="Status do jogador">
-            <span class="hud-stat hud-stat--hp" title="Health Points">HP <span class="hud-hearts">&#9829;&#9829;&#9829;</span></span>
-            <span class="hud-stat hud-stat--lvl" title="Nível do Desenvolvedor">LVL 24</span>
+          <div class="player-hud-bars ds-hud-bars" aria-label="Status de carga e estamina do desenvolvedor">
+            <div class="ds-gauge" title="Estamina: 100%">
+              <span class="ds-gauge-tag">STM</span>
+              <div class="ds-meter ds-meter--cyan" aria-hidden="true">
+                <span class="is-filled"></span>
+                <span class="is-filled"></span>
+                <span class="is-filled"></span>
+                <span class="is-filled"></span>
+                <span class="is-filled"></span>
+                <span class="is-filled"></span>
+              </div>
+            </div>
+            <div class="ds-gauge" title="Chiral Network Sync: 100%">
+              <span class="ds-gauge-tag ds-gauge-tag--gold">SYNC</span>
+              <div class="ds-meter ds-meter--gold" aria-hidden="true">
+                <span class="is-filled"></span>
+                <span class="is-filled"></span>
+                <span class="is-filled"></span>
+                <span class="is-filled"></span>
+                <span class="is-filled"></span>
+                <span class="is-filled"></span>
+              </div>
+            </div>
+            <span class="hud-stat ds-great-deliverer">★ GREAT DELIVERER</span>
           </div>
         </div>
       </div>
 
       <!-- Controls Right -->
-      <div class="header-actions">
-        <!-- SFX Synthesizer Toggle -->
+      <div class="header-actions ds-header-actions">
+        <!-- Odradek Audio Transceiver Toggle -->
         <button
           type="button"
-          class="sfx-toggle"
+          class="sfx-toggle ds-sfx-btn"
           id="sfx-toggle"
-          aria-label="Alternar efeitos sonoros retrô"
-          title="Alternar áudio retrô 8-bit"
+          aria-label="Alternar áudio e efeitos sonoros"
+          title="Alternar transceptor de áudio Odradek"
         >
-          <span class="sfx-icon" id="sfx-icon" aria-hidden="true">&#128266;</span>
-          <span class="sfx-label" id="sfx-label">SFX: ON</span>
+          <span class="ds-audio-waves" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span class="sfx-icon" id="sfx-icon" aria-hidden="true" style="display: none;">🔊</span>
+          <span class="sfx-label ds-sfx-label" id="sfx-label">SFX: ON</span>
         </button>
 
         <button
           type="button"
-          class="menu-toggle"
+          class="menu-toggle ds-menu-btn"
           id="menu-toggle"
           aria-expanded="false"
           aria-controls="primary-nav"
           aria-label="Abrir menu de navegação"
         >
-          <span class="menu-toggle__text">MENU</span>
-          <span class="menu-toggle__bars" aria-hidden="true">
+          <span class="menu-toggle__text">HUD NAV</span>
+          <span class="menu-toggle__bars ds-menu-bars" aria-hidden="true">
             <span></span>
             <span></span>
             <span></span>
           </span>
         </button>
 
-        <nav class="primary-nav" id="primary-nav" aria-label="Navegação principal">
-          <a href="#sobre" class="nav-link"><span class="nav-num">01</span> Bio</a>
-          <a href="#trajetoria" class="nav-link"><span class="nav-num">02</span> Quests</a>
-          <a href="#projetos" class="nav-link"><span class="nav-num">03</span> Vault</a>
-          <a href="#tecnologias" class="nav-link"><span class="nav-num">04</span> Arsenal</a>
-          <a href="#contato" class="nav-link nav-link--highlight"><span class="nav-num">05</span> Transmissão</a>
+        <nav class="primary-nav ds-primary-nav" id="primary-nav" aria-label="Navegação principal">
+          <a href="#sobre" class="nav-link ds-nav-item">
+            <span class="nav-num ds-nav-idx">[01]</span>
+            <span class="ds-nav-title">Bio</span>
+          </a>
+          <a href="#trajetoria" class="nav-link ds-nav-item">
+            <span class="nav-num ds-nav-idx">[02]</span>
+            <span class="ds-nav-title">Logs</span>
+          </a>
+          <a href="#projetos" class="nav-link ds-nav-item">
+            <span class="nav-num ds-nav-idx">[03]</span>
+            <span class="ds-nav-title">Vault</span>
+          </a>
+          <a href="#tecnologias" class="nav-link ds-nav-item">
+            <span class="nav-num ds-nav-idx">[04]</span>
+            <span class="ds-nav-title">Arsenal</span>
+          </a>
+          <a href="#contato" class="nav-link nav-link--highlight ds-nav-item ds-nav-item--chiral">
+            <span class="nav-num ds-nav-idx">[05]</span>
+            <span class="ds-nav-title">Comms ↗</span>
+          </a>
         </nav>
       </div>
     </div>
@@ -215,10 +273,12 @@
   <!-- Centered 1440px Page Shell -->
   <div class="page-shell">
     <main>
-      <!-- Developer Retro Marquee Strip -->
-      <div class="marquee-bar" aria-hidden="true">
+      <!-- Developer Death Stranding & Bridges Marquee Strip -->
+      <div class="marquee-bar ds-marquee" aria-hidden="true">
         <div class="marquee-track">
-          <span>★ PLAYER 1 READY</span>
+          <span>★ BRIDGES EXPEDITION READY</span>
+          <span>•</span>
+          <span>CHIRAL NETWORK // CONNECTED</span>
           <span>•</span>
           <span>FULL STACK DEVELOPER</span>
           <span>•</span>
@@ -228,9 +288,11 @@
           <span>•</span>
           <span>UI/UX DESIGN</span>
           <span>•</span>
-          <span>INSERT COIN TO CONTINUE</span>
+          <span>KEEP ON KEEPING ON</span>
           <span>•</span>
-          <span>★ PLAYER 1 READY</span>
+          <span>★ BRIDGES EXPEDITION READY</span>
+          <span>•</span>
+          <span>CHIRAL NETWORK // CONNECTED</span>
           <span>•</span>
           <span>FULL STACK DEVELOPER</span>
           <span>•</span>
@@ -240,19 +302,20 @@
           <span>•</span>
           <span>UI/UX DESIGN</span>
           <span>•</span>
-          <span>INSERT COIN TO CONTINUE</span>
+          <span>KEEP ON KEEPING ON</span>
         </div>
       </div>
 
-      <!-- Hero Section: Gamer Character Sheet -->
+      <!-- Hero Section: Gamer Character Sheet & Bridges Terminal -->
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero__content">
-          <div class="hero__badge-row">
-            <span class="badge-accent">
-              <span class="status-dot" aria-hidden="true"></span>
-              PLAYER 1 // READY
+          <div class="hero__badge-row ds-badge-row">
+            <span class="ds-hud-chip ds-hud-chip--chiral">
+              <span class="ds-pulse-dot" aria-hidden="true"></span>
+              BRIDGES // PORTER DIV
             </span>
-            <span class="badge-xp">CLASS: FULL STACK</span>
+            <span class="ds-hud-chip ds-hud-chip--cyan">GREAT DELIVERER ★</span>
+            <span class="ds-hud-chip ds-hud-chip--slate">FULL STACK CLASS</span>
           </div>
 
           <h1 id="hero-title" class="hero__name">
@@ -286,19 +349,67 @@
             </li>
           </ul>
 
-          <!-- RPG Attributes Mini-HUD -->
-          <div class="hero__stats-hud" aria-label="Estatísticas e habilidades do desenvolvedor">
-            <div class="stat-slot">
-              <span class="stat-tag stat-tag--atk">ATK</span>
-              <span class="stat-val">C#, ASP .NET Core, API REST</span>
+          <!-- Death Stranding Bridges Cargo & Capability Loadout HUD -->
+          <div class="hero__stats-hud ds-loadout-hud" aria-label="Loadout e atributos técnicos do desenvolvedor">
+            <div class="ds-loadout-header">
+              <div class="ds-loadout-title-wrap">
+                <span class="ds-loadout-icon" aria-hidden="true">⬢</span>
+                <span class="ds-loadout-title">BRIDGES LOADOUT // CARGO &amp; SYSTEM ATTRIBUTES</span>
+              </div>
+              <span class="ds-loadout-status"><span class="ds-pulse-dot ds-pulse-dot--cyan"></span> Q-PID SYNC: 100%</span>
             </div>
-            <div class="stat-slot">
-              <span class="stat-tag stat-tag--def">DEF</span>
-              <span class="stat-val">Docker, SQL, Testcontainers</span>
-            </div>
-            <div class="stat-slot">
-              <span class="stat-tag stat-tag--agi">AGI</span>
-              <span class="stat-val">HTML5, CSS3, JavaScript, UI/UX</span>
+
+            <div class="ds-loadout-slots">
+              <div class="stat-slot ds-loadout-slot">
+                <div class="ds-slot-lead">
+                  <span class="stat-tag ds-loadout-tag ds-loadout-tag--atk">CORE</span>
+                  <span class="ds-slot-label">Backend &amp; Web APIs</span>
+                </div>
+                <span class="stat-val ds-slot-desc">C#, ASP .NET Core, Web APIs, Entity Framework</span>
+                <div class="ds-slot-gauge" aria-hidden="true" title="Capacidade: 95%">
+                  <div class="ds-meter-bars">
+                    <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                    <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                    <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                    <span class="is-empty"></span>
+                  </div>
+                  <span class="ds-gauge-val">95%</span>
+                </div>
+              </div>
+
+              <div class="stat-slot ds-loadout-slot">
+                <div class="ds-slot-lead">
+                  <span class="stat-tag ds-loadout-tag ds-loadout-tag--def">INFRA</span>
+                  <span class="ds-slot-label">Databases &amp; Containers</span>
+                </div>
+                <span class="stat-val ds-slot-desc">Docker, PostgreSQL, SQL Server, Testcontainers</span>
+                <div class="ds-slot-gauge" aria-hidden="true" title="Capacidade: 90%">
+                  <div class="ds-meter-bars ds-meter-bars--cyan">
+                    <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                    <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                    <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                    <span class="is-empty"></span>
+                  </div>
+                  <span class="ds-gauge-val ds-gauge-val--cyan">90%</span>
+                </div>
+              </div>
+
+              <div class="stat-slot ds-loadout-slot">
+                <div class="ds-slot-lead">
+                  <span class="stat-tag ds-loadout-tag ds-loadout-tag--agi">INTERFACE</span>
+                  <span class="ds-slot-label">Client &amp; Experiência</span>
+                </div>
+                <span class="stat-val ds-slot-desc">HTML5, CSS3, JavaScript, UI/UX Design, Figma</span>
+                <div class="ds-slot-gauge" aria-hidden="true" title="Capacidade: 95%">
+                  <div class="ds-meter-bars ds-meter-bars--emerald">
+                    <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                    <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                    <span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span>
+                    <span class="is-empty"></span>
+                  </div>
+                  <span class="ds-gauge-val ds-gauge-val--emerald">95%</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -335,8 +446,13 @@
 
         <div class="hero__visual">
           <div class="portrait-frame">
-            <div class="portrait-square portrait-square--back pixel-shadow" aria-hidden="true"></div>
-            <div class="portrait-square portrait-square--front pixel-shadow" aria-hidden="true"></div>
+            <div class="ds-portrait-plate" aria-hidden="true">
+              <span class="ds-plate-tick ds-plate-tick--tl">+</span>
+              <span class="ds-plate-tick ds-plate-tick--tr">+</span>
+              <span class="ds-plate-tick ds-plate-tick--bl">+</span>
+              <span class="ds-plate-tick ds-plate-tick--br">+</span>
+              <span class="ds-plate-coord">UCA-RS // ID: CV-9924</span>
+            </div>
             <img
               src="assets/images/perfil.png"
               alt="Retrato de Cristofer Vargas de Santis, Desenvolvedor Web Full Stack e Técnico de Informática"
@@ -345,107 +461,113 @@
               height="533"
               fetchpriority="high"
             >
-            <!-- Floating Gamer Level Badge -->
-            <div class="portrait-lvl-tag pixel-float" aria-hidden="true">
-              <span>LVL 24</span>
+            <!-- Floating Death Stranding Porter Grade Badge -->
+            <div class="portrait-lvl-tag ds-grade-badge pixel-float" aria-hidden="true">
+              <div class="ds-grade-star">★</div>
+              <div class="ds-grade-details">
+                <span class="ds-grade-sub">BRIDGES PORTER</span>
+                <span class="ds-grade-main">GRADE 24</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section id="sobre" class="section-wrap" aria-labelledby="sobre-title">
-        <article class="pixel-card pixel-shadow dialogue-card">
-          <div class="dialogue-header">
-            <h2 id="sobre-title" class="section-title">
-              Perfil do Jogador // Bio
-            </h2>
-            <span class="dialogue-tag">DATA LOG: 2026</span>
+      <section id="sobre" class="section-wrap reveal" aria-labelledby="sobre-title">
+        <article class="pixel-card ds-dossier-card">
+          <div class="dialogue-header ds-dossier-header">
+            <div class="ds-dossier-title-wrap">
+              <h2 id="sobre-title" class="section-title">
+                Bridges Personnel Dossier // Bio
+              </h2>
+            </div>
+            <span class="dialogue-tag ds-dossier-tag">CHIRAL LOG // 2026</span>
           </div>
 
-          <div class="dialogue-body">
-            <div class="dialogue-speaker">
-              <span class="speaker-avatar" aria-hidden="true">🧙‍♂️</span>
-              <span class="speaker-name">CRISTOFER // DEVELOPER</span>
+          <div class="dialogue-body ds-dossier-body">
+            <div class="dialogue-speaker ds-dossier-speaker">
+              <span class="ds-pulse-dot" aria-hidden="true"></span>
+              <span class="speaker-name">PORTER // CRISTOFER VARGAS DE SANTIS</span>
             </div>
 
-            <div class="dialogue-grid">
-              <aside class="dialogue-stats" aria-label="Atributos e dados do desenvolvedor">
-                <div class="dialogue-stat-item">
-                  <span class="dialogue-stat-label">CLASSE</span>
-                  <span class="dialogue-stat-val">Full Stack (.NET &amp; C#)</span>
+            <div class="dialogue-grid ds-dossier-grid">
+              <aside class="dialogue-stats ds-dossier-stats" aria-label="Atributos e dados do desenvolvedor">
+                <div class="dialogue-stat-item ds-stat-item">
+                  <span class="dialogue-stat-label">DESIGNATION</span>
+                  <span class="dialogue-stat-val">Full Stack Developer (.NET &amp; C#)</span>
                 </div>
-                <div class="dialogue-stat-item">
-                  <span class="dialogue-stat-label">FORMAÇÃO</span>
-                  <span class="dialogue-stat-val">ADS (Uninter) · Técnico TI</span>
+                <div class="dialogue-stat-item ds-stat-item">
+                  <span class="dialogue-stat-label">QUALIFICATION</span>
+                  <span class="dialogue-stat-val">ADS (Uninter) · Técnico TI (Senac)</span>
                 </div>
-                <div class="dialogue-stat-item">
-                  <span class="dialogue-stat-label">SUB-CLASSE</span>
-                  <span class="dialogue-stat-val">UI/UX &amp; Design Gráfico</span>
+                <div class="dialogue-stat-item ds-stat-item">
+                  <span class="dialogue-stat-label">SUB-DISCIPLINE</span>
+                  <span class="dialogue-stat-val">UI/UX Design &amp; Gráfica</span>
                 </div>
-                <div class="dialogue-stat-item">
-                  <span class="dialogue-stat-label">BASE</span>
-                  <span class="dialogue-stat-val">Rio Grande do Sul, Brasil</span>
+                <div class="dialogue-stat-item ds-stat-item">
+                  <span class="dialogue-stat-label">STATION // BASE</span>
+                  <span class="dialogue-stat-val">Rio Grande do Sul, Brasil (Remoto/Híbrido)</span>
                 </div>
               </aside>
 
-              <div class="dialogue-narrative">
+              <div class="dialogue-narrative ds-dossier-narrative">
                 <p class="about-text">
                   Profissional da área de Tecnologia com formação
                   <strong class="hl">Técnica em Informática</strong> e graduando em
                   <strong class="hl">Análise e Desenvolvimento de Sistemas</strong>.
                   Possuo atuação multidisciplinar que engloba suporte a hardware e infraestrutura,
                   desenvolvimento de sistemas web robustos em <strong class="hl">C# / .NET</strong> e criação de soluções visuais com foco em <strong class="hl">UI/UX</strong>.
-                  Combinando raciocínio lógico, visão de arquitetura e facilidade para aprender novas ferramentas, busco desafios para entregar valor, código escalável e auxiliar equipes a subirem de nível.
+                  Combinando raciocínio lógico, visão de arquitetura e facilidade para aprender novas ferramentas, busco desafios para entregar valor, código escalável e conectar equipes com alta eficiência técnica.
                 </p>
               </div>
             </div>
           </div>
 
-          <div class="dialogue-footer" aria-hidden="true">
-            <span class="dialogue-prompt">STATUS: DISPONÍVEL PARA PROJETOS &amp; OPORTUNIDADES</span>
+          <div class="dialogue-footer ds-dossier-footer" aria-hidden="true">
+            <span class="dialogue-prompt">STATUS: STANDBY PARA NOVAS MISSÕES &amp; OPORTUNIDADES // READY TO CONNECT</span>
             <span class="dialogue-arrow">▼</span>
           </div>
         </article>
       </section>
       <section id="trajetoria" class="section-wrap reveal" aria-labelledby="trajetoria-title">
-        <article class="pixel-card pixel-shadow timeline-card">
-          <div class="quest-section-header">
+        <article class="pixel-card ds-timeline-card">
+          <div class="quest-section-header ds-timeline-head">
             <h2 id="trajetoria-title" class="section-title">
-              Quest Log // Trajetória
+              Expedition Archive // Trajetória &amp; Missões
             </h2>
-            <span class="quest-counter">4 MISSÕES REGISTRADAS</span>
+            <span class="quest-counter ds-counter">4 DIRECTIVES LOGGED</span>
           </div>
 
-          <!-- Main Quests (Formação) -->
-          <div class="quest-category">
-            <h3 class="quest-category-title" id="formacao-title">
-              <span class="category-icon" aria-hidden="true">📜</span>
-              Missões Principais // Formação &amp; Especializações
+          <!-- Directives (Formação) -->
+          <div class="quest-category ds-category">
+            <h3 class="quest-category-title ds-category-title" id="formacao-title">
+              <span class="category-icon ds-cat-icon" aria-hidden="true">⬢</span>
+              Directives // Formação &amp; Especializações
             </h3>
 
-            <div class="timeline" role="list" aria-label="Formação acadêmica e cursos">
-              <div class="timeline-item" role="listitem">
-                <div class="timeline-rail">
-                  <div class="timeline-point timeline-point--top">
-                    <span class="timeline-node" aria-hidden="true"></span>
-                    <span class="timeline-date">Cursando</span>
+            <div class="timeline ds-timeline" role="list" aria-label="Formação acadêmica e especializações">
+              <div class="timeline-item ds-timeline-item" role="listitem">
+                <div class="timeline-rail ds-timeline-rail">
+                  <div class="timeline-point timeline-point--top ds-point">
+                    <span class="timeline-node ds-node" aria-hidden="true"></span>
+                    <span class="timeline-date ds-date">Cursando</span>
                   </div>
-                  <div class="timeline-point timeline-point--bottom">
-                    <span class="timeline-node" aria-hidden="true"></span>
-                    <time class="timeline-date" datetime="2026">2026</time>
+                  <div class="timeline-point timeline-point--bottom ds-point">
+                    <span class="timeline-node ds-node" aria-hidden="true"></span>
+                    <time class="timeline-date ds-date" datetime="2026">2026</time>
                   </div>
                 </div>
-                <div class="timeline-body">
-                  <header class="timeline-header">
-                    <div class="timeline-title-row">
-                      <h4 class="timeline-role">Análise e Desenvolvimento de Sistemas</h4>
-                      <span class="quest-status quest-status--active">⚔️ EM ANDAMENTO</span>
+                <div class="timeline-body ds-timeline-body">
+                  <header class="timeline-header ds-timeline-header">
+                    <div class="timeline-title-row ds-title-row">
+                      <h4 class="timeline-role ds-role">Análise e Desenvolvimento de Sistemas</h4>
+                      <span class="quest-status ds-status-badge ds-status-badge--active">[ ACTIVE DIRECTIVE ]</span>
                     </div>
-                    <span class="timeline-org">Uninter</span>
+                    <span class="timeline-org ds-org">Uninter · Graduação</span>
                   </header>
-                  <p class="timeline-desc">
+                  <p class="timeline-desc ds-desc">
                     <strong class="hl">Banco de Dados Relacional</strong>,
                     <strong class="hl">Fundamentos de Software</strong>,
-                    <strong class="hl">Construção de Sites estáticos</strong>,
+                    <strong class="hl">Construção de Sites Estáticos</strong>,
                     Lei Geral de Proteção de Dados (LGPD),
                     <strong class="hl">Lógica e Algoritmos de Programação</strong>,
                     <strong class="hl">Programação Orientada a Objetos</strong>,
@@ -454,136 +576,136 @@
                 </div>
               </div>
 
-              <div class="timeline-item" role="listitem">
-                <div class="timeline-rail">
-                  <div class="timeline-point timeline-point--top">
-                    <span class="timeline-node" aria-hidden="true"></span>
-                    <span class="timeline-date">Cursando</span>
+              <div class="timeline-item ds-timeline-item" role="listitem">
+                <div class="timeline-rail ds-timeline-rail">
+                  <div class="timeline-point timeline-point--top ds-point">
+                    <span class="timeline-node ds-node" aria-hidden="true"></span>
+                    <span class="timeline-date ds-date">Cursando</span>
                   </div>
-                  <div class="timeline-point timeline-point--bottom">
-                    <span class="timeline-node" aria-hidden="true"></span>
-                    <time class="timeline-date" datetime="2026-01">JAN 2026</time>
+                  <div class="timeline-point timeline-point--bottom ds-point">
+                    <span class="timeline-node ds-node" aria-hidden="true"></span>
+                    <time class="timeline-date ds-date" datetime="2026-01">JAN 2026</time>
                   </div>
                 </div>
-                <div class="timeline-body">
-                  <header class="timeline-header">
-                    <div class="timeline-title-row">
-                      <h4 class="timeline-role">Desenvolvimento de API WEB</h4>
-                      <span class="quest-status quest-status--active">⚔️ EM ANDAMENTO</span>
+                <div class="timeline-body ds-timeline-body">
+                  <header class="timeline-header ds-timeline-header">
+                    <div class="timeline-title-row ds-title-row">
+                      <h4 class="timeline-role ds-role">Desenvolvimento de API WEB</h4>
+                      <span class="quest-status ds-status-badge ds-status-badge--active">[ ACTIVE DIRECTIVE ]</span>
                     </div>
-                    <span class="timeline-org">Udemy · 67h</span>
+                    <span class="timeline-org ds-org">Udemy · 67h Especialização</span>
                   </header>
-                  <p class="timeline-desc">
+                  <p class="timeline-desc ds-desc">
                     Curso profissionalizante de desenvolvimento em
                     <strong class="hl">API REST em ASP .NET 10 com C#</strong> e tecnologias como:
                     <strong class="hl">.NET, Docker, Swagger, React JS, xUnit Testcontainers, Autenticação com Token JWT, HATEOAS.</strong>
                   </p>
-                  <p class="timeline-project">
-                    <span class="quest-loot-label">Loot / Projeto:</span>
+                  <p class="timeline-project ds-project-loot">
+                    <span class="quest-loot-label ds-loot-tag">DELIVERY REPO:</span>
                     <a
                       href="https://github.com/Cristofer-Vargas/LudoVault"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="project-inline-link"
+                      class="project-inline-link ds-inline-link"
                     >
                       <strong class="hl">LudoVault</strong>
-                      <span class="gh-pill">GITHUB REPO ↗</span>
+                      <span class="gh-pill ds-gh-pill">GITHUB REPO ↗</span>
                     </a>
                   </p>
                 </div>
               </div>
 
-              <div class="timeline-item" role="listitem">
-                <div class="timeline-rail">
-                  <div class="timeline-point timeline-point--top">
-                    <span class="timeline-node" aria-hidden="true"></span>
-                    <time class="timeline-date" datetime="2023">2023</time>
+              <div class="timeline-item ds-timeline-item" role="listitem">
+                <div class="timeline-rail ds-timeline-rail">
+                  <div class="timeline-point timeline-point--top ds-point">
+                    <span class="timeline-node ds-node" aria-hidden="true"></span>
+                    <time class="timeline-date ds-date" datetime="2023">2023</time>
                   </div>
-                  <div class="timeline-point timeline-point--bottom">
-                    <span class="timeline-node" aria-hidden="true"></span>
-                    <time class="timeline-date" datetime="2021">2021</time>
+                  <div class="timeline-point timeline-point--bottom ds-point">
+                    <span class="timeline-node ds-node" aria-hidden="true"></span>
+                    <time class="timeline-date ds-date" datetime="2021">2021</time>
                   </div>
                 </div>
-                <div class="timeline-body">
-                  <header class="timeline-header">
-                    <div class="timeline-title-row">
-                      <h4 class="timeline-role">Técnico de Informática</h4>
-                      <span class="quest-status quest-status--completed">✓ CONCLUÍDA</span>
+                <div class="timeline-body ds-timeline-body">
+                  <header class="timeline-header ds-timeline-header">
+                    <div class="timeline-title-row ds-title-row">
+                      <h4 class="timeline-role ds-role">Técnico de Informática</h4>
+                      <span class="quest-status ds-status-badge ds-status-badge--done">[ MISSION COMPLETED ]</span>
                     </div>
-                    <span class="timeline-org">Senac</span>
+                    <span class="timeline-org ds-org">Senac · Formação Técnica</span>
                   </header>
-                  <p class="timeline-desc">
+                  <p class="timeline-desc ds-desc">
                     Conhecimento e Práticas em: Instalação, manutenção e configuração de
                     <strong class="hl">hardware e software</strong> de computadores; Administração de
                     <strong class="hl">redes locais de computadores</strong>, incluindo configuração e
                     <strong class="hl">monitoramento de sistemas operacionais</strong>;
                     <strong class="hl">Desenvolvimento de software</strong> para desktops e aplicativos web,
-                    com foco também em <strong class="hl">banco de dados</strong>; Web Designer, com
-                    desenvolvimento de <strong class="hl">UI/UX</strong> (usabilidade e experiência do usuário).
+                    com foco em <strong class="hl">banco de dados</strong>; Web Designer com
+                    desenvolvimento de interfaces <strong class="hl">UI/UX</strong>.
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Guild Quests (Experiência) -->
-          <div class="quest-category quest-category--spaced">
-            <h3 class="quest-category-title" id="experiencia-title">
-              <span class="category-icon" aria-hidden="true">💼</span>
-              Guild EXP // Experiência Profissional &amp; Produção
+          <!-- Expedition History (Experiência) -->
+          <div class="quest-category quest-category--spaced ds-category ds-category--spaced">
+            <h3 class="quest-category-title ds-category-title" id="experiencia-title">
+              <span class="category-icon ds-cat-icon" aria-hidden="true">⬢</span>
+              Expedition History // Atuação Profissional
             </h3>
 
-            <div class="timeline" role="list" aria-label="Experiência profissional">
-              <div class="timeline-item" role="listitem">
-                <div class="timeline-rail">
-                  <div class="timeline-point timeline-point--top">
-                    <span class="timeline-node" aria-hidden="true"></span>
-                    <time class="timeline-date" datetime="2026-03">MAR 2026</time>
+            <div class="timeline ds-timeline" role="list" aria-label="Experiência profissional">
+              <div class="timeline-item ds-timeline-item" role="listitem">
+                <div class="timeline-rail ds-timeline-rail">
+                  <div class="timeline-point timeline-point--top ds-point">
+                    <span class="timeline-node ds-node" aria-hidden="true"></span>
+                    <time class="timeline-date ds-date" datetime="2026-03">MAR 2026</time>
                   </div>
-                  <div class="timeline-point timeline-point--bottom">
-                    <span class="timeline-node" aria-hidden="true"></span>
-                    <time class="timeline-date" datetime="2023-10">OUT 2023</time>
+                  <div class="timeline-point timeline-point--bottom ds-point">
+                    <span class="timeline-node ds-node" aria-hidden="true"></span>
+                    <time class="timeline-date ds-date" datetime="2023-10">OUT 2023</time>
                   </div>
                 </div>
-                <div class="timeline-body">
-                  <header class="timeline-header">
-                    <div class="timeline-title-row">
-                      <h4 class="timeline-role">Designer Gráfico</h4>
-                      <span class="quest-status quest-status--completed">✓ CONCLUÍDA</span>
+                <div class="timeline-body ds-timeline-body">
+                  <header class="timeline-header ds-timeline-header">
+                    <div class="timeline-title-row ds-title-row">
+                      <h4 class="timeline-role ds-role">Designer Gráfico</h4>
+                      <span class="quest-status ds-status-badge ds-status-badge--done">[ MISSION COMPLETED ]</span>
                     </div>
-                    <span class="timeline-org">GCR Personalizações</span>
+                    <span class="timeline-org ds-org">GCR Personalizações</span>
                   </header>
-                  <p class="timeline-desc">
+                  <p class="timeline-desc ds-desc">
                     <strong class="hl">Designer</strong> para gráfica, comunicação visual e social media;<br>
-                    <strong class="hl">Impressor de gráfica rápida</strong> (Impressoras a laser, jato de tinta e sublimação) e
-                    <strong class="hl">comunicação visual</strong> (Impressão em Plotter de impressão e recorte, materiais como adesivos, banners, fachadas em lonas, etc);<br>
-                    <strong class="hl">Auxiliar de Produção</strong>, acabamento de lona, placas, etc.
+                    <strong class="hl">Impressor de gráfica rápida</strong> (Laser, jato de tinta e sublimação) e
+                    <strong class="hl">comunicação visual</strong> (Plotter de recorte, adesivos, banners, fachadas em lonas);<br>
+                    <strong class="hl">Auxiliar de Produção</strong>, acabamento de lonas, placas e materiais de alta tiragem.
                   </p>
                 </div>
               </div>
 
-              <div class="timeline-item" role="listitem">
-                <div class="timeline-rail">
-                  <div class="timeline-point timeline-point--top">
-                    <span class="timeline-node" aria-hidden="true"></span>
-                    <time class="timeline-date" datetime="2022-11">NOV 2022</time>
+              <div class="timeline-item ds-timeline-item" role="listitem">
+                <div class="timeline-rail ds-timeline-rail">
+                  <div class="timeline-point timeline-point--top ds-point">
+                    <span class="timeline-node ds-node" aria-hidden="true"></span>
+                    <time class="timeline-date ds-date" datetime="2022-11">NOV 2022</time>
                   </div>
-                  <div class="timeline-point timeline-point--bottom">
-                    <span class="timeline-node" aria-hidden="true"></span>
-                    <time class="timeline-date" datetime="2021-12">DEZ 2021</time>
+                  <div class="timeline-point timeline-point--bottom ds-point">
+                    <span class="timeline-node ds-node" aria-hidden="true"></span>
+                    <time class="timeline-date ds-date" datetime="2021-12">DEZ 2021</time>
                   </div>
                 </div>
-                <div class="timeline-body">
-                  <header class="timeline-header">
-                    <div class="timeline-title-row">
-                      <h4 class="timeline-role">Diagramador</h4>
-                      <span class="quest-status quest-status--completed">✓ CONCLUÍDA</span>
+                <div class="timeline-body ds-timeline-body">
+                  <header class="timeline-header ds-timeline-header">
+                    <div class="timeline-title-row ds-title-row">
+                      <h4 class="timeline-role ds-role">Diagramador</h4>
+                      <span class="quest-status ds-status-badge ds-status-badge--done">[ MISSION COMPLETED ]</span>
                     </div>
-                    <span class="timeline-org">A Notícia Ltda.</span>
+                    <span class="timeline-org ds-org">A Notícia Ltda.</span>
                   </header>
-                  <p class="timeline-desc">
+                  <p class="timeline-desc ds-desc">
                     Diagramação de páginas para <strong class="hl">jornal impresso e digital</strong>,
-                    tratamento de imagens e criação de anúncios publicitários.
+                    tratamento profissional de imagens e criação de anúncios publicitários.
                   </p>
                 </div>
               </div>
@@ -592,118 +714,121 @@
         </article>
       </section>
       <section id="projetos" class="projects-band reveal" aria-labelledby="projetos-title">
-        <div class="projects-band__header">
-          <div class="vault-badge-row">
-            <span class="badge-accent">VAULT // REPERTÓRIO</span>
-            <span class="badge-xp">ACTIVE BUILDS</span>
+        <div class="projects-band__header ds-vault-head">
+          <div class="vault-badge-row ds-vault-badges">
+            <span class="badge-accent">ARCHIVE // REPOSITÓRIO</span>
+            <span class="badge-xp">CARGO DELIVERIES</span>
           </div>
-          <h2 id="projetos-title" class="section-title section-title--center">Arcade Vault // Projetos</h2>
-          <p class="projects-vault-sub">Clique em um projeto para inspecionar loot, arquitetura e repositório</p>
+          <h2 id="projetos-title" class="section-title section-title--center">Bridges Archive // Projetos &amp; Entregas</h2>
+          <p class="projects-vault-sub ds-vault-sub">Selecione um módulo para inspecionar arquitetura técnica, telemetria e repositório</p>
 
-          <div class="carousel-controls" aria-label="Controles do carrossel de projetos">
-            <button type="button" class="pixel-btn carousel-nav-btn" id="carousel-prev" aria-label="Projeto anterior">◀ PREV</button>
-            <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Selecionar projeto"></div>
-            <button type="button" class="pixel-btn carousel-nav-btn" id="carousel-next" aria-label="Próximo projeto">NEXT ▶</button>
+          <div class="carousel-controls ds-carousel-controls" aria-label="Controles do carrossel de projetos">
+            <button type="button" class="pixel-btn carousel-nav-btn ds-nav-arrow" id="carousel-prev" aria-label="Projeto anterior">◀ PREV</button>
+            <div class="carousel-dots ds-carousel-dots" id="carousel-dots" role="tablist" aria-label="Selecionar projeto"></div>
+            <button type="button" class="pixel-btn carousel-nav-btn ds-nav-arrow" id="carousel-next" aria-label="Próximo projeto">NEXT ▶</button>
           </div>
         </div>
 
-        <div class="carousel-viewport" id="carousel-viewport" tabindex="0" aria-roledescription="carousel" aria-label="Projetos em destaque">
-          <div class="carousel-track" id="carousel-track">
+        <div class="carousel-viewport ds-carousel-viewport" id="carousel-viewport" tabindex="0" aria-roledescription="carousel" aria-label="Projetos em destaque">
+          <div class="carousel-track ds-carousel-track" id="carousel-track">
             <!-- Populated dynamically via carousel.component.js -->
           </div>
         </div>
       </section>
 
       <!-- Project Detail Modal -->
-      <div class="modal" id="project-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div class="modal__backdrop" data-close-modal="true"></div>
-        <div class="modal__dialog pixel-shadow">
-          <button type="button" class="modal__close pixel-btn" id="modal-close" aria-label="Fechar detalhes">X</button>
-          <span class="modal__category" id="modal-category"></span>
-          <h2 class="modal__title" id="modal-title"></h2>
-          <div class="modal__preview" id="modal-preview"></div>
-          <h3 class="modal__subtitle">Descrição</h3>
-          <p class="modal__desc" id="modal-desc"></p>
-          <h3 class="modal__subtitle">Tecnologias</h3>
-          <ul class="modal__tags" id="modal-tags"></ul>
-          <div class="modal__actions" id="modal-actions"></div>
+      <div class="modal ds-modal" id="project-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal__backdrop ds-modal__backdrop" data-close-modal="true"></div>
+        <div class="modal__dialog ds-modal__dialog">
+          <button type="button" class="modal__close pixel-btn ds-modal__close" id="modal-close" aria-label="Fechar detalhes">✕</button>
+          <span class="modal__category ds-modal__cat" id="modal-category"></span>
+          <h2 class="modal__title ds-modal__title" id="modal-title"></h2>
+          <div class="modal__preview ds-modal__preview" id="modal-preview"></div>
+          <h3 class="modal__subtitle ds-modal__subtitle">Descrição</h3>
+          <p class="modal__desc ds-modal__desc" id="modal-desc"></p>
+          <h3 class="modal__subtitle ds-modal__subtitle">Tecnologias</h3>
+          <ul class="modal__tags ds-modal__tags" id="modal-tags"></ul>
+          <div class="modal__actions ds-modal__actions" id="modal-actions"></div>
         </div>
       </div>
       <section id="tecnologias" class="section-wrap reveal" aria-labelledby="tecnologias-title">
-        <article class="pixel-card pixel-shadow">
-          <div class="section-head-row">
+        <article class="pixel-card ds-tech-card">
+          <div class="section-head-row ds-tech-head">
             <div>
-              <span class="badge-xp">SKILL TREE &amp; LOADOUT</span>
-              <h2 id="tecnologias-title" class="section-title">Arsenal &amp; Inventário</h2>
+              <span class="badge-xp">EQUIPMENT LOADOUT</span>
+              <h2 id="tecnologias-title" class="section-title">Chiral Arsenal // Tecnologias</h2>
             </div>
 
-            <div class="tech-filters" id="tech-filters" role="tablist" aria-label="Filtrar tecnologias por categoria">
-              <button type="button" class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">Todos</button>
-              <button type="button" class="filter-btn" data-filter="frontend" role="tab" aria-selected="false">Front-End</button>
-              <button type="button" class="filter-btn" data-filter="backend" role="tab" aria-selected="false">Back-End &amp; Dados</button>
-              <button type="button" class="filter-btn" data-filter="devops" role="tab" aria-selected="false">DevOps &amp; Testes</button>
-              <button type="button" class="filter-btn" data-filter="design" role="tab" aria-selected="false">Design &amp; UI/UX</button>
+            <div class="tech-filters ds-tech-filters" id="tech-filters" role="tablist" aria-label="Filtrar tecnologias por categoria">
+              <button type="button" class="filter-btn ds-filter-btn is-active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+              <button type="button" class="filter-btn ds-filter-btn" data-filter="frontend" role="tab" aria-selected="false">Front-End</button>
+              <button type="button" class="filter-btn ds-filter-btn" data-filter="backend" role="tab" aria-selected="false">Back-End &amp; Dados</button>
+              <button type="button" class="filter-btn ds-filter-btn" data-filter="devops" role="tab" aria-selected="false">DevOps &amp; Testes</button>
+              <button type="button" class="filter-btn ds-filter-btn" data-filter="design" role="tab" aria-selected="false">Design &amp; UI/UX</button>
             </div>
           </div>
 
-          <div class="tech-grid" id="tech-grid">
+          <div class="tech-grid ds-tech-grid" id="tech-grid">
             <!-- Populated dynamically via technologies.component.js -->
           </div>
         </article>
       </section>
       <section id="contato" class="section-wrap reveal" aria-labelledby="contato-title">
-        <article class="pixel-card pixel-shadow comm-card">
-          <div class="comm-header">
+        <article class="pixel-card ds-comm-card">
+          <div class="comm-header ds-comm-header">
             <div>
-              <span class="badge-wa">TRANSMISSION LINK</span>
-              <h2 id="contato-title" class="section-title">Central de Contato // Transmissão</h2>
+              <span class="badge-wa">Q-PID LINK ACTIVE</span>
+              <h2 id="contato-title" class="section-title">Chiral Comms // Central de Transmissão</h2>
             </div>
-            <span class="comm-status-pill">● CANAL ONLINE</span>
+            <span class="comm-status-pill ds-comm-pill">
+              <span class="ds-pulse-dot ds-pulse-dot--cyan"></span>
+              CANAL ONLINE
+            </span>
           </div>
 
-          <div class="contact-grid">
-            <div class="contact-info">
-              <p class="contact-intro">
-                Disponível para novas missões como <strong class="hl">Desenvolvedor Web Full Stack</strong>,
-                desenvolvimento backend em <strong class="hl">C# / ASP .NET Core</strong>,
-                arquitetura de APIs, interfaces <strong class="hl">UI/UX</strong> e colaborações.
+          <div class="contact-grid ds-contact-grid">
+            <div class="contact-info ds-contact-info">
+              <p class="contact-intro ds-contact-intro">
+                Disponível para novas missões e entregas como <strong class="hl">Desenvolvedor Web Full Stack</strong>,
+                atuação em arquitetura backend em <strong class="hl">C# / ASP .NET Core</strong>,
+                construção de APIs REST escaláveis, microsserviços, interfaces <strong class="hl">UI/UX</strong> e colaborações técnicas.
               </p>
 
-              <address class="contact-address">
-                <ul class="contact-details">
-                  <li>
-                    <span class="contact-label">Localização</span>
-                    <span class="contact-value">Rio Grande do Sul, Brasil <span class="badge-xp">REMOTO / HÍBRIDO</span></span>
+              <address class="contact-address ds-contact-address">
+                <ul class="contact-details ds-contact-details">
+                  <li class="ds-contact-li">
+                    <span class="contact-label ds-contact-label">Estação // Localização</span>
+                    <span class="contact-value ds-contact-val">Rio Grande do Sul, Brasil <span class="badge-xp">REMOTO / HÍBRIDO</span></span>
                   </li>
-                  <li>
-                    <span class="contact-label">Canal Direto</span>
+                  <li class="ds-contact-li">
+                    <span class="contact-label ds-contact-label">Canal Direto // Transceptor</span>
                     <a
                       href="https://wa.me/?text=Ol%C3%A1%20Cristofer!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade."
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="contact-link contact-link--wa"
+                      class="contact-link contact-link--wa ds-contact-link"
                     >
                       <span class="wa-dot"></span> Conversar no WhatsApp ↗
                     </a>
                   </li>
-                  <li>
-                    <span class="contact-label">GitHub</span>
+                  <li class="ds-contact-li">
+                    <span class="contact-label ds-contact-label">Terminal GitHub</span>
                     <a
                       href="https://github.com/Cristofer-Vargas"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="contact-link"
+                      class="contact-link ds-contact-link"
                     >
                       github.com/Cristofer-Vargas ↗
                     </a>
                   </li>
-                  <li>
-                    <span class="contact-label">Projeto Destaque</span>
+                  <li class="ds-contact-li">
+                    <span class="contact-label ds-contact-label">Entrega Destaque // Repositório</span>
                     <a
                       href="https://github.com/Cristofer-Vargas/LudoVault"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="contact-link"
+                      class="contact-link ds-contact-link"
                     >
                       github.com/Cristofer-Vargas/LudoVault ↗
                     </a>
@@ -711,62 +836,62 @@
                 </ul>
               </address>
 
-              <div class="contact-actions">
-                <button type="button" class="pixel-btn" id="copy-github-btn">
+              <div class="contact-actions ds-contact-actions">
+                <button type="button" class="pixel-btn ds-copy-btn" id="copy-github-btn">
                   Copiar Link do GitHub
                 </button>
               </div>
             </div>
 
             <!-- Transmission Form (WhatsApp Automated) -->
-            <form class="contact-form" id="contact-form" novalidate>
-              <div class="form-title-row">
-                <span class="form-title-text">💬 Enviar Mensagem via WhatsApp</span>
-                <span class="form-title-sub">Texto Personalizado</span>
+            <form class="contact-form ds-contact-form" id="contact-form" novalidate>
+              <div class="form-title-row ds-form-title-row">
+                <span class="form-title-text ds-form-title-text">CHIRAL TRANSMISSION // WHATSAPP</span>
+                <span class="form-title-sub ds-form-title-sub">Texto Automatizado</span>
               </div>
 
-              <div class="form-field">
-                <label for="contact-name">Seu Nome / Empresa</label>
+              <div class="form-field ds-form-field">
+                <label for="contact-name">Seu Nome / Organização</label>
                 <input
                   type="text"
                   id="contact-name"
                   name="name"
-                  placeholder="Ex: João da Silva ou Tech Solutions"
+                  placeholder="Ex: João da Silva ou Tech Corp"
                   autocomplete="name"
                   required
                 >
               </div>
 
-              <div class="form-field">
+              <div class="form-field ds-form-field">
                 <label for="contact-subject">Assunto da Missão</label>
                 <input
                   type="text"
                   id="contact-subject"
                   name="subject"
-                  placeholder="Ex: Vaga .NET Full Stack / Proposta de Projeto"
+                  placeholder="Ex: Oportunidade .NET Full Stack / Projeto Web"
                   required
                 >
               </div>
 
-              <div class="form-field">
-                <label for="contact-message">Mensagem / Detalhes</label>
+              <div class="form-field ds-form-field">
+                <label for="contact-message">Mensagem / Diretiva</label>
                 <textarea
                   id="contact-message"
                   name="message"
                   rows="4"
-                  placeholder="Escreva sua mensagem... Ao clicar em enviar, o WhatsApp será aberto com o texto pronto!"
+                  placeholder="Escreva sua mensagem... Ao enviar, o canal de transmissão do WhatsApp será iniciado com o texto pronto!"
                   required
                 ></textarea>
               </div>
 
-              <button type="submit" class="pixel-btn pixel-btn--whatsapp pixel-btn--full" id="btn-send-whatsapp">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <button type="submit" class="pixel-btn pixel-btn--whatsapp pixel-btn--full ds-submit-btn" id="btn-send-whatsapp">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
                   <path d="M7 2h10v1H7V2z M5 3h2v1H5V3z M17 3h2v1h-2V3z M4 4h1v1H4V4z M19 4h1v1h-1V4z M3 5h1v2H3V5z M20 5h1v2h-1V5z M2 7h1v10H2V7z M21 7h1v10h-1V7z M3 17h1v2H3v-2z M20 17h1v2h-1v-2z M4 19h1v1H4v-1z M19 19h1v1h-1v-1z M5 20h2v1H5v-1z M17 20h2v1h-2v-1z M7 21h10v1H7v-1z M2 17h2v2H2v-2z M1 19h2v2H1v-2z M0 21h2v3H0v-3z M2 22h2v1H2v-1z M8 7h3v3H9v1h1v1h1v1h1v-1h3v3h-2v-1h-1v-1h-1v-1H9v-1H8V7z"/>
                 </svg>
-                Abrir Mensagem no WhatsApp
+                Iniciar Transmissão no WhatsApp
               </button>
 
-              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+              <p class="form-status ds-form-status" id="form-status" role="status" aria-live="polite"></p>
             </form>
           </div>
         </article>
@@ -775,57 +900,68 @@
 
     <footer class="site-footer">
       <div class="site-footer__banner" aria-hidden="true">
-        <span class="stage-clear-tag">★ STAGE CLEARED // 100% ★</span>
-        <span class="stage-clear-sub">Obrigado por explorar este portfólio!</span>
+        <div class="footer-banner-telemetry">
+          <span class="telemetry-node">TERMINAL: SOUTH-01</span>
+          <span class="telemetry-div">//</span>
+          <span class="telemetry-node">STATUS: ALL DELIVERIES LOGGED</span>
+          <span class="telemetry-div">//</span>
+          <span class="telemetry-node chiral-sync">CHIRAL NETWORK: 100% SYNC</span>
+        </div>
+        <span class="stage-clear-tag">BRIDGES TERMINAL // EXPEDITION COMPLETE</span>
+        <span class="stage-clear-sub">KEEP ON KEEPING ON &middot; OBRIGADO POR EXPLORAR ESTE ARQUIVO</span>
       </div>
 
       <div class="site-footer__grid">
         <div class="footer-col">
-          <h3 class="footer-col__title">Créditos</h3>
+          <h3 class="footer-col__title"><span class="col-indicator">//</span> Fontes &amp; Créditos</h3>
           <ul class="footer-col__list">
             <li>
-              <a href="https://devicon.dev/" target="_blank" rel="noopener noreferrer">DevIcons ↗</a>
+              <a href="https://devicon.dev/" target="_blank" rel="noopener noreferrer">DevIcons <span>↗</span></a>
             </li>
             <li>
-              <a href="https://fonts.google.com/specimen/Silkscreen" target="_blank" rel="noopener noreferrer">Silkscreen (Google Fonts) ↗</a>
+              <a href="https://fonts.google.com/specimen/Silkscreen" target="_blank" rel="noopener noreferrer">Silkscreen (Google Fonts) <span>↗</span></a>
             </li>
             <li>
-              <a href="https://fonts.google.com/specimen/Rubik" target="_blank" rel="noopener noreferrer">Rubik (Google Fonts) ↗</a>
+              <a href="https://fonts.google.com/specimen/Rubik" target="_blank" rel="noopener noreferrer">Rubik (Google Fonts) <span>↗</span></a>
             </li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h3 class="footer-col__title">Transmissão</h3>
+          <h3 class="footer-col__title"><span class="col-indicator">//</span> Transmissão Direta</h3>
           <ul class="footer-col__list">
-            <li>Rio Grande do Sul, Brasil</li>
-            <li><a href="https://wa.me/?text=Ol%C3%A1%20Cristofer!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer">WhatsApp Direto ↗</a></li>
-            <li><a href="#contato">Enviar Formulário</a></li>
-            <li><a href="#topo">Voltar ao Título (Topo) ↑</a></li>
+            <li class="footer-col__static">Rio Grande do Sul, Brasil [BASE SUL]</li>
+            <li><a href="https://wa.me/?text=Ol%C3%A1%20Cristofer!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer">WhatsApp Direto <span>↗</span></a></li>
+            <li><a href="#contato">Transmissor de Contato <span>↓</span></a></li>
+            <li><a href="#topo">Retornar ao Topo (HUD) <span>↑</span></a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h3 class="footer-col__title">Redes &amp; Loot</h3>
+          <h3 class="footer-col__title"><span class="col-indicator">//</span> Rede &amp; Repositórios</h3>
           <ul class="footer-col__list">
             <li>
-              <a href="https://github.com/Cristofer-Vargas" target="_blank" rel="noopener noreferrer">GitHub / Cristofer-Vargas ↗</a>
+              <a href="https://github.com/Cristofer-Vargas" target="_blank" rel="noopener noreferrer">GitHub / Cristofer-Vargas <span>↗</span></a>
             </li>
             <li>
-              <a href="https://github.com/Cristofer-Vargas/LudoVault" target="_blank" rel="noopener noreferrer">LudoVault Repo ↗</a>
+              <a href="https://github.com/Cristofer-Vargas/LudoVault" target="_blank" rel="noopener noreferrer">LudoVault Repository <span>↗</span></a>
             </li>
           </ul>
         </div>
       </div>
 
       <div class="site-footer__bottom">
-        <span>&copy; <span id="current-year"></span> Cristofer Vargas de Santis · Desenvolvedor Web Full Stack &amp; UI/UX</span>
+        <div class="footer-bottom-line">
+          <span>&copy; <span id="current-year"></span> CRISTOFER VARGAS DE SANTIS &middot; BRIDGES FULL STACK DEVELOPER &amp; UI/UX</span>
+          <span class="footer-system-tag">PROTOCOL: KNOT-SYS v2.4 // TACTICAL MINIMAL</span>
+        </div>
       </div>
     </footer>
 
     <!-- Back to top button -->
-    <button type="button" class="back-to-top pixel-btn pixel-btn--primary" id="back-to-top" aria-label="Voltar ao topo" hidden>
-      ▲
+    <button type="button" class="back-to-top" id="back-to-top" aria-label="Voltar ao topo" hidden>
+      <span class="back-to-top__icon">▲</span>
+      <span class="back-to-top__text">TOP</span>
     </button>
   </div>
 

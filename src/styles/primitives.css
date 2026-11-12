@@ -1,23 +1,35 @@
-/* Shared section wrappers, cards, typography, tags & buttons */
+/* ==========================================================================
+   Death Stranding Minimalist Primitives (Cards, Typography, Tags & Buttons)
+   ========================================================================== */
+
 .section-wrap {
   position: relative;
   z-index: 3;
   padding: 0 48px 36px;
 }
 
+/* Minimalist Tactical Glass Card */
 .pixel-card {
   background-color: var(--bg-card);
-  border: 3px solid #000000;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow-pixel);
   padding: 36px;
   position: relative;
+  clip-path: var(--ds-chamfer);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .pixel-card::before {
   content: "";
   position: absolute;
-  inset: 2px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--ds-gold, #ffb703) 25%, transparent 70%);
+  opacity: 0.65;
   pointer-events: none;
 }
 
@@ -25,14 +37,16 @@
   box-shadow: var(--shadow-pixel);
 }
 
+/* Death Stranding Minimalist Section Header */
 .section-title {
   margin: 0 0 24px;
-  font-family: var(--font-display);
-  font-size: clamp(21px, 2.2vw, 30px);
+  font-family: var(--font-body);
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 700;
   line-height: 1.35;
-  color: var(--accent);
-  text-shadow: var(--shadow-text);
-  letter-spacing: 0.04em;
+  color: var(--ds-gold, #ffb703);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -41,12 +55,12 @@
 .section-title::before {
   content: "";
   display: inline-block;
-  width: 12px;
-  height: 12px;
-  background-color: var(--highlight);
-  box-shadow: 2px 2px 0 #000000;
+  width: 5px;
+  height: 18px;
+  background-color: var(--ds-gold, #ffb703);
+  box-shadow: 0 0 8px var(--ds-gold-glow, rgba(255, 183, 3, 0.45));
   flex-shrink: 0;
-  animation: retro-blink 1.8s steps(1) infinite;
+  border-radius: 1px;
 }
 
 .section-title--spaced {
@@ -74,53 +88,61 @@
 
 .hl {
   background: transparent;
-  color: var(--highlight);
-  font-weight: 700;
+  color: var(--ds-gold, #ffb703);
+  font-weight: 600;
   text-decoration: underline;
-  text-decoration-thickness: 2px;
+  text-decoration-color: rgba(255, 183, 3, 0.4);
+  text-decoration-thickness: 1.5px;
   text-underline-offset: 3px;
 }
 
-/* RPG & Gamer Badges */
+/* Minimalist Badges & Tactical Chips */
 .badge-accent {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 3px 10px;
-  background-color: var(--accent);
-  color: #000000;
-  font-family: var(--font-display);
+  background-color: rgba(255, 183, 3, 0.14);
+  color: var(--ds-gold, #ffb703);
+  border: 1px solid rgba(255, 183, 3, 0.45);
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  border: 2px solid #000000;
-  box-shadow: 2px 2px 0 #000000;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  clip-path: var(--ds-chamfer-sm);
 }
 
 .badge-xp {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   padding: 2px 8px;
-  background-color: #122b1c;
-  color: var(--retro-xp);
-  border: 1px solid var(--retro-xp);
-  font-family: var(--font-display);
+  background-color: rgba(0, 240, 255, 0.12);
+  color: var(--ds-cyan, #00f0ff);
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  font-family: var(--font-body);
   font-size: 10px;
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  clip-path: var(--ds-chamfer-sm);
 }
 
 .badge-wa {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 12px;
-  background-color: #12301e;
+  padding: 3px 10px;
+  background-color: rgba(37, 211, 102, 0.12);
   color: #25d366;
-  border: 2px solid #25d366;
-  font-family: var(--font-display);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  font-family: var(--font-body);
   font-size: 11px;
-  box-shadow: 2px 2px 0 #000000;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  clip-path: var(--ds-chamfer-sm);
 }
 
 .tag-pill {
@@ -129,93 +151,97 @@
   padding: 4px 10px;
   background-color: var(--bg-pill);
   color: var(--text-main);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 2px 2px 0 #000000;
-  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px));
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .tag-pill:hover {
-  transform: translateY(-2px);
-  background-color: var(--accent);
-  color: #000000;
-  border-color: #000000;
-  box-shadow: 3px 3px 0 #000000;
+  transform: translateY(-1px);
+  background-color: rgba(255, 183, 3, 0.15);
+  color: var(--ds-gold, #ffb703);
+  border-color: var(--ds-gold, #ffb703);
+  box-shadow: 0 0 10px rgba(255, 183, 3, 0.25);
 }
 
-/* Stepped 8-Bit Pixel Buttons */
+/* Minimalist Chamfered Buttons */
 .pixel-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 20px;
-  background-color: var(--bg-shell);
+  padding: 10px 22px;
+  background-color: rgba(14, 19, 29, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--text-main);
-  border: 3px solid #000000;
-  font-family: var(--font-display);
-  font-size: 13px;
-  letter-spacing: 0.04em;
+  border: 1px solid rgba(255, 183, 3, 0.4);
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 4px 4px 0 #000000;
-  transition: transform 0.08s ease, background-color 0.15s ease, box-shadow 0.08s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.12s ease, background-color 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, color 0.18s ease;
   user-select: none;
   text-decoration: none;
 }
 
 .pixel-btn:hover,
 .pixel-btn:focus-visible {
-  background-color: var(--accent);
-  color: #000000;
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 #000000;
+  background-color: rgba(255, 183, 3, 0.18);
+  color: #ffffff;
+  border-color: var(--ds-gold, #ffb703);
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(255, 183, 3, 0.35);
 }
 
 .pixel-btn:active {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 #000000;
+  transform: translateY(0);
+  box-shadow: 0 0 6px rgba(255, 183, 3, 0.2);
 }
 
 .pixel-btn--primary {
-  background-color: var(--accent);
-  color: #000000;
-  box-shadow: 4px 4px 0 #000000;
+  background-color: var(--ds-gold, #ffb703);
+  color: #07090e;
+  border-color: var(--ds-gold, #ffb703);
+  box-shadow: 0 0 14px rgba(255, 183, 3, 0.35);
 }
 
 .pixel-btn--primary:hover,
 .pixel-btn--primary:focus-visible {
-  background-color: var(--highlight);
+  background-color: #ffc72c;
   color: #000000;
+  box-shadow: 0 0 20px rgba(255, 183, 3, 0.55);
 }
 
 .pixel-btn--whatsapp {
-  background-color: #25d366;
-  color: #000000;
-  border-color: #000000;
+  background-color: rgba(37, 211, 102, 0.15);
+  color: #25d366;
+  border-color: #25d366;
 }
 
 .pixel-btn--whatsapp:hover,
 .pixel-btn--whatsapp:focus-visible {
-  background-color: #2eee76;
-  color: #000000;
+  background-color: #25d366;
+  color: #07090e;
+  box-shadow: 0 0 16px rgba(37, 211, 102, 0.45);
 }
 
 .pixel-btn--full {
   width: 100%;
-  padding: 14px 20px;
+  padding: 13px 20px;
 }
 
-/* Keyframes & Animations */
-@keyframes retro-blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
-
+/* Animations */
 @keyframes pixel-float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-5px); }
 }
 
 .pixel-float {
@@ -225,8 +251,8 @@
 /* Scroll reveal utility */
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .reveal.is-visible {
@@ -250,8 +276,7 @@
   }
 
   .pixel-card {
-    padding: 24px 16px;
-    border-width: 2px;
+    padding: 24px 18px;
   }
 
   .section-title {
@@ -260,7 +285,7 @@
 
   .pixel-btn {
     font-size: 12px;
-    padding: 10px 14px;
+    padding: 9px 16px;
   }
 }
 
@@ -270,8 +295,7 @@
     transform: none;
     transition: none;
   }
-  .pixel-float,
-  .section-title::before {
+  .pixel-float {
     animation: none;
   }
 }
