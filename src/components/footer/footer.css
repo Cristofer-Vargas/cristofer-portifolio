@@ -1,22 +1,51 @@
 .site-footer {
-  margin-top: 24px;
-  background-color: var(--accent);
-  color: var(--text-footer);
-  padding: 56px 56px 32px;
+  margin-top: 36px;
+  background-color: #12131b;
+  color: var(--text-main);
+  padding: 42px 48px 28px;
+  border-top: 3px solid #000000;
+  box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.08);
+}
+
+.site-footer__banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 20px;
+  background-color: #0d0e14;
+  border: 2px dashed rgba(255, 222, 33, 0.4);
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.stage-clear-tag {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--retro-gold);
+  letter-spacing: 0.06em;
+}
+
+.stage-clear-sub {
+  font-size: 13.5px;
+  color: var(--text-muted);
 }
 
 .site-footer__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  margin-bottom: 42px;
+  margin-bottom: 36px;
 }
 
 .footer-col__title {
-  margin: 0 0 18px;
-  font-size: 24px;
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-size: 13.5px;
   font-weight: 700;
-  color: var(--text-footer);
+  color: var(--accent);
+  letter-spacing: 0.04em;
 }
 
 .footer-col__list {
@@ -26,38 +55,42 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 14.5px;
+  font-weight: 500;
 }
 
 .footer-col__list a {
+  color: var(--text-muted);
   text-decoration: none;
-  transition: color 0.15s ease;
+  transition: color 0.15s ease, transform 0.12s ease;
+  display: inline-block;
 }
 
 .footer-col__list a:hover {
-  color: var(--text-main);
-  text-decoration: underline;
+  color: var(--highlight);
+  transform: translateX(3px);
 }
 
 .site-footer__bottom {
   padding-top: 20px;
-  border-top: 2px solid rgba(34, 34, 34, 0.25);
-  font-size: 15px;
-  font-weight: 700;
+  border-top: 2px solid rgba(255, 255, 255, 0.08);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-dim);
   text-align: center;
 }
 
 .back-to-top {
   position: fixed;
-  right: 24px;
-  bottom: 24px;
+  right: 20px;
+  bottom: 20px;
   z-index: 60;
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   padding: 0;
-  font-size: 22px;
+  font-size: 16px;
   line-height: 1;
+  box-shadow: 4px 4px 0 #000000;
 }
 
 .back-to-top[hidden] {
@@ -66,11 +99,11 @@
 
 @media (max-width: 768px) {
   .site-footer {
-    padding: 40px 24px 28px;
+    padding: 32px 20px 24px;
   }
 
   .site-footer__grid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
   }
 }

@@ -1,3 +1,49 @@
+.quest-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.15);
+  padding-bottom: 16px;
+  margin-bottom: 28px;
+}
+
+.quest-section-header .section-title {
+  margin-bottom: 0;
+}
+
+.quest-counter {
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: var(--retro-xp);
+  background-color: #000000;
+  padding: 4px 10px;
+  border: 1px solid var(--retro-xp);
+  letter-spacing: 0.05em;
+}
+
+.quest-category-title {
+  margin: 0 0 20px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--highlight);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quest-category--spaced {
+  margin-top: 44px;
+  border-top: 2px dashed rgba(255, 255, 255, 0.15);
+  padding-top: 36px;
+}
+
+.category-icon {
+  font-size: 16px;
+}
+
 .timeline {
   display: flex;
   flex-direction: column;
@@ -56,26 +102,25 @@
   height: 14px;
   flex-shrink: 0;
   background-color: var(--accent);
-  border: 2px solid #222222;
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.35);
+  border: 2px solid #000000;
+  box-shadow: 2px 2px 0 #000000;
   transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .timeline-date {
-  font-size: 13px;
+  font-size: 12.5px;
+  font-family: var(--font-display);
   font-weight: 700;
   color: var(--text-main);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   white-space: nowrap;
   line-height: 1;
 }
 
 .timeline-item:hover .timeline-node {
   background-color: var(--highlight);
-  transform: scale(1.15);
-  box-shadow:
-    inset 1px 1px 0 rgba(255, 255, 255, 0.45),
-    0 0 8px rgba(255, 222, 33, 0.55);
+  transform: scale(1.2);
+  box-shadow: 0 0 10px var(--highlight);
 }
 
 .timeline-item:hover .timeline-rail::before {
@@ -84,49 +129,93 @@
 
 .timeline-body {
   min-width: 0;
-  padding: 2px 14px 6px;
-  border-left: 2px solid transparent;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  padding: 4px 16px 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0 #000000;
+  border-left: 4px solid var(--accent);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .timeline-item:hover .timeline-body {
-  background-color: rgba(0, 0, 0, 0.14);
-  border-left-color: rgba(205, 133, 63, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-left-color: var(--highlight);
+  transform: translateX(4px);
 }
 
 .timeline-header {
   display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.timeline-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 10px;
+  gap: 10px;
 }
 
 .timeline-role {
   margin: 0;
-  font-size: 22px;
+  font-family: var(--font-display);
+  font-size: 17px;
   font-weight: 700;
   color: var(--accent);
-  text-shadow: 0 3px 0 rgba(0, 0, 0, 0.35);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.02em;
 }
 
 .timeline-org {
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 600;
-  color: var(--text-main);
+  color: var(--retro-gold);
+}
+
+.quest-status {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border: 1px solid currentColor;
+  letter-spacing: 0.05em;
+}
+
+.quest-status--active {
+  color: var(--retro-gold);
+  background-color: rgba(255, 222, 33, 0.12);
+  border-color: var(--retro-gold);
+}
+
+.quest-status--completed {
+  color: var(--retro-xp);
+  background-color: rgba(46, 213, 115, 0.12);
+  border-color: var(--retro-xp);
 }
 
 .timeline-desc {
   margin: 0;
-  font-size: 17px;
-  line-height: 1.6;
-  color: var(--text-main);
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--text-muted);
 }
 
 .timeline-project {
   margin: 12px 0 0;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quest-loot-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: var(--retro-mp);
 }
 
 .project-inline-link {
@@ -144,12 +233,14 @@
 .gh-pill {
   display: inline-block;
   padding: 2px 8px;
-  background-color: var(--bg-marquee);
-  color: var(--text-main);
-  font-size: 12px;
+  background-color: #000000;
+  color: var(--retro-gold);
+  font-family: var(--font-display);
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.06em;
-  border: 1px solid var(--text-muted);
+  border: 1px solid var(--retro-gold);
+  box-shadow: 2px 2px 0 #000000;
 }
 
 @media (max-width: 768px) {

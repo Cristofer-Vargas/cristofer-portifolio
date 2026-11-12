@@ -1,3 +1,37 @@
+.comm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.15);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.comm-header .section-title {
+  margin-bottom: 0;
+}
+
+.comm-status-pill {
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: var(--retro-xp);
+  background-color: #000000;
+  padding: 4px 10px;
+  border: 1px solid var(--retro-xp);
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 4px var(--retro-xp); }
+  50% { box-shadow: 0 0 12px var(--retro-xp); }
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -7,8 +41,9 @@
 
 .contact-intro {
   margin: 0 0 24px;
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text-main);
 }
 
 .contact-address {
@@ -21,31 +56,35 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
 .contact-details li {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
   padding-left: 14px;
   border-left: 3px solid var(--accent);
 }
 
 .contact-label {
-  font-size: 13px;
-  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: var(--text-dim);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .contact-value,
 .contact-link {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--text-main);
   text-decoration: none;
   word-break: break-word;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .contact-link:hover {
@@ -53,13 +92,57 @@
   text-decoration: underline;
 }
 
+.contact-link--wa {
+  color: var(--whatsapp-green);
+}
+
+.contact-link--wa:hover {
+  color: #2eee76;
+}
+
+.wa-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--whatsapp-green);
+  display: inline-block;
+  box-shadow: 0 0 6px var(--whatsapp-green);
+}
+
+.contact-actions {
+  margin-top: 10px;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  background-color: rgba(34, 34, 34, 0.45);
+  background-color: #161822;
   padding: 24px;
-  border: 2px solid rgba(255, 255, 255, 0.12);
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+}
+
+.form-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.12);
+  padding-bottom: 10px;
+  margin-bottom: 4px;
+}
+
+.form-title-text {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--whatsapp-green);
+  letter-spacing: 0.03em;
+}
+
+.form-title-sub {
+  font-size: 11.5px;
+  color: var(--text-dim);
 }
 
 .form-field {
@@ -69,38 +152,52 @@
 }
 
 .form-field label {
-  font-size: 15px;
+  font-family: var(--font-display);
+  font-size: 11px;
   font-weight: 700;
   color: var(--text-main);
+  letter-spacing: 0.04em;
 }
 
 .form-field input,
 .form-field textarea {
   width: 100%;
   padding: 10px 12px;
-  background-color: var(--bg-marquee);
+  background-color: #0d0e14;
   color: var(--text-main);
-  border: 2px solid var(--bg-pill);
-  font-size: 16px;
+  border: 2px solid #000000;
+  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.4);
+  font-family: var(--font-body);
+  font-size: 15px;
   outline: none;
   transition: border-color 0.15s ease;
 }
 
 .form-field input:focus,
 .form-field textarea:focus {
-  border-color: var(--highlight);
+  border-color: var(--whatsapp-green);
+  box-shadow: 0 0 6px rgba(37, 211, 102, 0.35);
 }
 
 .form-status {
-  margin: 4px 0 0;
+  margin: 6px 0 0;
   min-height: 22px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
-  color: var(--highlight);
+  color: var(--retro-gold);
+}
+
+.form-status.is-success {
+  color: var(--whatsapp-green);
+}
+
+.form-status.is-error {
+  color: var(--retro-hp);
 }
 
 @media (max-width: 768px) {
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
 }

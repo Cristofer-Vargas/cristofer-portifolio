@@ -1,7 +1,10 @@
 import { qs } from '../services/dom.service.js';
 import { copyToClipboard } from '../services/clipboard.service.js';
+import { audio } from '../services/audio.service.js';
 
 const GITHUB_URL = 'https://github.com/Cristofer-Vargas';
+// Cristofer pode adicionar seu número com DDI e DDD caso deseje direcionar para um número específico (Ex: '5555999999999')
+const WHATSAPP_PHONE = '';
 
 export function initContact() {
   const copyBtn = qs('#copy-github-btn');
@@ -9,13 +12,14 @@ export function initContact() {
   const statusEl = qs('#form-status');
 
   copyBtn?.addEventListener('click', async () => {
+    audio.playCoin();
     const original = copyBtn.textContent;
     const copied = await copyToClipboard(GITHUB_URL);
-    copyBtn.textContent = copied ? 'Link copiado!' : GITHUB_URL;
+    copyBtn.textContent = copied ? '✓ Link do GitHub copiado!' : GITHUB_URL;
 
     setTimeout(() => {
       copyBtn.textContent = original;
-    }, 2200);
+    }, 2400);
   });
 
   form?.addEventListener('submit', async (event) => {
@@ -27,17 +31,33 @@ export function initContact() {
     const message = qs('#contact-message')?.value.trim() || '';
 
     if (!name || !subject || !message) {
-      statusEl.textContent = 'Preencha nome, assunto e mensagem para continuar.';
+      audio.playBlip();
+      statusEl.className = 'form-status is-error';
+      statusEl.textContent = 'Por favor, preencha nome, assunto e mensagem.';
       return;
     }
 
-    const formatted = `Olá Cristofer!\n\nNome: ${name}\nAssunto: ${subject}\n\n${message}`;
-    const copied = await copyToClipboard(formatted);
-    if (copied) {
-      statusEl.textContent = 'Mensagem formatada e copiada para a área de transferência!';
-      form.reset();
-    } else {
-      statusEl.textContent = 'Mensagem validada! Copie seus dados ou entre em contato via GitHub.';
-    }
+    // Build stylized retro message for WhatsApp
+    const formatted =
+      `🕹️ *Contato via Portfólio*\n\n` +
+      `👤 *Nome:* ${name}\n` +
+      `📌 *Assunto:* ${subject}\n\n` +
+      `💬 *Mensagem:*\n${message}`;
+
+    const targetUrl = WHATSAPP_PHONE
+      ? `https://api.whatsapp.com/send?phone=${WHATSAPP_PHONE}&text=${encodeURIComponent(formatted)}`
+      : `https://api.whatsapp.com/send?text=${encodeURIComponent(formatted)}`;
+
+    audio.playPowerup();
+    statusEl.className = 'form-status is-success';
+    statusEl.textContent = 'Transmissão pronta! Abrindo WhatsApp...';
+
+    // Also copy formatted text to clipboard as safety backup
+    await copyToClipboard(formatted);
+
+    setTimeout(() => {
+      window.open(targetUrl, '_blank', 'noopener,noreferrer');
+      statusEl.textContent = '✓ Mensagem aberta no WhatsApp e texto copiado para sua área de transferência!';
+    }, 350);
   });
 }

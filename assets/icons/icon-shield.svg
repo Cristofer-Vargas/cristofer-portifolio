@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" shape-rendering="crispEdges">
+  <!-- Retro Pixel Shield (Frontend & Security / Defense) -->
+  <path fill="#2ed573" d="M4 3h16v2H4V3z M3 5h18v6H3V5z M4 11h16v4H4v-4z M6 15h12v3H6v-3z M8 18h8v2H8v-2z M10 20h4v2h-4v-2z"/>
+  <!-- Inner Emblem -->
+  <path fill="#ffffff" opacity="0.8" d="M11 7h2v7h-2V7z M8 10h8v2H8v-2z"/>
+</svg>

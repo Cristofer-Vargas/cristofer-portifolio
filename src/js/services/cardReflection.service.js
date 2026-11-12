@@ -1,5 +1,5 @@
 /**
- * Interactive specular reflection and subtle 3D tilt effect for active cards.
+ * Subtle 3D tilt effect for active cards on hover (no mouse-trailing glow).
  */
 
 export function bindCardReflection(container, activeCardSelector) {
@@ -16,12 +16,9 @@ export function bindCardReflection(container, activeCardSelector) {
     const rect = card.getBoundingClientRect();
     const px = (event.clientX - rect.left) / rect.width;
     const py = (event.clientY - rect.top) / rect.height;
-    const rx = ((0.5 - py) * 5).toFixed(2);
-    const ry = ((px - 0.5) * 6).toFixed(2);
+    const rx = ((0.5 - py) * 4).toFixed(2);
+    const ry = ((px - 0.5) * 5).toFixed(2);
 
-    card.style.setProperty('--mx', `${(px * 100).toFixed(1)}%`);
-    card.style.setProperty('--my', `${(py * 100).toFixed(1)}%`);
-    card.style.setProperty('--shine-opacity', '0.22');
     card.style.setProperty('--rx', `${rx}deg`);
     card.style.setProperty('--ry', `${ry}deg`);
   });
@@ -31,7 +28,6 @@ export function bindCardReflection(container, activeCardSelector) {
     (event) => {
       const card = event.target.closest?.(activeCardSelector);
       if (!card) return;
-      card.style.setProperty('--shine-opacity', '0');
       card.style.setProperty('--rx', '0deg');
       card.style.setProperty('--ry', '0deg');
     },

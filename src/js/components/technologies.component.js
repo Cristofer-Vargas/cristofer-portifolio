@@ -1,5 +1,6 @@
 import { TECHNOLOGIES } from '../data/technologies.data.js';
 import { qs, qsa, escapeHtml } from '../services/dom.service.js';
+import { audio } from '../services/audio.service.js';
 
 function renderTechnologies(filter = 'all') {
   const grid = qs('#tech-grid');
@@ -13,7 +14,7 @@ function renderTechnologies(filter = 'all') {
   grid.innerHTML = list
     .map(
       (tech) => `
-      <div class="tech-item">
+      <div class="tech-item" title="${escapeHtml(tech.name)} (${escapeHtml(tech.label)})">
         <div class="tech-item__top">
           <i class="${escapeHtml(tech.icon)} tech-item__icon" aria-hidden="true"></i>
           <span class="tech-item__name">${escapeHtml(tech.name)}</span>
@@ -33,6 +34,8 @@ export function initTechnologies() {
   filterBar.addEventListener('click', (event) => {
     const btn = event.target.closest('.filter-btn');
     if (!btn) return;
+
+    audio.playBlip();
 
     const selected = btn.dataset.filter || 'all';
     qsa('.filter-btn', filterBar).forEach((button) => {

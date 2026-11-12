@@ -4,6 +4,7 @@ import {
   observeRevealElements,
   scrollToTop
 } from '../services/scroll.service.js';
+import { audio } from '../services/audio.service.js';
 
 export function initBackToTopAndMeta() {
   const yearEl = qs('#current-year');
@@ -20,5 +21,8 @@ export function initBackToTopAndMeta() {
     backToTopBtn.hidden = !shouldShow;
   });
 
-  backToTopBtn.addEventListener('click', scrollToTop);
+  backToTopBtn.addEventListener('click', () => {
+    audio.playCoin();
+    scrollToTop();
+  });
 }

@@ -2,6 +2,7 @@ import { PROJECTS } from '../data/projects.data.js';
 import { qs, escapeHtml, renderTagList } from '../services/dom.service.js';
 import { bindCardReflection } from '../services/cardReflection.service.js';
 import { openProjectModal } from './modal.component.js';
+import { audio } from '../services/audio.service.js';
 
 let activeProjectIndex = 1; // Starts centered on LudoVault (Desenvolvimento)
 
@@ -13,7 +14,7 @@ function getOrderedIndices(centerIndex, length) {
 
 function createProjectCardHtml(project, projectIdx, isActive) {
   const repoLinkHtml = project.githubUrl
-    ? `<a href="${escapeHtml(project.githubUrl)}" target="_blank" rel="noopener noreferrer" class="pixel-btn project-card__btn" data-stop-card="true">GitHub</a>`
+    ? `<a href="${escapeHtml(project.githubUrl)}" target="_blank" rel="noopener noreferrer" class="pixel-btn project-card__btn" data-stop-card="true">GitHub ↗</a>`
     : '';
 
   return `
@@ -26,7 +27,11 @@ function createProjectCardHtml(project, projectIdx, isActive) {
       <div class="project-card__reflection" aria-hidden="true"></div>
       <div class="project-card__sweep" aria-hidden="true"></div>
 
-      <span class="project-card__category">${escapeHtml(project.category)}</span>
+      <div class="project-card__header-row">
+        <span class="project-card__category">${escapeHtml(project.category)}</span>
+        <span class="badge-xp">SLOT 0${projectIdx + 1}</span>
+      </div>
+
       <h3 class="project-card__title">${escapeHtml(project.title)}</h3>
 
       <div class="project-card__emblem">
@@ -45,7 +50,7 @@ function createProjectCardHtml(project, projectIdx, isActive) {
           class="pixel-btn project-card__btn"
           data-open-modal="${projectIdx}"
         >
-          Ver detalhes
+          🔍 Inspecionar
         </button>
         ${repoLinkHtml}
       </div>
@@ -81,6 +86,7 @@ function renderCarousel() {
 function stepCarousel(delta) {
   activeProjectIndex = (activeProjectIndex + delta + PROJECTS.length) % PROJECTS.length;
   renderCarousel();
+  audio.playBlip();
 }
 
 export function initCarousel() {
@@ -107,6 +113,7 @@ export function initCarousel() {
 
     const modalBtn = event.target.closest('[data-open-modal]');
     if (modalBtn) {
+      audio.playCoin();
       const idx = Number(modalBtn.dataset.openModal);
       openProjectModal(PROJECTS[idx], modalBtn);
       return;

@@ -1,34 +1,69 @@
 <header class="site-header" id="topo">
   <div class="site-header__inner">
-    <a
-      href="https://github.com/Cristofer-Vargas"
-      class="brand-github"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Perfil do GitHub de Cristofer Vargas"
-    >
-      <svg viewBox="0 0 24 24" width="44" height="44" fill="currentColor" aria-hidden="true">
-        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z" />
-      </svg>
-    </a>
+    <!-- Player HUD Left -->
+    <div class="header-hud">
+      <a
+        href="https://github.com/Cristofer-Vargas"
+        class="brand-github"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Perfil do GitHub de Cristofer Vargas"
+        title="Ver GitHub"
+      >
+        <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor" aria-hidden="true">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z" />
+        </svg>
+      </a>
 
-    <button
-      type="button"
-      class="menu-toggle"
-      id="menu-toggle"
-      aria-expanded="false"
-      aria-controls="primary-nav"
-      aria-label="Abrir menu de navegação"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <div class="player-status">
+        <div class="player-tag">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="player-name">P1: CRISTOFER</span>
+        </div>
+        <div class="player-hud-bars" aria-label="Status do jogador">
+          <span class="hud-stat hud-stat--hp" title="Health Points">HP <span class="hud-hearts">&#9829;&#9829;&#9829;</span></span>
+          <span class="hud-stat hud-stat--lvl" title="Nível do Desenvolvedor">LVL 24</span>
+        </div>
+      </div>
+    </div>
 
-    <nav class="primary-nav" id="primary-nav" aria-label="Navegação principal">
-      <a href="#tecnologias" class="nav-link">Tecnologias</a>
-      <a href="#projetos" class="nav-link">Projetos</a>
-      <a href="#contato" class="nav-link">Contato</a>
-    </nav>
+    <!-- Controls Right -->
+    <div class="header-actions">
+      <!-- SFX Synthesizer Toggle -->
+      <button
+        type="button"
+        class="sfx-toggle"
+        id="sfx-toggle"
+        aria-label="Alternar efeitos sonoros retrô"
+        title="Alternar áudio retrô 8-bit"
+      >
+        <span class="sfx-icon" id="sfx-icon" aria-hidden="true">&#128266;</span>
+        <span class="sfx-label" id="sfx-label">SFX: ON</span>
+      </button>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="Abrir menu de navegação"
+      >
+        <span class="menu-toggle__text">MENU</span>
+        <span class="menu-toggle__bars" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Navegação principal">
+        <a href="#sobre" class="nav-link"><span class="nav-num">01</span> Bio</a>
+        <a href="#trajetoria" class="nav-link"><span class="nav-num">02</span> Quests</a>
+        <a href="#projetos" class="nav-link"><span class="nav-num">03</span> Vault</a>
+        <a href="#tecnologias" class="nav-link"><span class="nav-num">04</span> Arsenal</a>
+        <a href="#contato" class="nav-link nav-link--highlight"><span class="nav-num">05</span> Transmissão</a>
+      </nav>
+    </div>
   </div>
 </header>

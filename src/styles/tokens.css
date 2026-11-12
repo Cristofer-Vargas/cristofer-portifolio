@@ -1,26 +1,53 @@
 :root {
-  /* Color Palette */
-  --bg-canvas: #0d0d0d;
-  --bg-shell: #333333;
-  --bg-marquee: #222222;
-  --bg-card: #666666;
-  --bg-pill: #808080;
-  --accent: #cd853f;
-  --accent-hover: #df954d;
-  --accent-dark: #7c3f04;
-  --highlight: #ffde21;
-  --text-main: #ffffff;
-  --text-muted: #dddddd;
-  --text-dark: #000000;
-  --text-footer: #222222;
+  /* Color Palette - Cyber Arcade & Retro Gamer */
+  --bg-canvas: #0a0b10;
+  --bg-shell: #181922;
+  --bg-marquee: #101118;
+  --bg-card: #242633;
+  --bg-card-inner: #1a1b24;
+  --bg-pill: #353849;
 
-  /* Pixel Shadows */
+  /* Signature Accents & RPG Stats */
+  --accent: #cd853f;
+  --accent-hover: #e0964e;
+  --accent-dark: #7a3e05;
+  --highlight: #ffde21;
+
+  --retro-hp: #ff4757;
+  --retro-mp: #00f0ff;
+  --retro-xp: #2ed573;
+  --retro-gold: #ffde21;
+  --retro-purple: #a55eea;
+  --whatsapp-green: #25d366;
+
+  /* Typography Colors */
+  --text-main: #f5f6fa;
+  --text-muted: #c8cbd9;
+  --text-dim: #8b8f9e;
+  --text-dark: #0f1016;
+  --text-footer: #14151d;
+
+  /* Stepped 8-Bit Pixel Shadows & Borders */
   --shadow-pixel:
-    8px 0 0 rgba(0, 0, 0, 0.25),
-    -8px 0 0 rgba(0, 0, 0, 0.25),
-    0 8px 0 rgba(0, 0, 0, 0.25),
-    0 -8px 0 rgba(0, 0, 0, 0.25);
-  --shadow-text: 0 4px 0 rgba(0, 0, 0, 0.4);
+    5px 0 0 #000000,
+    -5px 0 0 #000000,
+    0 5px 0 #000000,
+    0 -5px 0 #000000,
+    0 12px 24px rgba(0, 0, 0, 0.45);
+  --shadow-pixel-sm:
+    3px 0 0 #000000,
+    -3px 0 0 #000000,
+    0 3px 0 #000000,
+    0 -3px 0 #000000;
+  --pixel-bevel:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.16),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.5);
+  --pixel-bevel-gold:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.35),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-text: 0 4px 0 rgba(0, 0, 0, 0.65);
+  --glow-cyan: 0 0 12px rgba(0, 240, 255, 0.45);
+  --glow-gold: 0 0 12px rgba(255, 222, 33, 0.45);
 
   /* Typography (Híbrido Indie: Silkscreen + Rubik) */
   --font-display: "Silkscreen", monospace;
