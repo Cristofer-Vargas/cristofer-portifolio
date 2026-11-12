@@ -1,22 +1,17 @@
 {
   "name": "Portfólio — Cristofer Vargas de Santis",
   "short_name": "Cristofer Vargas",
-  "description": "Portfólio de Cristofer Vargas de Santis — Desenvolvedor Web Full Stack (.NET, C#, JS) e Designer UI/UX.",
+  "description": "Portfólio de desenvolvimento back-end com C# e .NET.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#0D0D0D",
-  "theme_color": "#CD853F",
+  "background_color": "#efefe7",
+  "theme_color": "#efefe7",
   "lang": "pt-BR",
   "icons": [
     {
       "src": "assets/icons/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml"
-    },
-    {
-      "src": "assets/icons/favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png"
     },
     {
       "src": "assets/icons/apple-touch-icon.png",

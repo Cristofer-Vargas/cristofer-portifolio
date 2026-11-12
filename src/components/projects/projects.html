@@ -1,38 +1,95 @@
-<section id="projetos" class="projects-band reveal" aria-labelledby="projetos-title">
-  <div class="projects-band__header skyrim-vault-head">
-    <div class="vault-badge-row skyrim-vault-badges">
-      <span class="badge-accent">ARTEFATOS LENDÁRIOS</span>
-      <span class="badge-xp">INVENTÁRIO DOVAHKIIN</span>
+<section id="projetos" class="section projects" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="section-heading section-heading--split">
+      <h2 id="projects-title">Projetos <em>por dentro.</em></h2>
+      <a class="text-link" href="https://github.com/Cristofer-Vargas?tab=repositories">Repositórios no GitHub <span aria-hidden="true">↗</span></a>
     </div>
-    <h2 id="projetos-title" class="section-title section-title--center">Artefatos Forjados // Projetos</h2>
-    <p class="projects-vault-sub skyrim-vault-sub">Selecione um artefato para examinar atributos, runas técnicas e repositório</p>
 
-    <div class="carousel-controls skyrim-carousel-controls" aria-label="Controles do carrossel de artefatos">
-      <button type="button" class="pixel-btn carousel-nav-btn" id="carousel-prev" aria-label="Artefato anterior">‹ ANTERIOR</button>
-      <div class="carousel-dots skyrim-carousel-dots" id="carousel-dots" role="tablist" aria-label="Selecionar artefato"></div>
-      <button type="button" class="pixel-btn carousel-nav-btn" id="carousel-next" aria-label="Próximo artefato">PRÓXIMO ›</button>
+    <div class="project-filters" role="group" aria-label="Filtrar projetos" hidden>
+      <button class="filter" type="button" data-filter="all" aria-pressed="true">Todos</button>
+      <button class="filter" type="button" data-filter="backend" aria-pressed="false">Back-end</button>
+      <button class="filter" type="button" data-filter="web" aria-pressed="false">Web</button>
+      <button class="filter" type="button" data-filter="desktop" aria-pressed="false">Desktop</button>
+      <button class="filter" type="button" data-filter="design" aria-pressed="false">Design</button>
     </div>
-  </div>
+    <p id="project-count" class="visually-hidden" role="status"></p>
 
-  <div class="carousel-viewport skyrim-carousel-viewport" id="carousel-viewport" tabindex="0" aria-roledescription="carousel" aria-label="Artefatos em destaque">
-    <div class="carousel-track skyrim-carousel-track" id="carousel-track">
-      <!-- Populated dynamically via carousel.component.js -->
+    <article class="project-card case-study case-study--vault" data-category="backend" aria-labelledby="ludovault-title">
+      <div class="case-copy">
+        <p class="eyebrow project-category">Back-end <span>·</span> Em desenvolvimento desde abr 2026</p>
+        <h3 id="ludovault-title">LudoVault</h3>
+        <p>Catálogo de jogos com uma API REST em ASP.NET Core e MySQL. Inspirado no IGDB, o projeto explora como organizar jogos de diferentes plataformas, anos e gêneros em bibliotecas e listas pessoais.</p>
+        <ul class="tags" aria-label="Tecnologias do LudoVault"><li>C#</li><li>ASP.NET Core</li><li>MySQL</li></ul>
+        <a class="text-link" href="https://github.com/Cristofer-Vargas/LudoVault">LudoVault no GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+      <section class="architecture" aria-labelledby="architecture-title">
+        <h4 id="architecture-title">Explore as camadas da API</h4>
+        <details name="ludovault-layer" open>
+          <summary>Controller <span class="detail-mark" aria-hidden="true">+</span></summary>
+          <p>Recebe a requisição HTTP e usa DTOs para definir os dados de entrada e saída.</p>
+        </details>
+        <details name="ludovault-layer">
+          <summary>Serviço <span class="detail-mark" aria-hidden="true">+</span></summary>
+          <p>Concentra a lógica da aplicação e coordena as operações que dependem dos repositórios.</p>
+        </details>
+        <details name="ludovault-layer">
+          <summary>Repositório <span class="detail-mark" aria-hidden="true">+</span></summary>
+          <p>Isola o acesso aos dados para que os serviços possam trabalhar sem conhecer os detalhes da persistência.</p>
+        </details>
+        <details name="ludovault-layer">
+          <summary>MySQL <span class="detail-mark" aria-hidden="true">+</span></summary>
+          <p>Armazena os dados relacionais do catálogo. Mapeamentos e migrations descrevem e versionam a estrutura do banco.</p>
+        </details>
+      </section>
+    </article>
+
+    <article class="project-card case-study case-study--notes" data-category="desktop" aria-labelledby="notes-title">
+      <div class="case-copy">
+        <p class="eyebrow project-category">Desktop <span>·</span> Alpha</p>
+        <h3 id="notes-title">Notes-MD</h3>
+        <p>Editor desktop de Markdown com edição visual e acesso ao texto-fonte. Os arquivos ficam em uma pasta local, e os links entre notas ajudam a navegar pelas referências.</p>
+        <ul class="tags" aria-label="Tecnologias do Notes-MD"><li>TypeScript</li><li>Electron</li><li>React</li></ul>
+        <a class="text-link" href="https://github.com/Cristofer-Vargas/notes-md">Notes-MD no GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+      <figure class="notes-figure">
+        <canvas data-illustration="notes" width="620" height="300" aria-hidden="true"></canvas>
+        <figcaption>Ilustração das conexões entre notas</figcaption>
+      </figure>
+    </article>
+
+    <div class="project-index">
+      <h3 class="eyebrow project-index-title">Mais projetos</h3>
+      <details class="project-card index-entry" data-category="backend web">
+        <summary><span>Controle de Contatos</span><small>ASP.NET Core MVC</small> <span class="detail-mark" aria-hidden="true">+</span></summary>
+        <div class="index-description">
+          <p>Aplicação para gerenciar contatos. Usa repositórios para acessar os dados e migrations para versionar a estrutura do banco.</p>
+          <a class="text-link" href="https://github.com/Cristofer-Vargas/ControleDeContatos" aria-label="Ver código do Controle de Contatos no GitHub">Ver código <span aria-hidden="true">↗</span></a>
+        </div>
+      </details>
+
+      <details class="project-card index-entry" data-category="web">
+        <summary><span>Convenção de Eventos</span><small>PHP · Laravel · Blade</small> <span class="detail-mark" aria-hidden="true">+</span></summary>
+        <div class="index-description">
+          <p>Aplicação para publicar eventos e registrar participações, desenvolvida durante um curso do canal Hora de Codar.</p>
+          <a class="text-link" href="https://github.com/Cristofer-Vargas/convencao-eventos" aria-label="Ver código da Convenção de Eventos no GitHub">Ver código <span aria-hidden="true">↗</span></a>
+        </div>
+      </details>
+
+      <details class="project-card index-entry" data-category="web">
+        <summary><span>Delivery SLG</span><small>PHP · Projeto integrador</small> <span class="detail-mark" aria-hidden="true">+</span></summary>
+        <div class="index-description">
+          <p>Sistema desenvolvido em equipe no Senac RS entre nov de 2022 e abr de 2023. A proposta era permitir que empresas cadastrassem produtos e clientes fizessem e acompanhassem pedidos.</p>
+          <a class="text-link" href="https://github.com/Cristofer-Vargas/delivery-slg.com.br" aria-label="Ver código do Delivery SLG no GitHub">Ver código <span aria-hidden="true">↗</span></a>
+        </div>
+      </details>
+
+      <details class="project-card index-entry" data-category="design">
+        <summary><span>D’Santis Food</span><small>Identidade visual</small> <span class="detail-mark" aria-hidden="true">+</span></summary>
+        <div class="index-description">
+          <p>Identidade de marca, cardápio, materiais impressos e peças para redes sociais do food truck, desenvolvidos como designer freelancer.</p>
+          <a class="text-link" href="https://www.instagram.com/dsantis_trailer/" aria-label="Ver o perfil do D’Santis Food no Instagram">Ver perfil da marca <span aria-hidden="true">↗</span></a>
+        </div>
+      </details>
     </div>
   </div>
 </section>
-
-<!-- Project Detail Modal: Skyrim 3D Item Inspection Window -->
-<div class="modal skyrim-modal" id="project-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
-  <div class="modal__backdrop skyrim-modal__backdrop" data-close-modal="true"></div>
-  <div class="modal__dialog skyrim-modal__dialog">
-    <button type="button" class="modal__close pixel-btn skyrim-modal__close" id="modal-close" aria-label="Fechar inventário">✕</button>
-    <span class="modal__category skyrim-modal__cat" id="modal-category"></span>
-    <h2 class="modal__title skyrim-modal__title" id="modal-title"></h2>
-    <div class="modal__preview skyrim-modal__preview" id="modal-preview"></div>
-    <h3 class="modal__subtitle skyrim-modal__subtitle">Atributos &amp; Descrição</h3>
-    <p class="modal__desc skyrim-modal__desc" id="modal-desc"></p>
-    <h3 class="modal__subtitle skyrim-modal__subtitle">Encantamentos &amp; Tecnologias</h3>
-    <ul class="modal__tags skyrim-modal__tags" id="modal-tags"></ul>
-    <div class="modal__actions skyrim-modal__actions" id="modal-actions"></div>
-  </div>
-</div>

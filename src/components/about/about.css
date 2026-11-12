@@ -1,132 +1,17 @@
-/* ==========================================================================
-   About Section - Skyrim Dovahkiin Chronicle (Minimalist Nordic)
-   ========================================================================== */
+.about { position: relative; background: var(--background); }
 
-.skyrim-chronicle-card {
-  position: relative;
-}
-
-.skyrim-card-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding-bottom: 16px;
-  margin-bottom: 24px;
-  border-bottom: 1px solid rgba(219, 226, 234, 0.12);
-}
-
-.skyrim-card-head .section-title {
-  margin-bottom: 0;
-}
-
-.skyrim-card-tag {
-  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: var(--skyrim-silver-muted, #8e9aab);
-  text-transform: uppercase;
-}
-
-.skyrim-chronicle-body {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.skyrim-dossier-grid {
+.about-grid {
   display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  gap: 36px;
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .77fr);
+  align-items: end;
+  gap: clamp(1.6rem, 7vw, 7.2rem);
 }
 
-/* Minimalist Attribute List */
-.skyrim-attr-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  background: rgba(9, 12, 18, 0.7);
-  border: 1px solid rgba(219, 226, 234, 0.12);
-  clip-path: var(--skyrim-notch-sm);
-  padding: 18px 20px;
-}
+.about .section-heading { margin-bottom: 0; }
+.about .eyebrow { margin-bottom: 1rem; color: var(--subtle); }
+.about h2 em { display: block; color: #536523; }
+.about-copy p { max-width: 55ch; color: var(--muted); }
+.about-copy .about-intro { margin-bottom: .85rem; color: var(--text); font-size: clamp(1.12rem, 1.8vw, 1.44rem); line-height: 1.5; letter-spacing: -.027em; }
+.about-copy .text-link { margin-top: 1rem; }
 
-.skyrim-attr-item {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(219, 226, 234, 0.08);
-}
-
-.skyrim-attr-item:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.skyrim-attr-label {
-  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
-  font-size: 9.5px;
-  font-weight: 700;
-  color: var(--skyrim-gold, #e5c158);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.skyrim-attr-val {
-  font-size: 13.5px;
-  font-weight: 500;
-  color: var(--text-main);
-  line-height: 1.4;
-}
-
-/* Narrative */
-.skyrim-narrative {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.about-text {
-  margin: 0;
-  font-size: 15.5px;
-  line-height: 1.7;
-  color: var(--text-muted);
-}
-
-.about-text strong.hl {
-  color: #ffffff;
-}
-
-/* Card Foot */
-.skyrim-card-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 24px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(219, 226, 234, 0.08);
-  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
-  font-size: 10.5px;
-  letter-spacing: 0.1em;
-  color: var(--skyrim-silver-muted, #8e9aab);
-}
-
-.skyrim-foot-status {
-  color: var(--skyrim-gold, #e5c158);
-}
-
-.skyrim-foot-diamond {
-  color: var(--skyrim-gold-bright, #ffe885);
-  font-size: 8px;
-}
-
-@media (max-width: 860px) {
-  .skyrim-dossier-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-}
+@media (max-width: 46rem) { .about-grid { grid-template-columns: 1fr; align-items: start; } }

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cristofer-vargas.github.io/cristofer-portifolio/sitemap.xml
+Sitemap: https://portifolio.cristofer.dev.br/sitemap.xml

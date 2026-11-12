@@ -1,232 +1,32 @@
-/* ==========================================================================
-   Timeline Section - Skyrim Quest Journal (Minimalist Nordic)
-   ========================================================================== */
-
-.skyrim-quest-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding-bottom: 16px;
-  margin-bottom: 24px;
-  border-bottom: 1px solid rgba(219, 226, 234, 0.12);
-}
-
-.skyrim-quest-head .section-title {
-  margin-bottom: 0;
-}
-
-.skyrim-counter {
-  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--skyrim-gold, #e5c158);
-}
-
-.skyrim-cat-title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
-  font-size: 13.5px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: #ffffff;
-  margin: 0 0 16px;
-  text-transform: uppercase;
-}
-
-.skyrim-cat-title .category-icon {
-  color: var(--skyrim-gold, #e5c158);
-  font-size: 9px;
-}
-
-.skyrim-category--spaced {
-  margin-top: 36px;
-}
-
-/* Timeline Track */
-.skyrim-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.skyrim-item {
+.timeline-grid {
   display: grid;
-  grid-template-columns: 86px 1fr;
-  gap: 20px;
-  align-items: stretch;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5.5vw, 6rem);
 }
 
-.skyrim-rail {
+.timeline-label { padding-bottom: .8rem; color: var(--subtle); }
+.timeline-list { padding: 0; list-style: none; }
+
+.timeline-list li {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 4px 0;
+  padding: 1.22rem 0 1.4rem 1.2rem;
+  border-top: 1px solid var(--line);
 }
 
-.skyrim-rail::before {
+.timeline-list li::before {
   content: "";
   position: absolute;
-  top: 14px;
-  bottom: 14px;
-  left: 5px;
-  width: 2px;
-  background: linear-gradient(
-    180deg,
-    var(--skyrim-gold, #e5c158) 0%,
-    rgba(219, 226, 234, 0.3) 50%,
-    var(--skyrim-gold, #e5c158) 100%
-  );
-  box-shadow: 0 0 6px rgba(229, 193, 88, 0.3);
-}
-
-.timeline-point {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  position: relative;
-  z-index: 2;
-}
-
-.skyrim-node {
-  width: 12px;
-  height: 12px;
-  background: #080a10;
-  border: 1.5px solid var(--skyrim-gold, #e5c158);
-  box-shadow: 0 0 8px rgba(229, 193, 88, 0.4);
+  top: 1.52rem;
+  left: .05rem;
+  width: .38rem;
+  height: .38rem;
+  border: 1px solid #677725;
   transform: rotate(45deg);
-  flex-shrink: 0;
 }
 
-.skyrim-date {
-  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--skyrim-silver-muted, #8e9aab);
-}
+.timeline-date { color: var(--subtle); font: .74rem / 1.5 var(--mono); text-transform: uppercase; }
+.timeline-list h4 { margin-block: .38rem .22rem; font-size: clamp(1.12rem, 1.8vw, 1.45rem); font-weight: 660; letter-spacing: -.03em; }
+.timeline-list p:last-child { margin-top: .35rem; color: var(--muted); }
+.timeline-org { font-size: .93rem; }
 
-/* Timeline Card Body */
-.skyrim-body {
-  background: rgba(10, 14, 22, 0.7);
-  border: 1px solid rgba(219, 226, 234, 0.12);
-  clip-path: var(--skyrim-notch-sm);
-  padding: 18px 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  transition: border-color 0.15s ease, transform 0.15s ease;
-}
-
-.skyrim-body:hover {
-  border-color: rgba(229, 193, 88, 0.35);
-  transform: translateX(4px);
-}
-
-.timeline-title-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.skyrim-role {
-  margin: 0;
-  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
-  font-size: 14.5px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: #ffffff;
-}
-
-.skyrim-status--active {
-  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
-  font-size: 9.5px;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  color: var(--skyrim-gold-bright, #ffe885);
-  padding: 2px 8px;
-  background: rgba(229, 193, 88, 0.12);
-  border: 1px solid rgba(229, 193, 88, 0.35);
-  clip-path: polygon(3px 0, calc(100% - 3px) 0, 100% 3px, 100% calc(100% - 3px), calc(100% - 3px) 100%, 3px 100%, 0 calc(100% - 3px), 0 3px);
-}
-
-.skyrim-status--done {
-  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--skyrim-silver-muted, #8e9aab);
-  padding: 2px 8px;
-  background: rgba(219, 226, 234, 0.06);
-  border: 1px solid rgba(219, 226, 234, 0.18);
-  clip-path: polygon(3px 0, calc(100% - 3px) 0, 100% 3px, 100% calc(100% - 3px), calc(100% - 3px) 100%, 3px 100%, 0 calc(100% - 3px), 0 3px);
-}
-
-.skyrim-org {
-  font-size: 12px;
-  color: var(--skyrim-gold, #e5c158);
-  font-weight: 500;
-}
-
-.skyrim-desc {
-  margin: 0;
-  font-size: 13.5px;
-  line-height: 1.55;
-  color: var(--text-muted);
-}
-
-.skyrim-loot {
-  margin: 4px 0 0;
-  font-size: 11.5px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.loot-label {
-  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
-  color: var(--skyrim-silver-muted, #8e9aab);
-  font-size: 9.5px;
-  letter-spacing: 0.1em;
-}
-
-.skyrim-link {
-  color: var(--skyrim-gold, #e5c158);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.gh-pill {
-  font-size: 9.5px;
-  font-weight: 700;
-  padding: 1px 6px;
-  background: rgba(229, 193, 88, 0.15);
-  border: 1px solid rgba(229, 193, 88, 0.35);
-  color: var(--skyrim-gold-bright, #ffe885);
-  clip-path: polygon(2px 0, calc(100% - 2px) 0, 100% 2px, 100% calc(100% - 2px), calc(100% - 2px) 100%, 2px 100%, 0 calc(100% - 2px), 0 2px);
-}
-
-@media (max-width: 680px) {
-  .skyrim-item {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .skyrim-rail {
-    flex-direction: row;
-    padding: 0;
-  }
-
-  .skyrim-rail::before {
-    display: none;
-  }
-}
+@media (max-width: 44rem) { .timeline-grid { grid-template-columns: 1fr; } }

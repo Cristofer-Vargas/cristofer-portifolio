@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" shape-rendering="crispEdges">
-  <!-- Retro Pixel WhatsApp Icon -->
-  <path d="M7 2h10v1H7V2z M5 3h2v1H5V3z M17 3h2v1h-2V3z M4 4h1v1H4V4z M19 4h1v1h-1V4z M3 5h1v2H3V5z M20 5h1v2h-1V5z M2 7h1v10H2V7z M21 7h1v10h-1V7z M3 17h1v2H3v-2z M20 17h1v2h-1v-2z M4 19h1v1H4v-1z M19 19h1v1h-1v-1z M5 20h2v1H5v-1z M17 20h2v1h-2v-1z M7 21h10v1H7v-1z"/>
-  <!-- Speech Bubble Tail -->
-  <path d="M2 17h2v2H2v-2z M1 19h2v2H1v-2z M0 21h2v3H0v-3z M2 22h2v1H2v-1z"/>
-  <!-- Phone Receiver Silhouette in Pixel Art -->
-  <path fill="#25D366" d="M8 7h3v3H9v1h1v1h1v1h1v-1h3v3h-2v-1h-1v-1h-1v-1H9v-1H8V7z"/>
-</svg>

@@ -1,162 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Primary SEO -->
-  <title>Cristofer Vargas de Santis | Desenvolvedor Web Full Stack (.NET, C#, JS) &amp; UI/UX</title>
-  <meta name="description" content="Portfólio de Cristofer Vargas de Santis — Desenvolvedor Web Full Stack (.NET, C#, JavaScript, HTML5, CSS3), Técnico de Informática e Designer UI/UX no Rio Grande do Sul, Brasil. Conheça projetos como o LudoVault.">
-  <meta name="keywords" content="Cristofer Vargas de Santis, Desenvolvedor Web Full Stack, Técnico de Informática, C#, ASP .NET Core, API RESTful, JavaScript, HTML5, CSS3, Docker, LudoVault, UI/UX, Design Gráfico, Rio Grande do Sul, Portfólio">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cristofer Vargas de Santis | Desenvolvedor Web C# e .NET</title>
+  <meta name="description" content="Portfólio de Cristofer Vargas de Santis, desenvolvedor web em São Luiz Gonzaga, RS. Conheça o LudoVault e projetos com C#, ASP.NET Core, APIs REST e MySQL.">
   <meta name="author" content="Cristofer Vargas de Santis">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <meta name="theme-color" content="#CD853F">
-  <link rel="canonical" href="https://cristofer-vargas.github.io/cristofer-portifolio/">
-
-  <!-- Favicons & Web Manifest -->
+  <meta name="robots" content="max-image-preview:large">
+  <meta name="theme-color" content="#efefe7">
+  <link rel="canonical" href="https://portifolio.cristofer.dev.br/">
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="assets/fonts/barlow-condensed-800.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="Portfólio — Cristofer Vargas de Santis">
-  <meta property="og:title" content="Cristofer Vargas de Santis — Desenvolvedor Web Full Stack &amp; UI/UX">
-  <meta property="og:description" content="Técnico de Informática, graduando em Análise e Desenvolvimento de Sistemas e Desenvolvedor Full Stack (.NET, C#, JavaScript, Docker e UI/UX).">
-  <meta property="og:url" content="https://cristofer-vargas.github.io/cristofer-portifolio/">
-  <meta property="og:image" content="https://cristofer-vargas.github.io/cristofer-portifolio/assets/images/og-cover.png">
+  <meta property="og:site_name" content="Cristofer Vargas">
+  <meta property="og:title" content="Cristofer Vargas de Santis | Desenvolvedor Web C# e .NET">
+  <meta property="og:description" content="Portfólio de desenvolvimento web e back-end. Explore o LudoVault, o Notes-MD e outros projetos de Cristofer Vargas de Santis.">
+  <meta property="og:url" content="https://portifolio.cristofer.dev.br/">
+  <meta property="og:image" content="https://portifolio.cristofer.dev.br/assets/images/og-cover.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Portfólio de Cristofer Vargas de Santis — Desenvolvedor Web Full Stack">
-
-  <!-- Twitter Cards -->
+  <meta property="og:image:alt" content="Retrato de Cristofer Vargas de Santis em preto e branco sobre circuitos e um círculo verde-lima.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cristofer Vargas de Santis — Desenvolvedor Web Full Stack &amp; UI/UX">
-  <meta name="twitter:description" content="Portfólio em estética pixel-art com formação, experiência profissional, tecnologias e projetos como o LudoVault.">
-  <meta name="twitter:image" content="https://cristofer-vargas.github.io/cristofer-portifolio/assets/images/og-cover.png">
-  <meta name="twitter:image:alt" content="Portfólio de Cristofer Vargas de Santis — Desenvolvedor Web Full Stack">
+  <meta name="twitter:title" content="Cristofer Vargas de Santis | Desenvolvedor Web C# e .NET">
+  <meta name="twitter:description" content="Portfólio de desenvolvimento web e back-end. Explore o LudoVault, o Notes-MD e outros projetos de Cristofer Vargas de Santis.">
+  <meta name="twitter:image" content="https://portifolio.cristofer.dev.br/assets/images/og-cover.png">
+  <meta name="twitter:image:alt" content="Retrato de Cristofer Vargas de Santis em preto e branco sobre circuitos e um círculo verde-lima.">
 
-  <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "Person",
-          "@id": "https://cristofer-vargas.github.io/cristofer-portifolio/#person",
-          "name": "Cristofer Vargas de Santis",
-          "jobTitle": "Desenvolvedor Web Full Stack e Técnico de Informática",
-          "description": "Profissional de tecnologia com formação Técnica em Informática, graduando em Análise e Desenvolvimento de Sistemas, atuação em desenvolvimento web Full Stack (.NET, C#, JS) e Design UI/UX.",
-          "url": "https://cristofer-vargas.github.io/cristofer-portifolio/",
-          "image": "https://cristofer-vargas.github.io/cristofer-portifolio/assets/images/perfil.png",
-          "sameAs": [
-            "https://github.com/Cristofer-Vargas"
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "addressRegion": "RS",
-            "addressCountry": "BR"
-          },
-          "alumniOf": [
-            {
-              "@type": "EducationalOrganization",
-              "name": "Uninter — Análise e Desenvolvimento de Sistemas"
-            },
-            {
-              "@type": "EducationalOrganization",
-              "name": "Senac — Técnico de Informática"
-            }
-          ],
-          "knowsAbout": [
-            "HTML5",
-            "CSS3",
-            "JavaScript",
-            "React JS",
-            "C#",
-            "ASP .NET Core",
-            "API RESTful",
-            "Banco de Dados Relacional",
-            "Docker",
-            "Git",
-            "UI/UX Design",
-            "Design Gráfico"
-          ]
-        },
-        {
           "@type": "WebSite",
-          "name": "Portfólio — Cristofer Vargas de Santis",
-          "url": "https://cristofer-vargas.github.io/cristofer-portifolio/",
-          "inLanguage": "pt-BR",
-          "author": {
-            "@id": "https://cristofer-vargas.github.io/cristofer-portifolio/#person"
-          }
+          "@id": "https://portifolio.cristofer.dev.br/#website",
+          "url": "https://portifolio.cristofer.dev.br/",
+          "name": "Cristofer Vargas",
+          "alternateName": "Cristofer Vargas de Santis",
+          "inLanguage": "pt-BR"
         },
         {
-          "@type": "ItemList",
-          "name": "Projetos Destaque",
-          "itemListElement": [
-            {
-              "@type": "SoftwareApplication",
-              "position": 1,
-              "name": "LudoVault",
-              "applicationCategory": "WebApplication",
-              "description": "Plataforma cofre (vault) para gerenciamento de bibliotecas e interesses de videogames desenvolvida em C# e ASP .NET Core.",
-              "url": "https://github.com/Cristofer-Vargas/LudoVault",
-              "author": {
-                "@id": "https://cristofer-vargas.github.io/cristofer-portifolio/#person"
-              }
+          "@type": "ProfilePage",
+          "@id": "https://portifolio.cristofer.dev.br/#profile",
+          "url": "https://portifolio.cristofer.dev.br/",
+          "name": "Cristofer Vargas de Santis | Desenvolvedor Web C# e .NET",
+          "description": "Portfólio de Cristofer Vargas de Santis, desenvolvedor web em São Luiz Gonzaga, RS. Conheça o LudoVault e projetos com C#, ASP.NET Core, APIs REST e MySQL.",
+          "inLanguage": "pt-BR",
+          "isPartOf": {"@id": "https://portifolio.cristofer.dev.br/#website"},
+          "primaryImageOfPage": {"@id": "https://portifolio.cristofer.dev.br/#portrait"},
+          "mainEntity": {
+            "@type": "Person",
+            "@id": "https://portifolio.cristofer.dev.br/#person",
+            "name": "Cristofer Vargas de Santis",
+            "alternateName": "Cristofer Vargas",
+            "jobTitle": "Desenvolvedor Web e Técnico em Informática",
+            "description": "Desenvolvedor web com foco em APIs REST, C# e .NET e técnico em Informática pelo Senac RS.",
+            "url": "https://portifolio.cristofer.dev.br/",
+            "image": {
+              "@type": "ImageObject",
+              "@id": "https://portifolio.cristofer.dev.br/#portrait",
+              "contentUrl": "https://portifolio.cristofer.dev.br/assets/images/cristofer-vargas-de-santis.webp",
+              "width": 840,
+              "height": 1120
             },
-            {
-              "@type": "CreativeWork",
-              "position": 2,
-              "name": "D’Santis Food Truck",
-              "description": "Identidade visual, cardápio e materiais de comunicação gráfica.",
-              "author": {
-                "@id": "https://cristofer-vargas.github.io/cristofer-portifolio/#person"
-              }
-            }
-          ]
+            "sameAs": [
+              "https://github.com/Cristofer-Vargas",
+              "https://www.linkedin.com/in/cristofer-vargas/"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "São Luiz Gonzaga",
+              "addressRegion": "Rio Grande do Sul",
+              "addressCountry": "BR"
+            },
+            "knowsAbout": ["C#", ".NET", "ASP.NET Core", "APIs REST", "MySQL", "Git", "TypeScript", "React", "UI/UX"]
+          }
         }
       ]
     }
   </script>
-
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cinzel+Decorative:wght@700&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="src/styles/main.css">
-</head>
-<body>
-  <!-- Subtle grain overlay across the canvas -->
-  <div class="noise-overlay" aria-hidden="true"></div>
-
-  <!-- Pixel-art castle & moon hero backdrop -->
-  <div class="hero-backdrop" aria-hidden="true">
-    <img src="assets/images/hero-castle.jpg" alt="" class="hero-backdrop__img">
-    <div class="hero-backdrop__fade"></div>
-  </div>
-
-  {{component:header}}
-
-  <!-- Centered 1440px Page Shell -->
-  <div class="page-shell">
-    <main>
-      {{component:hero}}
-      {{component:about}}
-      {{component:timeline}}
-      {{component:projects}}
-      {{component:technologies}}
-      {{component:contact}}
-    </main>
-
-    {{component:footer}}
-  </div>
-
   <script type="module" src="src/js/app.js"></script>
+</head>
+<body id="inicio">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  {{component:header}}
+  <main id="conteudo" tabindex="-1">
+    {{component:hero}}
+    {{component:projects}}
+    {{component:about}}
+    {{component:technologies}}
+    {{component:timeline}}
+    {{component:contact}}
+  </main>
+  {{component:footer}}
 </body>
 </html>

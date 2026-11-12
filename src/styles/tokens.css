@@ -1,74 +1,39 @@
+@font-face {
+  font-family: Geist;
+  src: url("../../assets/fonts/geist.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../../assets/fonts/barlow-condensed-800.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../../assets/fonts/ibm-plex-mono.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
-  /* ==========================================================================
-     Skyrim & Nordic Minimalist Palette
-     ========================================================================== */
-  --bg-canvas: #07090e;
-  --bg-shell: #0a0d14;
-  --bg-marquee: #06080d;
-  --bg-card: rgba(12, 16, 24, 0.86);
-  --bg-card-inner: rgba(9, 12, 18, 0.92);
-  --bg-pill: rgba(20, 27, 40, 0.75);
-
-  /* Nordic Gold & Glacial Frost Accents */
-  --skyrim-gold: #e5c158;
-  --skyrim-gold-bright: #ffe885;
-  --skyrim-gold-dim: rgba(229, 193, 88, 0.2);
-  --skyrim-silver: #dbe2ea;
-  --skyrim-silver-bright: #ffffff;
-  --skyrim-silver-muted: #8e9aab;
-  --skyrim-iron: #10141d;
-  --skyrim-iron-deep: #080a10;
-  --skyrim-iron-border: rgba(219, 226, 234, 0.18);
-  --skyrim-frost: #bae6fd;
-  --skyrim-frost-glow: rgba(186, 230, 253, 0.45);
-
-  /* The 3 Iconic Skyrim Vitals Colors */
-  --skyrim-magicka: #38bdf8;
-  --skyrim-magicka-glow: rgba(56, 189, 248, 0.45);
-  --skyrim-health: #ef4444;
-  --skyrim-health-glow: rgba(239, 68, 68, 0.45);
-  --skyrim-stamina: #22c55e;
-  --skyrim-stamina-glow: rgba(34, 197, 94, 0.45);
-
-  /* Aliases for Global Primaries */
-  --accent: #e5c158;
-  --accent-hover: #ffe885;
-  --accent-dark: #b89228;
-  --highlight: #bae6fd;
-  --whatsapp-green: #25d366;
-
-  /* Typography Colors */
-  --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
-  --text-dark: #07090e;
-
-  /* Nordic Iron & Slate Elevation Shadows */
-  --shadow-pixel: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(219, 226, 234, 0.12);
-  --shadow-pixel-sm: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(219, 226, 234, 0.1);
-  --pixel-bevel: inset 0 1px 0 rgba(255, 255, 255, 0.12), inset 0 -1px 0 rgba(0, 0, 0, 0.7);
-  --pixel-bevel-gold: inset 0 1px 0 rgba(229, 193, 88, 0.35);
-  --shadow-text: none;
-  --glow-gold: 0 0 14px rgba(229, 193, 88, 0.4);
-  --glow-cyan: 0 0 14px rgba(56, 189, 248, 0.4);
-
-  /* Typography */
-  --font-display: "Cinzel", "Cinzel Decorative", "Trajan Pro", serif;
-  --font-body: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-size-base: 15.5px;
-  --line-height-base: 1.6;
-  --letter-spacing-base: 0.015em;
-
-  /* Skyrim Notched Corners & Polygons */
-  --skyrim-notch: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
-  --skyrim-notch-sm: polygon(4px 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px);
-  --ds-chamfer: var(--skyrim-notch);
-  --ds-chamfer-sm: var(--skyrim-notch-sm);
-
-  /* Fonts */
-  --skyrim-font-engraved: "Cinzel", "Cinzel Decorative", "Trajan Pro", serif;
-  --skyrim-font-hud: "Cinzel", "Rubik", sans-serif;
-
-  /* Layout */
-  --shell-width: 1440px;
+  color-scheme: light;
+  --background: #efefe7;
+  --surface: #e5e6db;
+  --text: #191b17;
+  --muted: #505348;
+  --subtle: #5c6053;
+  --line: #c2c5b6;
+  --accent: #def855;
+  --ink: #171a13;
+  --focus: #536614;
+  --sans: Geist, "Segoe UI", sans-serif;
+  --display: "Barlow Condensed", "Arial Narrow", Geist, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, monospace;
+  --container: 84rem;
+  --gutter: clamp(1.15rem, 5.5vw, 5.5rem);
+  --header-height: 4.15rem;
 }
