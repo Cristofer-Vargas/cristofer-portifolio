@@ -2,6 +2,7 @@
   "name": "cristofer-portifolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "description": "Portfólio pessoal de Cristofer Vargas de Santis desenvolvido em HTML, CSS e JavaScript.",
   "scripts": {
     "build": "node scripts/build-html.mjs",
