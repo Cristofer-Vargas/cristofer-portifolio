@@ -207,6 +207,28 @@
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+@media (min-width: 1200px) {
+  .site-header {
+    height: 76px;
+  }
+
+  .site-header__inner {
+    padding: 0 56px;
+  }
+
+  .primary-nav {
+    gap: 26px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .player-name {
+    font-size: 13.5px;
+  }
+}
+
 @media (max-width: 992px) {
   .player-hud-bars {
     display: none;

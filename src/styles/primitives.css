@@ -28,7 +28,7 @@
 .section-title {
   margin: 0 0 24px;
   font-family: var(--font-display);
-  font-size: clamp(20px, 2.2vw, 28px);
+  font-size: clamp(21px, 2.2vw, 30px);
   line-height: 1.35;
   color: var(--accent);
   text-shadow: var(--shadow-text);
@@ -232,6 +232,16 @@
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (min-width: 1200px) {
+  .section-wrap {
+    padding: 0 64px 44px;
+  }
+
+  .pixel-card {
+    padding: 40px 44px;
+  }
 }
 
 @media (max-width: 768px) {

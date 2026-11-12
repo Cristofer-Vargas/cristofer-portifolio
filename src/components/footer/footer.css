@@ -97,6 +97,45 @@
   display: none;
 }
 
+@media (min-width: 1200px) {
+  .site-footer {
+    margin-top: 44px;
+    padding: 48px 64px 34px;
+  }
+
+  .site-footer__banner {
+    padding: 20px 28px;
+    margin-bottom: 40px;
+  }
+
+  .stage-clear-tag {
+    font-size: 14px;
+  }
+
+  .stage-clear-sub {
+    font-size: 14px;
+  }
+
+  .site-footer__grid {
+    gap: 48px;
+    margin-bottom: 40px;
+  }
+
+  .footer-col__title {
+    font-size: 14.5px;
+  }
+
+  .footer-col__list {
+    gap: 12px;
+    font-size: 15px;
+  }
+
+  .site-footer__bottom {
+    padding-top: 24px;
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 768px) {
   .site-footer {
     padding: 32px 20px 24px;

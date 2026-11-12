@@ -49,13 +49,13 @@ textarea {
   background-size: 100% 3px, 6px 100%;
 }
 
-/* Main 1200px centered shell */
+/* Main 1440px centered shell */
 .page-shell {
   position: relative;
   z-index: 1;
   max-width: var(--shell-width);
   margin: 0 auto;
-  padding-top: 24px;
+  padding-top: 26px;
   background: linear-gradient(
     to bottom,
     rgba(24, 25, 34, 0.82) 0px,

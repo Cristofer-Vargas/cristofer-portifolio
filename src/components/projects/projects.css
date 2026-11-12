@@ -447,6 +447,63 @@
   gap: 12px;
 }
 
+@media (min-width: 1200px) {
+  .projects-band {
+    padding: 52px 0 62px;
+  }
+
+  .projects-band__header {
+    padding: 0 64px 28px;
+  }
+
+  .carousel-viewport {
+    padding: 26px 36px 32px;
+  }
+
+  .carousel-track {
+    gap: 40px;
+  }
+
+  .project-card {
+    flex: 0 0 380px;
+    min-height: 550px;
+    padding: 38px 34px;
+  }
+
+  .project-card.is-active {
+    flex: 0 0 440px;
+    min-height: 630px;
+    padding: 42px 38px;
+  }
+
+  .project-card__title {
+    font-size: 21px;
+  }
+
+  .project-card.is-active .project-card__title {
+    font-size: 23px;
+  }
+
+  .project-card__emblem {
+    width: 112px;
+    height: 112px;
+  }
+
+  .project-card__heading {
+    font-size: 23px;
+  }
+
+  .project-card__desc {
+    font-size: 15.5px;
+    line-height: 1.55;
+  }
+
+  .modal__dialog {
+    max-width: 660px;
+    padding: 38px 42px;
+  }
+}
+
 @media (max-width: 1060px) {
   .carousel-track {
     gap: 20px;

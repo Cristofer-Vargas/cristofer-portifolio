@@ -195,6 +195,53 @@
   color: var(--retro-hp);
 }
 
+@media (min-width: 1200px) {
+  .contact-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 48px;
+  }
+
+  .contact-intro {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .contact-details {
+    gap: 18px;
+  }
+
+  .contact-details li {
+    padding-left: 16px;
+    border-left-width: 4px;
+  }
+
+  .contact-label {
+    font-size: 12px;
+  }
+
+  .contact-value,
+  .contact-link {
+    font-size: 17.5px;
+  }
+
+  .contact-form {
+    padding: 30px 32px;
+    gap: 16px;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    padding: 12px 14px;
+    font-size: 15.5px;
+  }
+
+  .pixel-btn--full {
+    padding: 15px 22px;
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 768px) {
   .contact-grid {
     grid-template-columns: 1fr;

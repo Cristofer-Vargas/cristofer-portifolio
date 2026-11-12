@@ -4,7 +4,7 @@
   top: 80px;
   left: 0;
   right: 0;
-  height: 1080px;
+  height: 1140px;
   overflow: hidden;
   z-index: 0;
   pointer-events: none;
@@ -260,6 +260,74 @@
   font-weight: 700;
   box-shadow: 3px 3px 0 #000000;
   letter-spacing: 0.05em;
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    padding: 56px 64px 0;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+  }
+
+  .hero__name {
+    font-size: clamp(28px, 2.6vw, 40px);
+  }
+
+  .hero__role {
+    font-size: 21px;
+  }
+
+  .hero__stats-hud {
+    max-width: 580px;
+    padding: 14px 18px;
+    gap: 10px;
+  }
+
+  .stat-slot {
+    font-size: 14px;
+  }
+
+  .stat-tag {
+    min-width: 46px;
+    font-size: 11px;
+  }
+
+  .stat-val {
+    font-size: 13.5px;
+  }
+
+  .portrait-frame {
+    width: 500px;
+    height: 495px;
+  }
+
+  .portrait-square {
+    width: 350px;
+    height: 350px;
+  }
+
+  .portrait-square--front {
+    right: 12px;
+    top: 52px;
+  }
+
+  .portrait-square--back {
+    left: 0;
+    bottom: -12px;
+  }
+
+  .portrait-img {
+    width: 440px;
+    right: 24px;
+    bottom: -12px;
+  }
+
+  .portrait-lvl-tag {
+    top: 64px;
+    left: 24px;
+    font-size: 12px;
+    padding: 5px 12px;
+  }
 }
 
 @media (max-width: 1060px) {

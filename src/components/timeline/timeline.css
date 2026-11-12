@@ -243,6 +243,34 @@
   box-shadow: 2px 2px 0 #000000;
 }
 
+@media (min-width: 1200px) {
+  .timeline-item {
+    grid-template-columns: 140px 1fr;
+    gap: 26px;
+  }
+
+  .timeline-body {
+    padding: 14px 24px 16px;
+  }
+
+  .timeline-role {
+    font-size: 18.5px;
+  }
+
+  .timeline-desc {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .timeline-org {
+    font-size: 15px;
+  }
+
+  .timeline-date {
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 768px) {
   .timeline-item {
     grid-template-columns: 112px 1fr;
