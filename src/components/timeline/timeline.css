@@ -1,324 +1,232 @@
 /* ==========================================================================
-   Death Stranding Minimalist Expedition Archive (Timeline)
+   Timeline Section - Skyrim Quest Journal (Minimalist Nordic)
    ========================================================================== */
 
-.quest-section-header.ds-timeline-head {
+.skyrim-quest-head {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(219, 226, 234, 0.12);
 }
 
-.quest-section-header.ds-timeline-head .section-title {
+.skyrim-quest-head .section-title {
   margin-bottom: 0;
 }
 
-.quest-counter.ds-counter {
-  font-family: var(--font-body);
-  font-size: 10.5px;
+.skyrim-counter {
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: 10px;
   font-weight: 700;
-  color: var(--ds-cyan, #00f0ff);
-  background: rgba(0, 240, 255, 0.1);
-  padding: 4px 10px;
-  border: 1px solid rgba(0, 240, 255, 0.4);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  clip-path: var(--ds-chamfer-sm);
+  letter-spacing: 0.14em;
+  color: var(--skyrim-gold, #e5c158);
 }
 
-.quest-category-title.ds-category-title {
-  margin: 0 0 20px;
-  font-family: var(--font-body);
-  font-size: 14.5px;
-  font-weight: 700;
-  color: var(--ds-gold, #ffb703);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.skyrim-cat-title {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  margin: 0 0 16px;
+  text-transform: uppercase;
 }
 
-.category-icon.ds-cat-icon {
-  font-size: 11px;
-  color: var(--ds-gold, #ffb703);
+.skyrim-cat-title .category-icon {
+  color: var(--skyrim-gold, #e5c158);
+  font-size: 9px;
 }
 
-.quest-category--spaced.ds-category--spaced {
-  margin-top: 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 32px;
+.skyrim-category--spaced {
+  margin-top: 36px;
 }
 
-.timeline.ds-timeline {
+/* Timeline Track */
+.skyrim-timeline {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 16px;
 }
 
-.timeline-item.ds-timeline-item {
+.skyrim-item {
   display: grid;
-  grid-template-columns: 124px 1fr;
+  grid-template-columns: 86px 1fr;
   gap: 20px;
   align-items: stretch;
 }
 
-/* Minimalist Laser Rail */
-.timeline-rail.ds-timeline-rail {
+.skyrim-rail {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 92px;
+  padding: 4px 0;
 }
 
-.timeline-rail.ds-timeline-rail::before {
+.skyrim-rail::before {
   content: "";
   position: absolute;
-  left: 6px;
-  top: 10px;
-  bottom: 10px;
+  top: 14px;
+  bottom: 14px;
+  left: 5px;
   width: 2px;
-  background: linear-gradient(180deg, var(--ds-gold, #ffb703) 0%, rgba(255, 183, 3, 0.3) 100%);
-  z-index: 1;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  background: linear-gradient(
+    180deg,
+    var(--skyrim-gold, #e5c158) 0%,
+    rgba(219, 226, 234, 0.3) 50%,
+    var(--skyrim-gold, #e5c158) 100%
+  );
+  box-shadow: 0 0 6px rgba(229, 193, 88, 0.3);
 }
 
-.timeline-item.ds-timeline-item:not(:last-child) .timeline-rail.ds-timeline-rail::after {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: calc(100% - 10px);
-  height: 48px;
-  width: 0;
-  border-left: 1px dashed rgba(255, 255, 255, 0.3);
-  z-index: 1;
-}
-
-.timeline-point.ds-point {
+.timeline-point {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   position: relative;
   z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 20px;
 }
 
-.timeline-node.ds-node {
-  width: 10px;
-  height: 10px;
+.skyrim-node {
+  width: 12px;
+  height: 12px;
+  background: #080a10;
+  border: 1.5px solid var(--skyrim-gold, #e5c158);
+  box-shadow: 0 0 8px rgba(229, 193, 88, 0.4);
+  transform: rotate(45deg);
   flex-shrink: 0;
-  border-radius: 50%;
-  background-color: var(--ds-gold, #ffb703);
-  border: 2px solid #06080d;
-  box-shadow: 0 0 8px var(--ds-gold, #ffb703);
-  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.timeline-date.ds-date {
-  font-size: 11.5px;
-  font-family: var(--font-body);
-  font-weight: 700;
-  color: var(--text-muted);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  line-height: 1;
-}
-
-.timeline-item.ds-timeline-item:hover .timeline-node.ds-node {
-  background-color: var(--ds-cyan, #00f0ff);
-  box-shadow: 0 0 12px var(--ds-cyan, #00f0ff);
-  transform: scale(1.25);
-}
-
-.timeline-item.ds-timeline-item:hover .timeline-rail.ds-timeline-rail::before {
-  background: var(--ds-cyan, #00f0ff);
-  box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
-}
-
-/* Minimalist Mission Body Card */
-.timeline-body.ds-timeline-body {
-  min-width: 0;
-  padding: 14px 20px 16px;
-  background: rgba(11, 15, 24, 0.72);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-left: 2px solid var(--ds-gold, #ffb703);
-  clip-path: var(--ds-chamfer-sm);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.timeline-item.ds-timeline-item:hover .timeline-body.ds-timeline-body {
-  background: rgba(15, 20, 32, 0.9);
-  border-left-color: var(--ds-cyan, #00f0ff);
-  transform: translateX(4px);
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55), 0 0 12px rgba(0, 240, 255, 0.15);
-}
-
-.timeline-header.ds-timeline-header {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-bottom: 10px;
-}
-
-.timeline-title-row.ds-title-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.timeline-role.ds-role {
-  margin: 0;
-  font-family: var(--font-body);
-  font-size: 16.5px;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.timeline-org.ds-org {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--ds-gold, #ffb703);
-}
-
-.quest-status.ds-status-badge {
-  font-family: var(--font-body);
-  font-size: 9.5px;
-  font-weight: 700;
-  padding: 2px 7px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-radius: 2px;
-}
-
-.quest-status.ds-status-badge--active {
-  color: var(--ds-cyan, #00f0ff);
-  background: rgba(0, 240, 255, 0.12);
-  border: 1px solid rgba(0, 240, 255, 0.45);
-}
-
-.quest-status.ds-status-badge--done {
-  color: var(--retro-xp, #2ed573);
-  background: rgba(46, 213, 115, 0.12);
-  border: 1px solid rgba(46, 213, 115, 0.45);
-}
-
-.timeline-desc.ds-desc {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--text-muted);
-}
-
-.timeline-project.ds-project-loot {
-  margin: 12px 0 0;
-  font-size: 14.5px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.quest-loot-label.ds-loot-tag {
-  font-family: var(--font-body);
+.skyrim-date {
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--ds-cyan, #00f0ff);
+  color: var(--skyrim-silver-muted, #8e9aab);
 }
 
-.project-inline-link.ds-inline-link {
-  display: inline-flex;
-  align-items: center;
+/* Timeline Card Body */
+.skyrim-body {
+  background: rgba(10, 14, 22, 0.7);
+  border: 1px solid rgba(219, 226, 234, 0.12);
+  clip-path: var(--skyrim-notch-sm);
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
-  text-decoration: none;
-  transition: transform 0.15s ease;
+  transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
-.project-inline-link.ds-inline-link:hover {
-  transform: translateY(-1px);
+.skyrim-body:hover {
+  border-color: rgba(229, 193, 88, 0.35);
+  transform: translateX(4px);
 }
 
-.gh-pill.ds-gh-pill {
-  display: inline-block;
+.timeline-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.skyrim-role {
+  margin: 0;
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+}
+
+.skyrim-status--active {
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: 9.5px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: var(--skyrim-gold-bright, #ffe885);
   padding: 2px 8px;
-  background-color: rgba(255, 183, 3, 0.12);
-  color: var(--ds-gold, #ffb703);
-  font-family: var(--font-body);
+  background: rgba(229, 193, 88, 0.12);
+  border: 1px solid rgba(229, 193, 88, 0.35);
+  clip-path: polygon(3px 0, calc(100% - 3px) 0, 100% 3px, 100% calc(100% - 3px), calc(100% - 3px) 100%, 3px 100%, 0 calc(100% - 3px), 0 3px);
+}
+
+.skyrim-status--done {
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
   font-size: 9.5px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border: 1px solid rgba(255, 183, 3, 0.4);
-  clip-path: var(--ds-chamfer-sm);
+  letter-spacing: 0.1em;
+  color: var(--skyrim-silver-muted, #8e9aab);
+  padding: 2px 8px;
+  background: rgba(219, 226, 234, 0.06);
+  border: 1px solid rgba(219, 226, 234, 0.18);
+  clip-path: polygon(3px 0, calc(100% - 3px) 0, 100% 3px, 100% calc(100% - 3px), calc(100% - 3px) 100%, 3px 100%, 0 calc(100% - 3px), 0 3px);
 }
 
-@media (min-width: 1200px) {
-  .timeline-item.ds-timeline-item {
-    grid-template-columns: 140px 1fr;
-    gap: 26px;
-  }
-
-  .timeline-body.ds-timeline-body {
-    padding: 16px 24px;
-  }
-
-  .timeline-role.ds-role {
-    font-size: 17.5px;
-  }
-
-  .timeline-desc.ds-desc {
-    font-size: 15.5px;
-    line-height: 1.7;
-  }
-
-  .timeline-org.ds-org {
-    font-size: 14px;
-  }
+.skyrim-org {
+  font-size: 12px;
+  color: var(--skyrim-gold, #e5c158);
+  font-weight: 500;
 }
 
-@media (max-width: 768px) {
-  .timeline-item.ds-timeline-item {
-    grid-template-columns: 100px 1fr;
-    gap: 12px;
-  }
-
-  .timeline-body.ds-timeline-body {
-    padding: 12px 14px;
-  }
+.skyrim-desc {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-muted);
 }
 
-@media (max-width: 560px) {
-  .timeline-item.ds-timeline-item {
+.skyrim-loot {
+  margin: 4px 0 0;
+  font-size: 11.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loot-label {
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  color: var(--skyrim-silver-muted, #8e9aab);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+}
+
+.skyrim-link {
+  color: var(--skyrim-gold, #e5c158);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gh-pill {
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 1px 6px;
+  background: rgba(229, 193, 88, 0.15);
+  border: 1px solid rgba(229, 193, 88, 0.35);
+  color: var(--skyrim-gold-bright, #ffe885);
+  clip-path: polygon(2px 0, calc(100% - 2px) 0, 100% 2px, 100% calc(100% - 2px), calc(100% - 2px) 100%, 2px 100%, 0 calc(100% - 2px), 0 2px);
+}
+
+@media (max-width: 680px) {
+  .skyrim-item {
     grid-template-columns: 1fr;
     gap: 10px;
   }
 
-  .timeline-rail.ds-timeline-rail {
+  .skyrim-rail {
     flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 16px;
-    min-height: auto;
-    padding-bottom: 8px;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+    padding: 0;
   }
 
-  .timeline-rail.ds-timeline-rail::before,
-  .timeline-item.ds-timeline-item:not(:last-child) .timeline-rail.ds-timeline-rail::after {
+  .skyrim-rail::before {
     display: none;
   }
 }

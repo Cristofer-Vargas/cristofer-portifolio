@@ -1,61 +1,73 @@
 :root {
-  /* Death Stranding Minimalist Sci-Fi Palette */
-  --bg-canvas: #06080d;
-  --bg-shell: #0a0e16;
-  --bg-marquee: #070a10;
-  --bg-card: rgba(14, 18, 28, 0.82);
-  --bg-card-inner: rgba(9, 12, 19, 0.88);
-  --bg-pill: rgba(22, 29, 44, 0.7);
+  /* ==========================================================================
+     Skyrim & Nordic Minimalist Palette
+     ========================================================================== */
+  --bg-canvas: #07090e;
+  --bg-shell: #0a0d14;
+  --bg-marquee: #06080d;
+  --bg-card: rgba(12, 16, 24, 0.86);
+  --bg-card-inner: rgba(9, 12, 18, 0.92);
+  --bg-pill: rgba(20, 27, 40, 0.75);
 
-  /* Chiral Network & Odradek Accents */
-  --accent: #ffb703;
-  --accent-hover: #ffc72c;
-  --accent-dark: #b88200;
-  --highlight: #00f0ff;
+  /* Nordic Gold & Glacial Frost Accents */
+  --skyrim-gold: #e5c158;
+  --skyrim-gold-bright: #ffe885;
+  --skyrim-gold-dim: rgba(229, 193, 88, 0.2);
+  --skyrim-silver: #dbe2ea;
+  --skyrim-silver-bright: #ffffff;
+  --skyrim-silver-muted: #8e9aab;
+  --skyrim-iron: #10141d;
+  --skyrim-iron-deep: #080a10;
+  --skyrim-iron-border: rgba(219, 226, 234, 0.18);
+  --skyrim-frost: #bae6fd;
+  --skyrim-frost-glow: rgba(186, 230, 253, 0.45);
 
-  --retro-hp: #ff4757;
-  --retro-mp: #00f0ff;
-  --retro-xp: #2ed573;
-  --retro-gold: #ffb703;
-  --retro-purple: #a55eea;
+  /* The 3 Iconic Skyrim Vitals Colors */
+  --skyrim-magicka: #38bdf8;
+  --skyrim-magicka-glow: rgba(56, 189, 248, 0.45);
+  --skyrim-health: #ef4444;
+  --skyrim-health-glow: rgba(239, 68, 68, 0.45);
+  --skyrim-stamina: #22c55e;
+  --skyrim-stamina-glow: rgba(34, 197, 94, 0.45);
+
+  /* Aliases for Global Primaries */
+  --accent: #e5c158;
+  --accent-hover: #ffe885;
+  --accent-dark: #b89228;
+  --highlight: #bae6fd;
   --whatsapp-green: #25d366;
 
   /* Typography Colors */
-  --text-main: #f8fafc;
+  --text-main: #f1f5f9;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
   --text-dark: #07090e;
-  --text-footer: #0c1017;
 
-  /* Death Stranding Minimalist Glass & Chamfer Shadows */
-  --shadow-pixel: 0 8px 30px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.06);
-  --shadow-pixel-sm: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
-  --pixel-bevel: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  --pixel-bevel-gold: inset 0 1px 0 rgba(255, 183, 3, 0.25);
+  /* Nordic Iron & Slate Elevation Shadows */
+  --shadow-pixel: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(219, 226, 234, 0.12);
+  --shadow-pixel-sm: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(219, 226, 234, 0.1);
+  --pixel-bevel: inset 0 1px 0 rgba(255, 255, 255, 0.12), inset 0 -1px 0 rgba(0, 0, 0, 0.7);
+  --pixel-bevel-gold: inset 0 1px 0 rgba(229, 193, 88, 0.35);
   --shadow-text: none;
-  --glow-cyan: 0 0 14px rgba(0, 240, 255, 0.35);
-  --glow-gold: 0 0 14px rgba(255, 183, 3, 0.35);
+  --glow-gold: 0 0 14px rgba(229, 193, 88, 0.4);
+  --glow-cyan: 0 0 14px rgba(56, 189, 248, 0.4);
 
-  /* Typography - Sleek Technical Grotesque */
-  --font-display: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* Typography */
+  --font-display: "Cinzel", "Cinzel Decorative", "Trajan Pro", serif;
   --font-body: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-size-base: 16px;
+  --font-size-base: 15.5px;
   --line-height-base: 1.6;
-  --letter-spacing-base: 0.01em;
+  --letter-spacing-base: 0.015em;
 
-  /* Death Stranding 1 Tactical HUD & Chiral Network Tokens */
-  --ds-gold: #ffb703;
-  --ds-gold-glow: rgba(255, 183, 3, 0.45);
-  --ds-gold-dim: rgba(255, 183, 3, 0.14);
-  --ds-cyan: #00f0ff;
-  --ds-cyan-glow: rgba(0, 240, 255, 0.45);
-  --ds-cyan-dim: rgba(0, 240, 255, 0.14);
-  --ds-hud-bg: rgba(9, 13, 20, 0.94);
-  --ds-hud-glass: rgba(15, 20, 31, 0.78);
-  --ds-hud-border: rgba(255, 183, 3, 0.35);
-  --ds-hud-border-cyan: rgba(0, 240, 255, 0.35);
-  --ds-chamfer: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
-  --ds-chamfer-sm: polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px));
+  /* Skyrim Notched Corners & Polygons */
+  --skyrim-notch: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
+  --skyrim-notch-sm: polygon(4px 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px);
+  --ds-chamfer: var(--skyrim-notch);
+  --ds-chamfer-sm: var(--skyrim-notch-sm);
+
+  /* Fonts */
+  --skyrim-font-engraved: "Cinzel", "Cinzel Decorative", "Trajan Pro", serif;
+  --skyrim-font-hud: "Cinzel", "Rubik", sans-serif;
 
   /* Layout */
   --shell-width: 1440px;

@@ -1,258 +1,215 @@
 /* ==========================================================================
-   Death Stranding Minimalist Chiral Comms (Contact Terminal)
+   Contact Section - Skyrim Messenger Raven (Minimalist Nordic)
    ========================================================================== */
 
-.comm-header.ds-comm-header {
+.skyrim-comm-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 16px;
   margin-bottom: 24px;
+  border-bottom: 1px solid rgba(219, 226, 234, 0.12);
 }
 
-.comm-header.ds-comm-header .section-title {
+.skyrim-comm-header .section-title {
   margin-bottom: 0;
 }
 
-.comm-status-pill.ds-comm-pill {
-  font-family: var(--font-body);
+.skyrim-comm-pill {
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
   font-size: 10px;
   font-weight: 700;
-  color: var(--ds-cyan, #00f0ff);
-  background-color: rgba(0, 240, 255, 0.1);
-  padding: 4px 10px;
-  border: 1px solid rgba(0, 240, 255, 0.45);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--skyrim-gold, #e5c158);
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  clip-path: var(--ds-chamfer-sm);
 }
 
-.contact-grid.ds-contact-grid {
+.skyrim-contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.25fr;
   gap: 36px;
   align-items: start;
 }
 
-.contact-intro.ds-contact-intro {
-  margin: 0 0 24px;
-  font-size: 16.5px;
-  line-height: 1.7;
-  color: #cbd5e1;
+.skyrim-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.contact-address.ds-contact-address {
+.skyrim-contact-intro {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.skyrim-contact-address {
   font-style: normal;
 }
 
-.contact-details.ds-contact-details {
+.skyrim-contact-details {
   list-style: none;
-  margin: 0 0 24px;
   padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
+  background: rgba(9, 12, 18, 0.7);
+  border: 1px solid rgba(219, 226, 234, 0.12);
+  clip-path: var(--skyrim-notch-sm);
+  padding: 18px 20px;
 }
 
-.ds-contact-li {
+.skyrim-contact-li {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding-left: 14px;
-  border-left: 2px solid var(--ds-gold, #ffb703);
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(219, 226, 234, 0.08);
 }
 
-.contact-label.ds-contact-label {
-  font-family: var(--font-body);
-  font-size: 10px;
+.skyrim-contact-li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.contact-label {
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: 9.5px;
   font-weight: 700;
-  color: var(--text-dim);
+  letter-spacing: 0.12em;
+  color: var(--skyrim-gold, #e5c158);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 
-.contact-value.ds-contact-val,
-.contact-link.ds-contact-link {
-  font-size: 16px;
-  font-weight: 600;
+.contact-value {
+  font-size: 13.5px;
   color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  color: var(--skyrim-silver, #dbe2ea);
   text-decoration: none;
-  word-break: break-word;
+  font-size: 13.5px;
+  transition: color 0.15s ease, transform 0.15s ease;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: color 0.15s ease;
 }
 
-.contact-link.ds-contact-link:hover {
-  color: var(--ds-gold, #ffb703);
+.contact-link:hover {
+  color: var(--skyrim-gold-bright, #ffe885);
+  transform: translateX(3px);
 }
 
 .contact-link--wa {
   color: #25d366;
+  font-weight: 600;
 }
 
 .contact-link--wa:hover {
-  color: #38ef7d;
+  color: #4ade80;
 }
 
-.wa-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: var(--whatsapp-green);
-  display: inline-block;
-  box-shadow: 0 0 6px var(--whatsapp-green);
-}
-
-.contact-actions.ds-contact-actions {
-  margin-top: 10px;
-}
-
-/* Minimalist Terminal Form */
-.contact-form.ds-contact-form {
+/* Transmission Form */
+.skyrim-contact-form {
+  background: rgba(10, 14, 22, 0.85);
+  border: 1px solid var(--skyrim-iron-border, rgba(219, 226, 234, 0.18));
+  clip-path: var(--skyrim-notch);
+  padding: 24px 26px;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  background: rgba(11, 15, 24, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  padding: 24px;
-  border: 1px solid rgba(255, 183, 3, 0.35);
-  clip-path: var(--ds-chamfer);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.65);
 }
 
-.form-title-row.ds-form-title-row {
+.skyrim-form-title-row {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 6px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 10px;
-  margin-bottom: 4px;
+  border-bottom: 1px solid rgba(219, 226, 234, 0.1);
 }
 
-.form-title-text.ds-form-title-text {
-  font-family: var(--font-body);
-  font-size: 11.5px;
+.form-title-text {
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: 11px;
   font-weight: 700;
-  color: var(--ds-gold, #ffb703);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--skyrim-gold, #e5c158);
 }
 
-.form-title-sub.ds-form-title-sub {
-  font-family: var(--font-body);
-  font-size: 10.5px;
+.form-title-sub {
+  font-size: 11px;
   color: var(--text-dim);
-  text-transform: uppercase;
 }
 
-.form-field.ds-form-field {
+.skyrim-form-field {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.form-field.ds-form-field label {
-  font-family: var(--font-body);
-  font-size: 10.5px;
+.skyrim-form-field label {
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: 10px;
   font-weight: 700;
-  color: var(--text-muted);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
+  color: var(--skyrim-silver, #dbe2ea);
   text-transform: uppercase;
 }
 
-.form-field.ds-form-field input,
-.form-field.ds-form-field textarea {
+.skyrim-form-field input,
+.skyrim-form-field textarea {
   width: 100%;
-  padding: 11px 13px;
-  background-color: rgba(6, 9, 14, 0.9);
-  color: var(--text-main);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  font-family: var(--font-body);
-  font-size: 14.5px;
-  outline: none;
-  clip-path: var(--ds-chamfer-sm);
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
-}
-
-.form-field.ds-form-field input:focus,
-.form-field.ds-form-field textarea:focus {
-  border-color: var(--ds-cyan, #00f0ff);
-  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
-}
-
-.form-status.ds-form-status {
-  margin: 4px 0 0;
-  min-height: 20px;
+  padding: 10px 14px;
+  background: rgba(6, 8, 12, 0.9);
+  border: 1px solid rgba(219, 226, 234, 0.18);
+  clip-path: polygon(3px 0, calc(100% - 3px) 0, 100% 3px, 100% calc(100% - 3px), calc(100% - 3px) 100%, 3px 100%, 0 calc(100% - 3px), 0 3px);
+  color: #ffffff;
   font-family: var(--font-body);
   font-size: 13.5px;
-  font-weight: 600;
-  color: var(--ds-gold, #ffb703);
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
-.form-status.ds-form-status.is-success {
+.skyrim-form-field input:focus,
+.skyrim-form-field textarea:focus {
+  border-color: var(--skyrim-gold, #e5c158);
+  box-shadow: 0 0 12px rgba(229, 193, 88, 0.35);
+}
+
+.skyrim-form-field textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-status {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form-status.is-success {
   color: #25d366;
 }
 
-.form-status.ds-form-status.is-error {
-  color: var(--retro-hp);
+.form-status.is-error {
+  color: var(--skyrim-health, #ef4444);
 }
 
-@media (min-width: 1200px) {
-  .contact-grid.ds-contact-grid {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 48px;
-  }
-
-  .contact-intro.ds-contact-intro {
-    font-size: 17.5px;
-    line-height: 1.75;
-    margin-bottom: 28px;
-  }
-
-  .contact-details.ds-contact-details {
-    gap: 18px;
-  }
-
-  .contact-details.ds-contact-details li {
-    padding-left: 16px;
-    border-left-width: 3px;
-  }
-
-  .contact-label.ds-contact-label {
-    font-size: 11px;
-  }
-
-  .contact-value.ds-contact-val,
-  .contact-link.ds-contact-link {
-    font-size: 17px;
-  }
-
-  .contact-form.ds-contact-form {
-    padding: 28px 32px;
-    gap: 16px;
-  }
-
-  .form-field.ds-form-field input,
-  .form-field.ds-form-field textarea {
-    padding: 12px 14px;
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .contact-grid.ds-contact-grid {
+@media (max-width: 860px) {
+  .skyrim-contact-grid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
   }
 }

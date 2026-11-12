@@ -1,23 +1,23 @@
 /* ==========================================================================
-   Death Stranding Minimalist Primitives (Cards, Typography, Tags & Buttons)
+   Skyrim & Nordic Minimalist Primitives (Cards, Typography, Tags & Buttons)
    ========================================================================== */
 
 .section-wrap {
   position: relative;
   z-index: 3;
-  padding: 0 48px 36px;
+  padding: 0 48px 40px;
 }
 
-/* Minimalist Tactical Glass Card */
+/* Minimalist Nordic Slate & Iron Card */
 .pixel-card {
   background-color: var(--bg-card);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--skyrim-iron-border, rgba(219, 226, 234, 0.18));
   box-shadow: var(--shadow-pixel);
-  padding: 36px;
+  padding: 34px 38px;
   position: relative;
-  clip-path: var(--ds-chamfer);
+  clip-path: var(--skyrim-notch);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -28,8 +28,15 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, var(--ds-gold, #ffb703) 25%, transparent 70%);
-  opacity: 0.65;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(229, 193, 88, 0.5) 25%,
+    var(--skyrim-silver, #dbe2ea) 50%,
+    rgba(229, 193, 88, 0.5) 75%,
+    transparent 100%
+  );
+  opacity: 0.7;
   pointer-events: none;
 }
 
@@ -37,15 +44,15 @@
   box-shadow: var(--shadow-pixel);
 }
 
-/* Death Stranding Minimalist Section Header */
+/* Skyrim Quest Journal Section Header */
 .section-title {
-  margin: 0 0 24px;
-  font-family: var(--font-body);
-  font-size: clamp(20px, 2.2vw, 26px);
+  margin: 0 0 20px;
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: clamp(20px, 2.2vw, 25px);
   font-weight: 700;
   line-height: 1.35;
-  color: var(--ds-gold, #ffb703);
-  letter-spacing: 0.08em;
+  color: var(--skyrim-gold, #e5c158);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -53,18 +60,15 @@
 }
 
 .section-title::before {
-  content: "";
-  display: inline-block;
-  width: 5px;
-  height: 18px;
-  background-color: var(--ds-gold, #ffb703);
-  box-shadow: 0 0 8px var(--ds-gold-glow, rgba(255, 183, 3, 0.45));
+  content: "◆";
+  font-size: 11px;
+  color: var(--skyrim-gold-bright, #ffe885);
+  filter: drop-shadow(0 0 6px rgba(229, 193, 88, 0.6));
   flex-shrink: 0;
-  border-radius: 1px;
 }
 
 .section-title--spaced {
-  margin-top: 48px;
+  margin-top: 44px;
 }
 
 .section-title--center {
@@ -78,8 +82,8 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  margin-bottom: 28px;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 .section-head-row .section-title {
@@ -88,29 +92,29 @@
 
 .hl {
   background: transparent;
-  color: var(--ds-gold, #ffb703);
+  color: var(--skyrim-gold, #e5c158);
   font-weight: 600;
   text-decoration: underline;
-  text-decoration-color: rgba(255, 183, 3, 0.4);
-  text-decoration-thickness: 1.5px;
+  text-decoration-color: rgba(229, 193, 88, 0.35);
+  text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 
-/* Minimalist Badges & Tactical Chips */
+/* Minimalist Nordic Badges */
 .badge-accent {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 3px 10px;
-  background-color: rgba(255, 183, 3, 0.14);
-  color: var(--ds-gold, #ffb703);
-  border: 1px solid rgba(255, 183, 3, 0.45);
-  font-family: var(--font-body);
+  background-color: rgba(229, 193, 88, 0.12);
+  color: var(--skyrim-gold, #e5c158);
+  border: 1px solid rgba(229, 193, 88, 0.4);
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  clip-path: var(--ds-chamfer-sm);
+  clip-path: var(--skyrim-notch-sm);
 }
 
 .badge-xp {
@@ -118,15 +122,15 @@
   align-items: center;
   gap: 5px;
   padding: 2px 8px;
-  background-color: rgba(0, 240, 255, 0.12);
-  color: var(--ds-cyan, #00f0ff);
-  border: 1px solid rgba(0, 240, 255, 0.4);
-  font-family: var(--font-body);
+  background-color: rgba(56, 189, 248, 0.12);
+  color: var(--skyrim-magicka, #38bdf8);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  clip-path: var(--ds-chamfer-sm);
+  clip-path: var(--skyrim-notch-sm);
 }
 
 .badge-wa {
@@ -137,87 +141,87 @@
   background-color: rgba(37, 211, 102, 0.12);
   color: #25d366;
   border: 1px solid rgba(37, 211, 102, 0.4);
-  font-family: var(--font-body);
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  clip-path: var(--ds-chamfer-sm);
+  clip-path: var(--skyrim-notch-sm);
 }
 
 .tag-pill {
   display: inline-flex;
   align-items: center;
-  padding: 4px 10px;
+  padding: 3px 9px;
   background-color: var(--bg-pill);
   color: var(--text-main);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(219, 226, 234, 0.14);
   clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px));
   transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .tag-pill:hover {
   transform: translateY(-1px);
-  background-color: rgba(255, 183, 3, 0.15);
-  color: var(--ds-gold, #ffb703);
-  border-color: var(--ds-gold, #ffb703);
-  box-shadow: 0 0 10px rgba(255, 183, 3, 0.25);
+  background-color: rgba(229, 193, 88, 0.15);
+  color: var(--skyrim-gold, #e5c158);
+  border-color: var(--skyrim-gold, #e5c158);
+  box-shadow: 0 0 10px rgba(229, 193, 88, 0.25);
 }
 
-/* Minimalist Chamfered Buttons */
+/* Minimalist Skyrim Forged Iron Buttons */
 .pixel-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 10px 22px;
-  background-color: rgba(14, 19, 29, 0.88);
+  background-color: rgba(16, 22, 32, 0.9);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  color: var(--text-main);
-  border: 1px solid rgba(255, 183, 3, 0.4);
-  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
-  font-family: var(--font-body);
-  font-size: 12.5px;
+  color: var(--skyrim-silver, #dbe2ea);
+  border: 1px solid rgba(229, 193, 88, 0.35);
+  clip-path: var(--skyrim-notch-sm);
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  transition: transform 0.12s ease, background-color 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.15s ease, background-color 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, color 0.18s ease;
   user-select: none;
   text-decoration: none;
 }
 
 .pixel-btn:hover,
 .pixel-btn:focus-visible {
-  background-color: rgba(255, 183, 3, 0.18);
+  background-color: rgba(24, 32, 48, 0.95);
   color: #ffffff;
-  border-color: var(--ds-gold, #ffb703);
+  border-color: var(--skyrim-gold, #e5c158);
   transform: translateY(-2px);
-  box-shadow: 0 0 14px rgba(255, 183, 3, 0.35);
+  box-shadow: 0 0 16px rgba(229, 193, 88, 0.35);
 }
 
 .pixel-btn:active {
   transform: translateY(0);
-  box-shadow: 0 0 6px rgba(255, 183, 3, 0.2);
+  box-shadow: 0 0 6px rgba(229, 193, 88, 0.2);
 }
 
 .pixel-btn--primary {
-  background-color: var(--ds-gold, #ffb703);
-  color: #07090e;
-  border-color: var(--ds-gold, #ffb703);
-  box-shadow: 0 0 14px rgba(255, 183, 3, 0.35);
+  background: linear-gradient(135deg, rgba(229, 193, 88, 0.9) 0%, rgba(184, 146, 40, 0.9) 100%);
+  color: #080a10;
+  border-color: var(--skyrim-gold, #e5c158);
+  box-shadow: 0 0 14px rgba(229, 193, 88, 0.35);
 }
 
 .pixel-btn--primary:hover,
 .pixel-btn--primary:focus-visible {
-  background-color: #ffc72c;
+  background: linear-gradient(135deg, #ffe885 0%, #e5c158 100%);
   color: #000000;
-  box-shadow: 0 0 20px rgba(255, 183, 3, 0.55);
+  box-shadow: 0 0 22px rgba(229, 193, 88, 0.55);
 }
 
 .pixel-btn--whatsapp {
@@ -229,7 +233,7 @@
 .pixel-btn--whatsapp:hover,
 .pixel-btn--whatsapp:focus-visible {
   background-color: #25d366;
-  color: #07090e;
+  color: #080a10;
   box-shadow: 0 0 16px rgba(37, 211, 102, 0.45);
 }
 
@@ -238,17 +242,16 @@
   padding: 13px 20px;
 }
 
-/* Animations */
+/* Animations & Utilities */
 @keyframes pixel-float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+  50% { transform: translateY(-4px); }
 }
 
 .pixel-float {
-  animation: pixel-float 3.5s ease-in-out infinite;
+  animation: pixel-float 4s ease-in-out infinite;
 }
 
-/* Scroll reveal utility */
 .reveal {
   opacity: 0;
   transform: translateY(16px);
@@ -266,7 +269,7 @@
   }
 
   .pixel-card {
-    padding: 40px 44px;
+    padding: 38px 44px;
   }
 }
 
@@ -280,11 +283,11 @@
   }
 
   .section-title {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   .pixel-btn {
-    font-size: 12px;
+    font-size: 11px;
     padding: 9px 16px;
   }
 }

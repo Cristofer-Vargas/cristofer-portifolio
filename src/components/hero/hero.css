@@ -1,14 +1,14 @@
 /* ==========================================================================
-   Hero Section & Death Stranding Bridges Loadout HUD (Minimalist)
+   Hero Section & Skyrim Dovahkiin Character Sheet (Minimalist Nordic)
    ========================================================================== */
 
 /* Full-bleed atmospheric hero backdrop */
 .hero-backdrop {
   position: absolute;
-  top: 70px;
+  top: 0;
   left: 0;
   right: 0;
-  height: 1140px;
+  height: 1180px;
   overflow: hidden;
   z-index: 0;
   pointer-events: none;
@@ -19,8 +19,8 @@
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  filter: brightness(0.4) contrast(1.15) saturate(0.6);
-  opacity: 0.28;
+  filter: brightness(0.35) contrast(1.15) saturate(0.5);
+  opacity: 0.25;
 }
 
 .hero-backdrop__fade {
@@ -28,570 +28,357 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(6, 8, 13, 0.4) 0%,
-    rgba(6, 8, 13, 0.85) 60%,
+    rgba(7, 9, 14, 0.4) 0%,
+    rgba(7, 9, 14, 0.88) 60%,
     var(--bg-canvas) 100%
   );
 }
 
-/* Death Stranding Bridges Marquee Banner */
-.marquee-bar.ds-marquee {
-  height: 42px;
-  background-color: rgba(6, 8, 13, 0.95);
-  border-top: 1px solid rgba(255, 183, 3, 0.2);
-  border-bottom: 1px solid rgba(255, 183, 3, 0.2);
+/* Skyrim Nordic Rune Marquee Strip */
+.marquee-bar.skyrim-marquee {
+  height: 38px;
+  background-color: rgba(7, 9, 14, 0.95);
+  border-top: 1px solid rgba(229, 193, 88, 0.2);
+  border-bottom: 1px solid rgba(229, 193, 88, 0.2);
   overflow: hidden;
   display: flex;
   align-items: center;
-  user-select: none;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
 }
 
 .marquee-track {
-  display: flex;
-  align-items: center;
-  gap: 36px;
-  width: max-content;
-  animation: marquee-scroll 30s linear infinite;
-}
-
-.marquee-bar:hover .marquee-track {
-  animation-play-state: paused;
-}
-
-.marquee-track span {
-  font-family: var(--font-body);
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #475569;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  display: inline-flex;
   white-space: nowrap;
-  transition: color 0.2s ease;
+  animation: marquee-scroll 45s linear infinite;
+  gap: 24px;
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--skyrim-silver-muted, #8e9aab);
+  text-transform: uppercase;
 }
 
-.marquee-bar:hover .marquee-track span {
-  color: var(--ds-gold, #ffb703);
+.marquee-track span:nth-child(4n + 1) {
+  color: var(--skyrim-gold, #e5c158);
+}
+
+.marquee-track span:nth-child(2n) {
+  color: rgba(229, 193, 88, 0.4);
 }
 
 @keyframes marquee-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-/* Hero Main Section Grid */
+/* Main Hero Grid Layout */
 .hero {
   position: relative;
-  z-index: 1;
-  padding: 48px 56px 0;
+  z-index: 2;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  gap: 36px;
+  gap: 48px;
+  padding: 48px 48px 40px;
 }
 
 .hero__content {
-  padding-bottom: 48px;
-}
-
-/* Death Stranding Badge Row */
-.hero__badge-row.ds-badge-row {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skyrim-badge-row {
+  display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 18px;
-}
-
-.ds-hud-chip {
-  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px));
+  gap: 8px;
+  margin-bottom: 4px;
 }
 
-.ds-hud-chip--chiral {
-  background: rgba(255, 183, 3, 0.12);
-  color: var(--ds-gold, #ffb703);
-  border: 1px solid rgba(255, 183, 3, 0.45);
-  box-shadow: 0 0 10px rgba(255, 183, 3, 0.2);
-}
-
-.ds-hud-chip--cyan {
-  background: rgba(0, 240, 255, 0.12);
-  color: var(--ds-cyan, #00f0ff);
-  border: 1px solid rgba(0, 240, 255, 0.45);
-  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
-}
-
-.ds-hud-chip--slate {
-  background: rgba(20, 26, 38, 0.85);
-  color: var(--text-main);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+.badge-pip {
+  color: var(--skyrim-gold-bright, #ffe885);
+  font-size: 8px;
+  margin-right: 2px;
 }
 
 .hero__name {
-  margin: 0 0 20px;
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: clamp(28px, 3vw, 44px);
-  line-height: 1.25;
+  margin: 0;
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: clamp(34px, 4.2vw, 54px);
+  font-weight: 900;
+  line-height: 1.1;
   color: #ffffff;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
 }
 
-.hero__roles {
-  list-style: none;
-  margin: 0 0 20px;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.hero__tagline {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 600px;
 }
 
-.hero__role {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 19px;
+.hero__tagline strong {
+  color: #ffffff;
   font-weight: 600;
-  color: var(--text-main);
-}
-
-.hero__role-icon {
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
-  opacity: 0.9;
 }
 
 /* ==========================================================================
-   Death Stranding Bridges Cargo & Capability Loadout HUD
+   Skyrim Skill Mastery HUD
    ========================================================================== */
-
-.hero__stats-hud.ds-loadout-hud {
+.skyrim-skill-hud {
+  background: rgba(12, 16, 24, 0.88);
+  border: 1px solid var(--skyrim-iron-border, rgba(219, 226, 234, 0.18));
+  clip-path: var(--skyrim-notch);
+  padding: 20px 24px;
   display: flex;
   flex-direction: column;
-  background: rgba(10, 14, 22, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--ds-hud-border, rgba(255, 183, 3, 0.35));
-  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
-  box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.65),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
-  padding: 16px 20px;
-  margin: 0 0 24px;
-  max-width: 540px;
+  gap: 14px;
+  margin-top: 4px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-pixel);
+  position: relative;
 }
 
-.ds-loadout-header {
+.skyrim-skill-hud::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--skyrim-gold), transparent);
+  opacity: 0.6;
+}
+
+.skyrim-hud-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 8px;
-  margin-bottom: 12px;
-}
-
-.ds-loadout-title-wrap {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.ds-loadout-icon {
-  color: var(--ds-gold, #ffb703);
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(219, 226, 234, 0.1);
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
   font-size: 11px;
-}
-
-.ds-loadout-title {
-  font-family: var(--font-body);
-  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--ds-gold, #ffb703);
-  text-transform: uppercase;
 }
 
-.ds-loadout-status {
-  font-family: var(--font-body);
+.skyrim-head-title {
+  color: var(--skyrim-gold, #e5c158);
+}
+
+.skyrim-head-dragon {
+  color: var(--skyrim-frost, #bae6fd);
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--ds-cyan, #00f0ff);
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
 }
 
-.ds-loadout-slots {
+.skyrim-skill-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.stat-slot.ds-loadout-slot {
-  display: grid;
-  grid-template-columns: 145px 1fr auto;
-  align-items: center;
-  gap: 12px;
+.skyrim-skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.ds-slot-lead {
+.skill-item-header {
   display: flex;
   align-items: center;
-  gap: 8px;
-}
-
-.stat-tag.ds-loadout-tag {
-  font-family: var(--font-body);
-  font-size: 9.5px;
+  justify-content: space-between;
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  padding: 2px 6px;
-  border-radius: 2px;
-  text-transform: uppercase;
-  min-width: 44px;
-  text-align: center;
+  letter-spacing: 0.08em;
 }
 
-.stat-tag.ds-loadout-tag--atk {
-  background: rgba(255, 183, 3, 0.14);
-  color: var(--ds-gold, #ffb703);
-  border: 1px solid rgba(255, 183, 3, 0.5);
+.skill-rune {
+  color: var(--skyrim-frost, #bae6fd);
+  font-size: 12px;
+  margin-right: 6px;
 }
 
-.stat-tag.ds-loadout-tag--def {
-  background: rgba(0, 240, 255, 0.14);
-  color: var(--ds-cyan, #00f0ff);
-  border: 1px solid rgba(0, 240, 255, 0.5);
+.skill-name {
+  color: #ffffff;
+  flex-grow: 1;
 }
 
-.stat-tag.ds-loadout-tag--agi {
-  background: rgba(46, 213, 115, 0.14);
-  color: var(--retro-xp, #2ed573);
-  border: 1px solid rgba(46, 213, 115, 0.5);
+.skill-val {
+  color: var(--skyrim-gold, #e5c158);
 }
 
-.ds-slot-label {
-  font-family: var(--font-body);
-  font-size: 10.5px;
-  font-weight: 600;
+.skill-desc {
+  margin: 0;
+  font-size: 12px;
   color: var(--text-dim);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
 }
 
-.stat-val.ds-slot-desc {
-  color: var(--text-muted);
-  font-size: 13px;
-  line-height: 1.4;
-  font-weight: 500;
-}
-
-.ds-slot-gauge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.ds-meter-bars {
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-}
-
-.ds-meter-bars span {
-  display: inline-block;
-  width: 3px;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.12);
+.skill-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(5, 7, 10, 0.85);
+  border: 1px solid rgba(219, 226, 234, 0.18);
   border-radius: 1px;
+  overflow: hidden;
+  margin-top: 2px;
 }
 
-.ds-meter-bars span.is-filled {
-  background-color: var(--ds-gold, #ffb703);
-  box-shadow: 0 0 5px rgba(255, 183, 3, 0.6);
+.skill-progress-fill {
+  height: 100%;
+  transition: width 0.5s ease;
 }
 
-.ds-meter-bars--cyan span.is-filled {
-  background-color: var(--ds-cyan, #00f0ff);
-  box-shadow: 0 0 5px rgba(0, 240, 255, 0.6);
+.fill--gold {
+  background: linear-gradient(90deg, #b89228 0%, var(--skyrim-gold) 100%);
+  box-shadow: 0 0 8px rgba(229, 193, 88, 0.5);
 }
 
-.ds-meter-bars--emerald span.is-filled {
-  background-color: var(--retro-xp, #2ed573);
-  box-shadow: 0 0 5px rgba(46, 213, 115, 0.6);
+.fill--cyan {
+  background: linear-gradient(90deg, #1d4ed8 0%, var(--skyrim-magicka) 100%);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
 }
 
-.ds-gauge-val {
-  font-family: var(--font-body);
-  font-size: 10.5px;
-  font-weight: 700;
-  color: var(--ds-gold, #ffb703);
-  min-width: 28px;
-  text-align: right;
-}
-
-.ds-gauge-val--cyan {
-  color: var(--ds-cyan, #00f0ff);
-}
-
-.ds-gauge-val--emerald {
-  color: var(--retro-xp, #2ed573);
+.fill--green {
+  background: linear-gradient(90deg, #166534 0%, var(--skyrim-stamina) 100%);
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
 }
 
 .hero__stack {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 8px;
 }
 
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 26px;
-}
-
-.hero__actions .pixel-btn {
-  text-decoration: none;
+  margin-top: 6px;
 }
 
 /* ==========================================================================
-   Portrait & Floating Death Stranding Porter Grade Badge
+   Portrait & Nordic Frame
    ========================================================================== */
-
 .hero__visual {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  align-self: end;
-  padding-top: 8px;
+  align-items: center;
 }
 
-.portrait-frame {
+.skyrim-portrait-frame {
   position: relative;
-  width: 460px;
-  height: 460px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 360px;
+  background: linear-gradient(180deg, rgba(16, 22, 32, 0.95) 0%, rgba(8, 11, 17, 0.98) 100%);
+  border: 1px solid var(--skyrim-iron-border, rgba(219, 226, 234, 0.22));
+  clip-path: var(--skyrim-notch);
+  padding: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
 }
 
-.ds-portrait-plate {
+.skyrim-portrait-notches {
   position: absolute;
-  inset: 20px 20px 0 20px;
-  background: linear-gradient(145deg, rgba(16, 22, 34, 0.85) 0%, rgba(9, 13, 20, 0.95) 100%);
-  border: 1px solid rgba(255, 183, 3, 0.35);
-  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), inset 0 0 24px rgba(255, 183, 3, 0.04);
+  inset: 0;
+  pointer-events: none;
 }
 
-.ds-plate-tick {
+.skyrim-portrait-notches .notch {
   position: absolute;
-  color: var(--ds-gold, #ffb703);
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 700;
+  color: var(--skyrim-gold, #e5c158);
+  font-size: 8px;
   line-height: 1;
-  opacity: 0.8;
 }
 
-.ds-plate-tick--tl { top: 10px; left: 10px; }
-.ds-plate-tick--tr { top: 10px; right: 10px; }
-.ds-plate-tick--bl { bottom: 10px; left: 10px; }
-.ds-plate-tick--br { bottom: 10px; right: 10px; }
-
-.ds-plate-coord {
-  position: absolute;
-  bottom: 12px;
-  left: 28px;
-  font-family: var(--font-body);
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--text-dim);
-  text-transform: uppercase;
-}
+.notch--tl { top: 6px; left: 6px; }
+.notch--tr { top: 6px; right: 6px; }
+.notch--bl { bottom: 6px; left: 6px; }
+.notch--br { bottom: 6px; right: 6px; }
 
 .portrait-img {
-  position: absolute;
-  right: 28px;
-  bottom: -6px;
-  width: 400px;
+  width: 100%;
   height: auto;
-  object-fit: contain;
-  z-index: 3;
-  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.6));
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  clip-path: polygon(4px 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px);
+  filter: contrast(1.05) brightness(0.96);
+  border: 1px solid rgba(219, 226, 234, 0.1);
 }
 
-.portrait-lvl-tag.ds-grade-badge {
+/* Floating Skyrim Level Badge */
+.skyrim-level-tag {
   position: absolute;
-  top: 50px;
-  left: 10px;
-  z-index: 4;
-  background: rgba(9, 13, 20, 0.95);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: var(--ds-gold, #ffb703);
-  border: 1px solid var(--ds-gold, #ffb703);
-  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
-  padding: 6px 14px;
-  box-shadow:
-    0 0 16px rgba(255, 183, 3, 0.35),
-    0 4px 12px rgba(0, 0, 0, 0.6);
+  bottom: -12px;
+  right: 18px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  padding: 8px 16px;
+  background: rgba(12, 16, 24, 0.95);
+  border: 1px solid var(--skyrim-gold, #e5c158);
+  clip-path: var(--skyrim-notch-sm);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8), 0 0 14px rgba(229, 193, 88, 0.35);
+  backdrop-filter: blur(8px);
 }
 
-.ds-grade-star {
-  color: var(--ds-gold, #ffb703);
-  font-size: 16px;
-  line-height: 1;
-  filter: drop-shadow(0 0 6px var(--ds-gold, #ffb703));
+.skyrim-tag-diamond {
+  color: var(--skyrim-gold-bright, #ffe885);
+  font-size: 11px;
 }
 
-.ds-grade-details {
+.skyrim-tag-details {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  line-height: 1.1;
 }
 
-.ds-grade-sub {
+.tag-title {
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
   font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--text-dim);
-  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--skyrim-gold, #e5c158);
 }
 
-.ds-grade-main {
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 700;
+.tag-val {
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: 13px;
+  font-weight: 900;
+  color: #ffffff;
   letter-spacing: 0.08em;
-  color: var(--ds-gold, #ffb703);
-  text-transform: uppercase;
 }
 
-/* ==========================================================================
-   Responsive Breakpoints & 1440px Optimization
-   ========================================================================== */
-
+/* Responsive Adaptations */
 @media (min-width: 1200px) {
   .hero {
-    padding: 56px 64px 0;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 48px;
-  }
-
-  .hero__name {
-    font-size: clamp(32px, 2.8vw, 44px);
-  }
-
-  .hero__role {
-    font-size: 21px;
-  }
-
-  .hero__stats-hud.ds-loadout-hud {
-    max-width: 580px;
-    padding: 18px 22px;
-  }
-
-  .stat-slot.ds-loadout-slot {
-    grid-template-columns: 155px 1fr auto;
-    gap: 14px;
-  }
-
-  .stat-val.ds-slot-desc {
-    font-size: 13.5px;
-  }
-
-  .portrait-frame {
-    width: 500px;
-    height: 495px;
-  }
-
-  .portrait-img {
-    width: 440px;
-    right: 28px;
-    bottom: -6px;
-  }
-
-  .portrait-lvl-tag.ds-grade-badge {
-    top: 56px;
-    left: 16px;
-    padding: 8px 16px;
+    padding: 56px 64px 44px;
+    gap: 60px;
   }
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 980px) {
   .hero {
     grid-template-columns: 1fr;
-    padding: 40px 32px 0;
-    gap: 24px;
-  }
-
-  .hero__content {
-    text-align: left;
-    padding-bottom: 8px;
+    gap: 36px;
+    padding: 32px 20px 28px;
   }
 
   .hero__visual {
-    padding-top: 8px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding: 30px 20px 0;
-    gap: 16px;
+    order: -1;
   }
 
-  .stat-slot.ds-loadout-slot {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
-
-  .ds-slot-lead {
-    justify-content: space-between;
-  }
-
-  .ds-slot-gauge {
-    justify-content: flex-end;
-    margin-top: 2px;
-  }
-
-  .portrait-frame {
-    width: 320px;
-    height: 345px;
-  }
-
-  .portrait-img {
-    width: 290px;
-    right: 14px;
-    bottom: -6px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
+  .skyrim-portrait-frame {
+    max-width: 280px;
   }
 }

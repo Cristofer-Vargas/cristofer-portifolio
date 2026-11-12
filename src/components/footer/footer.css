@@ -1,10 +1,14 @@
-.site-footer {
+/* ==========================================================================
+   Footer Section - Skyrim Sanctuary of High Hrothgar (Minimalist Nordic)
+   ========================================================================== */
+
+.site-footer.skyrim-footer {
   margin-top: 48px;
-  background: linear-gradient(180deg, rgba(8, 11, 18, 0.95) 0%, rgba(4, 6, 10, 1) 100%);
+  background: linear-gradient(180deg, rgba(10, 13, 20, 0.98) 0%, rgba(5, 7, 11, 1) 100%);
   color: var(--text-main);
   padding: 40px 40px 24px;
-  border-top: 1px solid rgba(255, 183, 3, 0.28);
-  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(229, 193, 88, 0.28);
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   position: relative;
 }
 
@@ -15,63 +19,59 @@
   left: 20%;
   width: 60%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--ds-gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--skyrim-gold, #e5c158), transparent);
 }
 
-.site-footer__banner {
+.skyrim-footer__banner {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 20px 24px;
-  background: rgba(14, 18, 28, 0.6);
-  border: 1px solid rgba(255, 183, 3, 0.22);
-  clip-path: var(--ds-chamfer);
+  background: rgba(12, 16, 24, 0.75);
+  border: 1px solid rgba(229, 193, 88, 0.25);
+  clip-path: var(--skyrim-notch);
   margin-bottom: 36px;
   text-align: center;
   backdrop-filter: blur(8px);
-  position: relative;
 }
 
-.footer-banner-telemetry {
+.skyrim-footer-runes {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-display);
-  font-size: 10.5px;
-  letter-spacing: 0.12em;
-  color: var(--text-dim);
+  gap: 8px;
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--skyrim-silver-muted, #8e9aab);
   text-transform: uppercase;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.footer-banner-telemetry .telemetry-div {
-  color: rgba(255, 183, 3, 0.4);
+.skyrim-footer-runes .rune-glyph {
+  color: var(--skyrim-frost, #bae6fd);
+  text-shadow: 0 0 8px rgba(186, 230, 253, 0.4);
 }
 
-.footer-banner-telemetry .chiral-sync {
-  color: var(--ds-cyan);
-}
-
-.stage-clear-tag {
-  font-family: var(--font-display);
-  font-size: 13px;
+.skyrim-clear-tag {
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: 14px;
   font-weight: 700;
-  color: var(--ds-gold);
+  color: var(--skyrim-gold, #e5c158);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.skyrim-clear-sub {
+  font-size: 11.5px;
+  color: var(--text-muted);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.stage-clear-sub {
-  font-size: 12px;
-  color: var(--text-muted);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.site-footer__grid {
+.skyrim-footer__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
@@ -80,20 +80,20 @@
 
 .footer-col__title {
   margin: 0 0 16px;
-  font-family: var(--font-display);
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
   font-size: 12.5px;
   font-weight: 700;
   color: #ffffff;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   display: flex;
   align-items: center;
 }
 
 .col-indicator {
-  color: var(--ds-gold);
+  color: var(--skyrim-gold, #e5c158);
   margin-right: 6px;
-  font-family: monospace;
+  font-size: 8px;
 }
 
 .footer-col__list {
@@ -118,7 +118,7 @@
 
 .footer-col__list a span {
   font-size: 11px;
-  color: var(--ds-cyan);
+  color: var(--skyrim-gold, #e5c158);
   opacity: 0.7;
   transition: transform 0.15s ease, opacity 0.15s ease;
 }
@@ -130,19 +130,18 @@
 
 .footer-col__list a:hover span {
   opacity: 1;
+  color: var(--skyrim-gold-bright, #ffe885);
   transform: translate(2px, -2px);
-  color: var(--ds-gold);
 }
 
 .footer-col__static {
   color: var(--text-dim);
   font-size: 13px;
-  font-family: var(--font-body);
 }
 
-.site-footer__bottom {
+.skyrim-footer__bottom {
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(219, 226, 234, 0.08);
 }
 
 .footer-bottom-line {
@@ -150,20 +149,21 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  font-size: 11.5px;
-  letter-spacing: 0.06em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   color: var(--text-dim);
   text-transform: uppercase;
 }
 
 .footer-system-tag {
-  color: var(--ds-cyan);
-  opacity: 0.75;
-  font-family: var(--font-display);
-  font-size: 10.5px;
+  color: var(--skyrim-frost, #bae6fd);
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: 10px;
+  letter-spacing: 0.12em;
 }
 
-.back-to-top {
+/* Fixed Back to Top Button */
+.skyrim-back-to-top {
   position: fixed;
   right: 24px;
   bottom: 24px;
@@ -175,77 +175,53 @@
   width: 48px;
   height: 48px;
   padding: 0;
-  background: rgba(10, 14, 22, 0.88);
-  border: 1px solid rgba(255, 183, 3, 0.35);
-  color: var(--ds-gold);
-  clip-path: polygon(0 8px, 8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+  background: rgba(12, 16, 24, 0.92);
+  border: 1px solid var(--skyrim-gold, #e5c158);
+  color: var(--skyrim-gold, #e5c158);
+  clip-path: var(--skyrim-notch-sm);
   backdrop-filter: blur(8px);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 183, 3, 0.05);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 10px rgba(229, 193, 88, 0.25);
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  transition: all 0.2s ease;
 }
 
-.back-to-top[hidden] {
+.skyrim-back-to-top[hidden] {
   display: none;
 }
 
 .back-to-top__icon {
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1;
 }
 
 .back-to-top__text {
-  font-family: var(--font-display);
-  font-size: 9px;
+  font-family: var(--skyrim-font-engraved, "Cinzel", serif);
+  font-size: 8.5px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   line-height: 1;
   margin-top: 3px;
 }
 
-.back-to-top:hover {
-  background: var(--ds-gold);
-  color: #06080d;
-  border-color: var(--ds-gold);
+.skyrim-back-to-top:hover {
+  background: var(--skyrim-gold, #e5c158);
+  color: #080a10;
   transform: translateY(-3px);
-  box-shadow: 0 0 20px rgba(255, 183, 3, 0.45);
+  box-shadow: 0 0 20px rgba(229, 193, 88, 0.6);
 }
 
 @media (min-width: 1200px) {
-  .site-footer {
-    padding: 48px 56px 28px;
-  }
-
-  .site-footer__banner {
-    padding: 24px 32px;
-    margin-bottom: 40px;
-  }
-
-  .stage-clear-tag {
-    font-size: 14px;
-  }
-
-  .site-footer__grid {
-    gap: 48px;
-    margin-bottom: 40px;
-  }
-
-  .footer-col__title {
-    font-size: 13px;
-  }
-
-  .footer-col__list {
-    gap: 12px;
-    font-size: 14px;
+  .site-footer.skyrim-footer {
+    padding: 44px 56px 28px;
   }
 }
 
 @media (max-width: 768px) {
-  .site-footer {
+  .site-footer.skyrim-footer {
     padding: 32px 18px 20px;
   }
 
-  .site-footer__grid {
+  .skyrim-footer__grid {
     grid-template-columns: 1fr;
     gap: 24px;
   }

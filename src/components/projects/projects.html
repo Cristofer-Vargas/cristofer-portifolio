@@ -1,38 +1,38 @@
 <section id="projetos" class="projects-band reveal" aria-labelledby="projetos-title">
-  <div class="projects-band__header ds-vault-head">
-    <div class="vault-badge-row ds-vault-badges">
-      <span class="badge-accent">ARCHIVE // REPOSITÓRIO</span>
-      <span class="badge-xp">CARGO DELIVERIES</span>
+  <div class="projects-band__header skyrim-vault-head">
+    <div class="vault-badge-row skyrim-vault-badges">
+      <span class="badge-accent">ARTEFATOS LENDÁRIOS</span>
+      <span class="badge-xp">INVENTÁRIO DOVAHKIIN</span>
     </div>
-    <h2 id="projetos-title" class="section-title section-title--center">Bridges Archive // Projetos &amp; Entregas</h2>
-    <p class="projects-vault-sub ds-vault-sub">Selecione um módulo para inspecionar arquitetura técnica, telemetria e repositório</p>
+    <h2 id="projetos-title" class="section-title section-title--center">Artefatos Forjados // Projetos</h2>
+    <p class="projects-vault-sub skyrim-vault-sub">Selecione um artefato para examinar atributos, runas técnicas e repositório</p>
 
-    <div class="carousel-controls ds-carousel-controls" aria-label="Controles do carrossel de projetos">
-      <button type="button" class="pixel-btn carousel-nav-btn ds-nav-arrow" id="carousel-prev" aria-label="Projeto anterior">◀ PREV</button>
-      <div class="carousel-dots ds-carousel-dots" id="carousel-dots" role="tablist" aria-label="Selecionar projeto"></div>
-      <button type="button" class="pixel-btn carousel-nav-btn ds-nav-arrow" id="carousel-next" aria-label="Próximo projeto">NEXT ▶</button>
+    <div class="carousel-controls skyrim-carousel-controls" aria-label="Controles do carrossel de artefatos">
+      <button type="button" class="pixel-btn carousel-nav-btn" id="carousel-prev" aria-label="Artefato anterior">‹ ANTERIOR</button>
+      <div class="carousel-dots skyrim-carousel-dots" id="carousel-dots" role="tablist" aria-label="Selecionar artefato"></div>
+      <button type="button" class="pixel-btn carousel-nav-btn" id="carousel-next" aria-label="Próximo artefato">PRÓXIMO ›</button>
     </div>
   </div>
 
-  <div class="carousel-viewport ds-carousel-viewport" id="carousel-viewport" tabindex="0" aria-roledescription="carousel" aria-label="Projetos em destaque">
-    <div class="carousel-track ds-carousel-track" id="carousel-track">
+  <div class="carousel-viewport skyrim-carousel-viewport" id="carousel-viewport" tabindex="0" aria-roledescription="carousel" aria-label="Artefatos em destaque">
+    <div class="carousel-track skyrim-carousel-track" id="carousel-track">
       <!-- Populated dynamically via carousel.component.js -->
     </div>
   </div>
 </section>
 
-<!-- Project Detail Modal -->
-<div class="modal ds-modal" id="project-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
-  <div class="modal__backdrop ds-modal__backdrop" data-close-modal="true"></div>
-  <div class="modal__dialog ds-modal__dialog">
-    <button type="button" class="modal__close pixel-btn ds-modal__close" id="modal-close" aria-label="Fechar detalhes">✕</button>
-    <span class="modal__category ds-modal__cat" id="modal-category"></span>
-    <h2 class="modal__title ds-modal__title" id="modal-title"></h2>
-    <div class="modal__preview ds-modal__preview" id="modal-preview"></div>
-    <h3 class="modal__subtitle ds-modal__subtitle">Descrição</h3>
-    <p class="modal__desc ds-modal__desc" id="modal-desc"></p>
-    <h3 class="modal__subtitle ds-modal__subtitle">Tecnologias</h3>
-    <ul class="modal__tags ds-modal__tags" id="modal-tags"></ul>
-    <div class="modal__actions ds-modal__actions" id="modal-actions"></div>
+<!-- Project Detail Modal: Skyrim 3D Item Inspection Window -->
+<div class="modal skyrim-modal" id="project-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal__backdrop skyrim-modal__backdrop" data-close-modal="true"></div>
+  <div class="modal__dialog skyrim-modal__dialog">
+    <button type="button" class="modal__close pixel-btn skyrim-modal__close" id="modal-close" aria-label="Fechar inventário">✕</button>
+    <span class="modal__category skyrim-modal__cat" id="modal-category"></span>
+    <h2 class="modal__title skyrim-modal__title" id="modal-title"></h2>
+    <div class="modal__preview skyrim-modal__preview" id="modal-preview"></div>
+    <h3 class="modal__subtitle skyrim-modal__subtitle">Atributos &amp; Descrição</h3>
+    <p class="modal__desc skyrim-modal__desc" id="modal-desc"></p>
+    <h3 class="modal__subtitle skyrim-modal__subtitle">Encantamentos &amp; Tecnologias</h3>
+    <ul class="modal__tags skyrim-modal__tags" id="modal-tags"></ul>
+    <div class="modal__actions skyrim-modal__actions" id="modal-actions"></div>
   </div>
 </div>
