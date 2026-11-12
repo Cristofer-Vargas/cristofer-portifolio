@@ -1,0 +1,13 @@
+@import "./tokens.css";
+@import "./base.css";
+@import "./primitives.css";
+
+/* Component Stylesheets */
+@import "../components/header/header.css";
+@import "../components/hero/hero.css";
+@import "../components/about/about.css";
+@import "../components/timeline/timeline.css";
+@import "../components/projects/projects.css";
+@import "../components/technologies/technologies.css";
+@import "../components/contact/contact.css";
+@import "../components/footer/footer.css";

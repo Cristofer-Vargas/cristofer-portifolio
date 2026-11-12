@@ -1,0 +1,42 @@
+{
+  "name": "cristofer-portifolio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Portfólio pessoal de Cristofer Vargas de Santis desenvolvido em HTML, CSS e JavaScript.",
+  "scripts": {
+    "build": "node scripts/build-html.mjs",
+    "predev": "node scripts/build-html.mjs",
+    "dev": "live-server --ignore=node_modules,.git",
+    "prepare": "husky",
+    "commit": "cz",
+    "release": "semantic-release",
+    "release:dry-run": "semantic-release --dry-run",
+    "commitlint": "commitlint --edit"
+  },
+  "keywords": [
+    "portfolio",
+    "html",
+    "css",
+    "javascript",
+    "commitizen",
+    "semantic-release"
+  ],
+  "author": "Cristofer Vargas de Santis",
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@semantic-release/changelog": "^7.0.0",
+    "@semantic-release/git": "^11.0.1",
+    "commitizen": "^4.3.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.1.7",
+    "live-server": "^1.2.2",
+    "semantic-release": "^25.0.9"
+  }
+}

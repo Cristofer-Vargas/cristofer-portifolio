@@ -1,0 +1,32 @@
+<section id="projetos" class="projects-band reveal" aria-labelledby="projetos-title">
+  <div class="projects-band__header">
+    <h2 id="projetos-title" class="section-title section-title--center">Projetos Destaque</h2>
+    <div class="carousel-controls" aria-label="Controles do carrossel de projetos">
+      <button type="button" class="pixel-btn" id="carousel-prev" aria-label="Projeto anterior">&lt;</button>
+      <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Selecionar projeto"></div>
+      <button type="button" class="pixel-btn" id="carousel-next" aria-label="Próximo projeto">&gt;</button>
+    </div>
+  </div>
+
+  <div class="carousel-viewport" id="carousel-viewport" tabindex="0" aria-roledescription="carousel" aria-label="Projetos em destaque">
+    <div class="carousel-track" id="carousel-track">
+      <!-- Populated dynamically via carousel.component.js -->
+    </div>
+  </div>
+</section>
+
+<!-- Project Detail Modal -->
+<div class="modal" id="project-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal__backdrop" data-close-modal="true"></div>
+  <div class="modal__dialog pixel-shadow">
+    <button type="button" class="modal__close pixel-btn" id="modal-close" aria-label="Fechar detalhes">X</button>
+    <span class="modal__category" id="modal-category"></span>
+    <h2 class="modal__title" id="modal-title"></h2>
+    <div class="modal__preview" id="modal-preview"></div>
+    <h3 class="modal__subtitle">Descrição</h3>
+    <p class="modal__desc" id="modal-desc"></p>
+    <h3 class="modal__subtitle">Tecnologias</h3>
+    <ul class="modal__tags" id="modal-tags"></ul>
+    <div class="modal__actions" id="modal-actions"></div>
+  </div>
+</div>

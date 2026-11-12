@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <rect width="32" height="32" fill="#0D0D0D"/>
+  <rect x="2" y="2" width="28" height="28" fill="#222222"/>
+  <rect x="2" y="2" width="28" height="2" fill="#CD853F"/>
+  <rect x="2" y="28" width="28" height="2" fill="#CD853F"/>
+  <rect x="2" y="2" width="2" height="28" fill="#CD853F"/>
+  <rect x="28" y="2" width="2" height="28" fill="#CD853F"/>
+  <!-- Pixel "<" -->
+  <rect x="9" y="10" width="2" height="2" fill="#FFDE21"/>
+  <rect x="7" y="12" width="2" height="2" fill="#FFDE21"/>
+  <rect x="5" y="14" width="2" height="4" fill="#FFDE21"/>
+  <rect x="7" y="18" width="2" height="2" fill="#FFDE21"/>
+  <rect x="9" y="20" width="2" height="2" fill="#FFDE21"/>
+  <!-- Pixel "/" -->
+  <rect x="17" y="9" width="2" height="3" fill="#CD853F"/>
+  <rect x="16" y="12" width="2" height="3" fill="#CD853F"/>
+  <rect x="15" y="15" width="2" height="3" fill="#CD853F"/>
+  <rect x="14" y="18" width="2" height="3" fill="#CD853F"/>
+  <rect x="13" y="21" width="2" height="2" fill="#CD853F"/>
+  <!-- Pixel ">" -->
+  <rect x="21" y="10" width="2" height="2" fill="#FFDE21"/>
+  <rect x="23" y="12" width="2" height="2" fill="#FFDE21"/>
+  <rect x="25" y="14" width="2" height="4" fill="#FFDE21"/>
+  <rect x="23" y="18" width="2" height="2" fill="#FFDE21"/>
+  <rect x="21" y="20" width="2" height="2" fill="#FFDE21"/>
+</svg>
