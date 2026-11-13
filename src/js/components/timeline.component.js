@@ -17,6 +17,7 @@ export function initTimeline() {
       const org = item.querySelector('.timeline-org');
       const date = item.querySelector('.timeline-date');
       const details = item.querySelector('.timeline-details');
+      const tags = item.querySelector('.timeline-tags');
       const trigger = document.createElement('button');
       trigger.type = 'button';
       trigger.className = 'timeline-trigger';
@@ -25,15 +26,22 @@ export function initTimeline() {
       trigger.setAttribute('aria-controls', dialog.id);
       title.replaceChildren(trigger);
 
-      trigger.addEventListener('click', () => {
+      const openDialog = () => {
         dialogCategory.textContent = category;
         dialogTitle.textContent = trigger.textContent;
         dialogOrg.textContent = org.textContent;
         dialogDate.replaceChildren(...date.cloneNode(true).childNodes);
         dialogDetails.replaceChildren(details.content.cloneNode(true));
+        if (tags) dialogDetails.append(tags.cloneNode(true));
         trigger.focus({ preventScroll: true });
         dialog.showModal();
         dialog.scrollTop = 0;
+      };
+
+      trigger.addEventListener('click', openDialog);
+      item.addEventListener('click', (event) => {
+        if (event.target.closest('.timeline-trigger, a')) return;
+        openDialog();
       });
     }
   }
