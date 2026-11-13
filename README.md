@@ -6,8 +6,12 @@ Portfólio de desenvolvimento back-end com foco em C#, .NET, APIs REST e bancos 
 
 - `npm ci` instala as dependências.
 - `npm run dev` gera o HTML e inicia o servidor local.
-- `npm run build` recompila o `index.html`.
+- `npm run build` recompila o `index.html` e a página de portfólio da D’Santis Food (`dsantis-food.html`).
 
 O HTML principal é gerado a partir de `src/pages/index.template.html` e dos componentes em `src/components/`. Cada seção tem seus próprios arquivos HTML e CSS. O JavaScript acrescenta o menu compacto, os filtros dos projetos e as ilustrações em canvas. Os projetos e os links estão disponíveis no HTML.
 
 O domínio do GitHub Pages é configurado no arquivo `CNAME`. O fluxo de versionamento usa Commitizen (`npm run commit`) e Semantic Release (`npm run release:dry-run` para simulação).
+
+## Galeria D’Santis Food
+
+A página `dsantis-food.html` organiza o case em cinco temas — identidade, ponto de venda, cardápios, redes sociais e campanhas — usando as artes em `assets/images/dsantis/`. Novas peças podem entrar no capítulo correspondente sem mudar a navegação por temas.

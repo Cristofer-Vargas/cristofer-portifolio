@@ -10,4 +10,10 @@
       <image:loc>https://portifolio.cristofer.dev.br/assets/images/og-cover.png</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://portifolio.cristofer.dev.br/dsantis-food.html</loc>
+    <image:image>
+      <image:loc>https://portifolio.cristofer.dev.br/assets/images/dsantis/mockups/finais/01-adesivo-vinilico-contorno.jpg</image:loc>
+    </image:image>
+  </url>
 </urlset>
