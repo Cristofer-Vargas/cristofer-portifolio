@@ -45,6 +45,61 @@
 .case-study--notes { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); }
 .case-study--notes .case-copy { grid-area: 1 / 2; }
 
+.dsantis-feature {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(13rem, .72fr) minmax(0, 1.25fr) minmax(7rem, .32fr);
+  align-items: stretch;
+  gap: clamp(1.2rem, 4vw, 4rem);
+  margin-top: clamp(2.2rem, 5vw, 4.6rem);
+  padding: clamp(1.25rem, 3.5vw, 2.9rem);
+  overflow: hidden;
+  border: 1px solid #e6a449;
+  background:
+    linear-gradient(125deg, transparent 0 62%, #f4c77a 62.2% 62.7%, transparent 63%),
+    #c77525;
+  color: #1c160d;
+}
+
+.dsantis-feature::before {
+  content: "";
+  position: absolute;
+  inset: .7rem;
+  border: 1px solid #291c0c;
+  opacity: .45;
+  pointer-events: none;
+}
+
+.dsantis-feature .case-copy { position: relative; z-index: 1; align-self: center; }
+.dsantis-feature .project-category, .dsantis-feature .text-link { color: #1c160d; }
+.dsantis-feature .case-copy > p:not(.project-category) { color: #342512; }
+
+.dsantis-feature__visual {
+  position: relative;
+  z-index: 1;
+  min-height: 13.4rem;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #1d160d;
+  background: #171109;
+}
+
+.dsantis-feature__photo { width: 100%; height: 100%; object-fit: cover; opacity: .78; }
+.dsantis-feature__visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, #17110915, #171109cc); pointer-events: none; }
+.dsantis-feature__logo-wrap { position: absolute; z-index: 1; inset: 1rem; display: grid; place-items: center; border: 1px solid #efc579; background: #171109e8; }
+.dsantis-feature__logo { width: min(86%, 17rem); height: auto; object-fit: contain; }
+
+.dsantis-feature__note {
+  position: relative;
+  z-index: 1;
+  align-self: end;
+  color: #321f0d;
+  font: .67rem / 1.55 var(--mono);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.dsantis-feature__note span { display: block; margin-top: .5rem; color: #f9e2b4; }
+
 .case-copy h3 {
   margin-block: .34rem .8rem;
   font: 800 clamp(3.25rem, 7.2vw, 6.9rem) / .88 var(--display);
@@ -184,6 +239,9 @@ details[open] > summary > .detail-mark { transform: rotate(45deg); }
 @media (max-width: 46rem) {
   .case-study, .case-study--notes { grid-template-columns: 1fr; }
   .case-study--notes .case-copy, .notes-figure { grid-area: auto; }
+  .dsantis-feature { grid-template-columns: 1fr; gap: 1.3rem; }
+  .dsantis-feature__visual { min-height: 14rem; }
+  .dsantis-feature__note { align-self: auto; }
   .index-entry summary { display: grid; grid-template-columns: 1fr auto; }
   .index-entry summary small { grid-row: 2; }
   .index-entry summary .detail-mark { grid-area: 1 / 2 / span 2; }

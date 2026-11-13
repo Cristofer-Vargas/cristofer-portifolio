@@ -89,11 +89,11 @@
 
 .hero-portrait {
   position: absolute;
-  top: 45%;
-  left: 18%;
-  width: 67%;
+  top: 44%;
+  left: 11%;
+  width: 84%;
   height: auto;
-  transform: translateY(-25%);
+  transform: translateY(-31%);
   filter: grayscale(100%) contrast(1.12);
   mask-image: linear-gradient(black 0 73%, transparent 86%);
 }
@@ -130,11 +130,11 @@
     inset: auto;
     width: min(100%, 36rem);
     justify-self: center;
-    aspect-ratio: 700 / 595;
+    aspect-ratio: 700 / 750;
     mask-image: linear-gradient(black 93%, transparent);
   }
   .hero-meta { grid-row: auto; }
-  .hero-portrait { top: 42%; }
+  .hero-portrait { top: 30%; left: 5%; width: 90%; transform: translateY(-29%); }
 }
 
 @media (max-width: 22rem) {
